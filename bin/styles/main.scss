@@ -1,10 +1,80 @@
-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
-input {
-    margin-bottom: 30px;
+$mainFont: "Open Sans", sans-serif;
+$secondFont: "Source Sans Pro", sans-serif;
+
+$mainBlue: #23374d;
+$lightBlue: #1089ff;
+
+$paddingX: 100px;
+
+@import "reset";
+
+.header {
+    background-color: $mainBlue;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px $paddingX;
+
+    &__search {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 15px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__input {
+        border: none;
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
+        font-family: $secondFont;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__button {
+        background-color: $lightBlue;
+        height: 100%;
+        padding: 5px 15px;
+
+        img {
+            height: 25px;
+            max-height: none;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 200px;
+    }
+
+    &__option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 5px;
+
+        img {
+            height: 25px;
+            max-height: none;
+        }
+
+        span {
+            color: white;
+            font-family: $secondFont;
+            font-weight: lighter;
+        }
+    }
 }

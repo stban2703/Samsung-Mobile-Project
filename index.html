@@ -1,41 +1,43 @@
 <!DOCTYPE html>
-<html\>
+<html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Samsung Mobile</title>
-        <link rel="stylesheet" href="./bin/styles/main.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <title>Samsung Mobile</title>
+    <link rel="icon" href="./src/icons/favicon.ico">
+    <link rel="stylesheet" href="./bin/styles/main.css">
+</head>
 
-    <body>
-        <form class="form">
-            <label for="title">Titulo</label>
-            <input required name="title" type="text">
+<body>
+    <header class="header">
+        
+        <img class="header__logo" src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono">
+        <section class="header__search">
+            <input type="text" class="header__input" placeholder="Buscar por nombre, clase, cámara...">
+            <div class="header__button">
+                <img src="./src/icons/search.svg" alt="Botón buscar">
+            </div>
+        </section>
+        <section class="header__menu">
+            <div class="header__option">
+                <img src="./src/icons/usericon.svg" alt="Usuario">
+                <span>Usuario</span>
+            </div>
+            <div class="header__option">
+                <img src="./src/icons/shopcart.svg" alt="Carrito">
+                <span>Carrito</span>
+            </div>
+            <div class="header__option">
+                <img src="./src/icons/order.svg" alt="Pedidos">
+                <span>Pedidos</span>
+            </div>
+        </section>
+    </header>
 
-            <label for="price">Precio</label>
-            <input required name="price" type="number">
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="./bin/scripts/main.js"></script>
+</body>
 
-            <label for="class">Clase</label>
-            <input required name="class" type="text">
-
-            <label for="rate">Calificación</label>
-            <input required name="rate" type="number">
-
-            <label for="storage">Almacenamiento</label>
-            <input required name="storage" type="number">
-
-            <label for="camera">Cámara</label>
-            <input required name="camera" type="number">
-
-            <label for="class">Descripción</label>
-            <input required name="description" type="text">
-
-            <button>Subir</button>
-        </form>
-        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
-        <script src="./bin/scripts/main.js"></script>
-    </body>
-
-    </html>
+</html>

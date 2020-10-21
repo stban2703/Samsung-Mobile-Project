@@ -16,10 +16,13 @@ firebase.initializeApp(firebaseConfig);
 // References
 const db = firebase.firestore();
 const productsRef = db.collection("products");
+//const form = document.querySelector('.form');
 
-const form = document.querySelector('.form');
 
-form.addEventListener('submit', function (event) {
+
+
+// Add new product
+/*form.addEventListener('submit', function (event) {
 
     event.preventDefault();
 
@@ -33,12 +36,12 @@ form.addEventListener('submit', function (event) {
         description: form.description.value,
     };
 
-    productsRef // referencia de la colección
-        .add(newProduct) // cree un nuevo elemento en la colección
+    productsRef
+        .add(newProduct)
         .then(function (docRef) {
             console.log("Document written with ID: ", docRef.id);
         })
         .catch(function (error) {
             console.error("Error adding document: ", error);
         });
-});
+});*/
