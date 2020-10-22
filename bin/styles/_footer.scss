@@ -1,0 +1,53 @@
+.footer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: $containerMaxWidth;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    &__contact {
+        font-family: $mainFont;
+        font-weight: lighter;
+        color: $lightGray;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 10px;
+    }
+
+    &__certification {
+        margin: 0 auto;
+    }
+
+    &__social-media {
+        background-color: $mainBlue;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon {
+        margin: 10px;
+        max-width: none;
+        width: 50px;
+    }
+}
