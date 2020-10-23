@@ -16,7 +16,60 @@ firebase.initializeApp(firebaseConfig);
 // References
 const db = firebase.firestore();
 const productsRef = db.collection("products");
+const productsList = document.querySelector('.product-list');
 //const form = document.querySelector('.form');
+
+
+// Render products
+function renderProducts(list) {
+    productsList.innerHTML = '';
+
+    list.forEach(function (elem) {
+        const newProduct = document.createElement('article');
+        newProduct.classList.add('product');
+
+        newProduct.innerHTML = `
+            <div class="product__preview">
+                <img src="./src/images/galaxys20-1.jpg" alt="Galaxy S20 Ultra">
+            </div>
+            <div class="product__details">
+                <h2 class="product__title">${elem.title}</h2>
+                <span class="product__price">$ ${elem.price}</span>
+                <div class="rating">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                </div>
+                <div class="product__controls">
+                    <img class="product__option" src="./src/icons/delete.svg" alt="Borrar producto">
+                    <img class="product__option" src="./src/icons/addtocart.svg" alt="Agregar al carrito">
+                    <img class="product__option" src="./src/icons/edit.svg" alt="Editar producto">
+                </div>
+            </div>`;
+        productsList.appendChild(newProduct);
+    });
+}
+
+function getProducts() {
+    productsRef  // referencia de la colección
+      .get() // pide todos los documentos de la colección
+      .then((querySnapshot) => {
+        const objects = [];
+        querySnapshot.forEach((doc) => {
+          const obj = doc.data();
+          obj.id = doc.id;
+          objects.push(obj);
+          console.log(`${doc.id} => ${doc.data()}`);
+        });
+        renderProducts(objects);
+      });
+  }
+  
+  // render inicial con todos los productos
+  getProducts();
+
 
 // Add new product
 /*form.addEventListener('submit', function (event) {
