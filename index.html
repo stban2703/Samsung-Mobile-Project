@@ -38,10 +38,42 @@
 
     <main class="main-content">
         <article class="main-content__container">
-            <aside class="order&filter">
+            <aside class="display">
 
+                <div class="display__section">
+                    <h3 class="display__title" for="sort">Ordenar por:</h3>
+                    <form class="display__options" name="sort">
+                        <select name="select">
+                            <option value="none">Ningún orden</option>
+                            <option value="lowerPrice">Menor a mayor precio</option>
+                            <option value="higherPrice">Mayor a menor precio</option>
+                            <option value="betterRate">Mayor a menor valoración</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div class="display__section">
+                    <h3 class="display__title" >Filtrar por:</h3>
+                    <form class="display__options" name="classFilter">
+                        <h4>Clase: </h3>
+                        <input type="radio" name="class" value="galaxyA"> Galaxy A
+                        <br>
+                        <input type="radio" name="class" value="galaxyA"> Galaxy Fold
+                        <br>
+                        <input type="radio" name="class" value="galaxyA"> Galaxy Note
+                        <br>
+                        <input type="radio" name="class" value="galaxyA"> Galaxy S
+                        <br>
+                        <input type="radio" name="class" value="galaxyA"> Galaxy XCover
+                        <br>
+                        <input type="radio" name="class" value="galaxyA"> Galaxy Z
+                        <br>
+                        <input type="radio" name="class" value="none"> Ningún filtro
+                    </form>
+                </div>
             </aside>
             <section class="product-list">
+
                 <div class="product">
                     <div class="product__preview">
                         <img src="./src/images/galaxys20-1.jpg" alt="Galaxy S20 Ultra">
@@ -63,6 +95,49 @@
                         </div>
                     </div>
                 </div>
+                <div class="product">
+                    <div class="product__preview">
+                        <img src="./src/images/galaxys20-1.jpg" alt="Galaxy S20 Ultra">
+                    </div>
+                    <div class="product__details">
+                        <h2 class="product__title">Galaxy S20 Ultra</h2>
+                        <span class="product__price">$ 3,999,999</span>
+                        <div class="rating">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                        </div>
+                        <div class="product__controls">
+                            <img class="product__option" src="./src/icons/delete.svg" alt="Borrar producto">
+                            <img class="product__option" src="./src/icons/addtocart.svg" alt="Agregar al carrito">
+                            <img class="product__option" src="./src/icons/edit.svg" alt="Editar producto">
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__preview">
+                        <img src="./src/images/galaxys20-1.jpg" alt="Galaxy S20 Ultra">
+                    </div>
+                    <div class="product__details">
+                        <h2 class="product__title">Galaxy S20 Ultra</h2>
+                        <span class="product__price">$ 3,999,999</span>
+                        <div class="rating">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                            <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                        </div>
+                        <div class="product__controls">
+                            <img class="product__option" src="./src/icons/delete.svg" alt="Borrar producto">
+                            <img class="product__option" src="./src/icons/addtocart.svg" alt="Agregar al carrito">
+                            <img class="product__option" src="./src/icons/edit.svg" alt="Editar producto">
+                        </div>
+                    </div>
+                </div>
+                
             </section>
         </article>
     </main>

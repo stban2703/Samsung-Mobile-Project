@@ -371,6 +371,9 @@ input[type=button] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -378,8 +381,81 @@ input[type=button] {
 }
 
 .main-content__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   max-width: 960px;
+}
+
+.display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  width: 230px;
+  color: #4d4d4d;
+  margin: 10px 5px;
+}
+
+.display__section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+}
+
+.display__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+
+.display__options {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #4d4d4d;
+  margin: 5px;
+}
+
+.display__options h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.display__options select {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #4d4d4d;
+  border: none;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.display__options select:focus {
+  outline: none;
+  border-color: #1089ff;
+}
+
+.product-list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .product {
@@ -403,6 +479,7 @@ input[type=button] {
           justify-content: space-between;
   width: 220px;
   height: 330px;
+  margin: 10px 5px;
 }
 
 .product__preview {
