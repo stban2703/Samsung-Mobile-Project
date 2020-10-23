@@ -4,12 +4,22 @@
 $mainFont: "Open Sans", sans-serif;
 $secondFont: "Source Sans Pro", sans-serif;
 
+// Default Html Font Size: 16px
+// Fs = Font size
+$productPriceFs: 1.25rem;
+
+// Bg = Background
 $mainBlue: #23374d;
 $lightBlue: #1089ff;
+$darkGray: rgb(77, 77, 77);
 $lightGray: #7c7c7c;
+$mainBg: white;
+$shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);;
 
 $containerMaxWidth: 960px;
 
 @import "reset";
 @import "header";
+@import "main-content";
+@import "product";
 @import "footer";

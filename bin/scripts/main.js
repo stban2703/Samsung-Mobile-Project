@@ -18,9 +18,6 @@ const db = firebase.firestore();
 const productsRef = db.collection("products");
 //const form = document.querySelector('.form');
 
-
-
-
 // Add new product
 /*form.addEventListener('submit', function (event) {
 

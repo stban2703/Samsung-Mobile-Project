@@ -367,6 +367,122 @@ input[type=button] {
   font-weight: lighter;
 }
 
+.main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.main-content__container {
+  width: 100%;
+  max-width: 960px;
+}
+
+.product {
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 220px;
+  height: 330px;
+}
+
+.product__preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: none;
+  height: 70%;
+}
+
+.product__preview img {
+  max-height: none;
+  width: 80%;
+}
+
+.product__details {
+  border-top: 1px solid #BBBBBB;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0;
+  width: 90%;
+  height: 30%;
+}
+
+.product__title {
+  color: #7c7c7c;
+}
+
+.product__price {
+  color: #1089ff;
+  font-size: 1.25rem;
+  margin: 5px 0;
+}
+
+.product__rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product__controls {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 0px;
+  right: 0px;
+}
+
+.product__option {
+  margin: 3px 5px;
+}
+
+.product__option:hover {
+  cursor: pointer;
+}
+
 .footer {
   background-color: white;
   display: -webkit-box;
