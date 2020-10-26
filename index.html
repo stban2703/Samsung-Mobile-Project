@@ -36,45 +36,135 @@
         </article>
     </header>
 
-    <main class="main-content">
-        <article class="main-content__container">
+
+    <main class="mainContent">
+
+        <header class="sectionHeader">
+            <h2 class="sectionHeader__title">¡Bienvenido a Samsung Mobile!</h2>
+            <p class="sectionHeader__desc">La tienda oficial de productos móviles Samsung</p>
+        </header>
+
+        <span class="mainContent__total">Número de productos mostrados: </span>
+
+        <article class="mainContent__container">
+            
             <aside class="display">
+                <form class="display__form" name="sort-filter">
+                    <div class="display__section">
+                        <h3 class="display__title" for="sort">Ordenar por:</h3>
+                        <div class="display__options">
+                            <select name="sort">
+                                <option value="none">Ningún orden</option>
+                                <option value="lowerPrice">Menor a mayor precio</option>
+                                <option value="higherPrice">Mayor a menor precio</option>
+                                <option value="betterRate">Mayor a menor valoración</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <div class="display__section">
-                    <h3 class="display__title" for="sort">Ordenar por:</h3>
-                    <form class="display__options" name="sort">
-                        <select name="select">
-                            <option value="none">Ningún orden</option>
-                            <option value="lowerPrice">Menor a mayor precio</option>
-                            <option value="higherPrice">Mayor a menor precio</option>
-                            <option value="betterRate">Mayor a menor valoración</option>
-                        </select>
-                    </form>
-                </div>
+                    <div class="display__section">
+                        <h3 class="display__title">Filtrar por:</h3>
+                        <div class="display__options">
 
-                <div class="display__section">
-                    <h3 class="display__title" >Filtrar por:</h3>
-                    <form class="display__options" name="classFilter">
-                        <h4>Clase: </h3>
-                        <input type="radio" name="class" value="galaxyA"> Galaxy A
-                        <br>
-                        <input type="radio" name="class" value="galaxyA"> Galaxy Fold
-                        <br>
-                        <input type="radio" name="class" value="galaxyA"> Galaxy Note
-                        <br>
-                        <input type="radio" name="class" value="galaxyA"> Galaxy S
-                        <br>
-                        <input type="radio" name="class" value="galaxyA"> Galaxy XCover
-                        <br>
-                        <input type="radio" name="class" value="galaxyA"> Galaxy Z
-                        <br>
-                        <input type="radio" name="class" value="none"> Ningún filtro
-                    </form>
-                </div>
+                            <h4 class="display__subtitle">Clase: </h4>
+
+                            <label>
+                                <input type="radio" name="class" value="galaxyA"> Galaxy A
+                            </label>
+
+                            <label>
+                                <input type="radio" name="class" value="galaxyFold"> Galaxy Fold
+                            </label>
+
+                            <label>
+                                <input type="radio" name="class" value="galaxyNote"> Galaxy Note
+                            </label>
+
+                            <label>
+                                <input type="radio" name="class" value="galaxyS"> Galaxy S
+                            </label>
+
+                            <label>
+                                <input type="radio" name="class" value="galaxyXCover"> Galaxy XCover
+                            </label>
+
+                            <label>
+                                <input type="radio" name="class" value="galaxyZ"> Galaxy Z
+                            </label>
+
+                            <label>
+                                <input type="radio" name="class" value="none"> Todas
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="display__section">
+                        <div class="display__options">
+
+                            <h4 class="display__subtitle">Almacenamiento: </h4>
+
+                            <label>
+                                <input type="radio" name="storage" value="32"> 32GB
+                            </label>
+
+                            <label>
+                                <input type="radio" name="storage" value="64"> 64MP
+                            </label>
+
+                            <label>
+                                <input type="radio" name="storage" value="128"> 128GB
+                            </label>
+
+                            <label>
+                                <input type="radio" name="storage" value="256"> 256GB
+                            </label>
+
+                            <label>
+                                <input type="radio" name="storage" value="512"> 512GB
+                            </label>
+
+                            <label>
+                                <input type="radio" name="storage" value="all"> Todas
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="display__section">
+                        <div class="display__options">
+                            <h4 class="display__subtitle">Cámara: </h4>
+
+                            <label>
+                                <input type="radio" name="camera" value="16"> 10 ~ 16 MP
+                            </label>
+
+                            <label>
+                                <input type="radio" name="camera" value="24"> 17 ~ 24 MP
+                            </label>
+
+                            <label>
+                                <input type="radio" name="camera" value="48"> 25 ~ 48 MP
+                            </label>
+
+                            <label>
+                                <input type="radio" name="camera" value="64"> 49 ~ 64 MP
+                            </label>
+
+                            <label>
+                                <input type="radio" name="camera" value="108"> 65 ~ 108 MP
+                            </label>
+
+                            <label>
+                                <input type="radio" name="camera" value="all"> Todas
+                            </label>
+                        </div>
+                    </div>
+                </form>
             </aside>
+
             <section class="product-list">
-                                
+
             </section>
+
         </article>
     </main>
 

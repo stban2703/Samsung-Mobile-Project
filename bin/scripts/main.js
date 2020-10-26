@@ -23,10 +23,14 @@ const productsList = document.querySelector('.product-list');
 // Render products
 function renderProducts(list) {
     productsList.innerHTML = '';
-
+    let cameraList = [];
+    let storageList = [];
     list.forEach(function (elem) {
         const newProduct = document.createElement('article');
         newProduct.classList.add('product');
+
+        cameraList.push(elem.camera);
+        storageList.push(elem.storage)
 
         newProduct.innerHTML = `
             <div class="product__preview">
@@ -50,6 +54,10 @@ function renderProducts(list) {
             </div>`;
         productsList.appendChild(newProduct);
     });
+
+    //console.log(storageList.sort(function(a,b){return a - b;}));
+    // Camera: [10, 12, 12, 12, 12, 12, 13, 13, 13, 16, 16, 16, 25, 25, 48, 48, 64, 64, 108, 108]
+    // Storage: [32, 32, 64, 64, 64, 64, 64, 64, 128, 128, 128, 128, 128, 128, 256, 256, 256, 256, 512, 512]
 }
 
 function getProducts() {
