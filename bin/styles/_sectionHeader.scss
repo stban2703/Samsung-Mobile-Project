@@ -1,0 +1,18 @@
+.sectionHeader {
+    width: 100%;
+    max-width: $containerMaxWidth;
+    margin: 10px 0;
+
+    &__title {
+        font-family: $mainFont;
+        font-weight: bold;
+        color: $mainBlue;
+        font-size: $headerTitleFs;
+    }
+
+    &__desc {
+        font-family: $secondFont;
+        color: $darkGray;
+        font-size: $headerDescFs;
+    }
+}

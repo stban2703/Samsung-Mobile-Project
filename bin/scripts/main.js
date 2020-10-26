@@ -15,30 +15,33 @@ firebase.initializeApp(firebaseConfig);
 
 // References
 const db = firebase.firestore();
-const productsRef = db.collection("products");
-const productsList = document.querySelector('.product-list');
+const productsRef = db.collection('products');
+const productsList = document.querySelector('.productList__view');
+const productListTotal = document.querySelector('.productList__total');
+const loader = document.querySelector('.lds-ring');
 //const form = document.querySelector('.form');
 
 
 // Render products
 function renderProducts(list) {
     productsList.innerHTML = '';
+    productListTotal.innerHTML = `Total de productos mostrados: <strong>${list.length}</strong>`;
     let cameraList = [];
     let storageList = [];
     list.forEach(function (elem) {
         const newProduct = document.createElement('article');
-        newProduct.classList.add('product');
+        newProduct.classList.add('productList__product');
 
         cameraList.push(elem.camera);
         storageList.push(elem.storage)
 
         newProduct.innerHTML = `
-            <div class="product__preview">
+            <div class="productList__preview">
                 <img src="./src/images/galaxys20-1.jpg" alt="Galaxy S20 Ultra">
             </div>
-            <div class="product__details">
-                <h2 class="product__title">${elem.title}</h2>
-                <span class="product__price">$ ${elem.price}</span>
+            <div class="productList__details">
+                <h2 class="productList__name">${elem.title}</h2>
+                <span class="productList__price">$${elem.price}</span>
                 <div class="rating">
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
@@ -46,10 +49,10 @@ function renderProducts(list) {
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
                 </div>
-                <div class="product__controls">
-                    <img class="product__option" src="./src/icons/delete.svg" alt="Borrar producto">
-                    <img class="product__option" src="./src/icons/addtocart.svg" alt="Agregar al carrito">
-                    <img class="product__option" src="./src/icons/edit.svg" alt="Editar producto">
+                <div class="productList__settings">
+                    <img class="productList__option" src="./src/icons/delete.svg" alt="Borrar producto">
+                    <img class="productList__option" src="./src/icons/addtocart.svg" alt="Agregar al carrito">
+                    <img class="productList__option" src="./src/icons/edit.svg" alt="Editar producto">
                 </div>
             </div>`;
         productsList.appendChild(newProduct);
@@ -70,6 +73,7 @@ function getProducts() {
           obj.id = doc.id;
           objects.push(obj);
           console.log(`${doc.id} => ${doc.data()}`);
+          loader.classList.add('lds-ring--hide')
         });
         renderProducts(objects);
       });

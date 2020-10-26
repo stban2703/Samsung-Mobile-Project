@@ -4,12 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-
-    &__totalProducts {
-        font-family: $secondFont;
-        width: 100%;
-        width: $containerMaxWidth;
-    }
+    margin: 0 10px;
 
     &__container {
         display: flex;

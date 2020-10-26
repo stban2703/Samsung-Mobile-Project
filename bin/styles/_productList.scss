@@ -1,0 +1,152 @@
+.productList {
+    width: 100%;
+    max-width: $containerMaxWidth;
+    display: flex;
+    flex-direction: column;
+
+    &__total {
+        font-family: $secondFont;
+        font-size: $totalFs;
+        color: $darkGray;
+        margin: 5px 0;
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+        background-color: $mainBg;
+        box-shadow: $shadow;
+        border-radius: $borderRadius;
+        width: $displayWidth;
+        height: fit-content;
+        color: $darkGray;
+        margin: 5px 0;
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    &__title {
+        font-family: $mainFont;
+        font-weight: bold;
+        color: $darkGray;
+        margin: 10px 0;
+    }
+
+    &__subtitle {
+        font-family: $mainFont;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    &__options {
+        font-family: $secondFont;
+        color: $darkGray;
+        display: flex;
+        flex-direction: column;
+        margin: 0 10px;
+
+        select {
+            font-family: $secondFont;
+            color: $darkGray;
+            border: none;
+            border-bottom: 1px solid $lineColor;
+
+            &:focus {
+                outline: none;
+                border-color: $lightBlue;
+            }
+        }
+
+        input[type="radio"] {
+            color: blue;
+            vertical-align: middle;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+    }
+
+    &__view {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 10px;
+        width: 100%;
+    }
+
+    &__product {
+        background-color: $mainBg;
+        box-shadow: $shadow;
+        border-radius: $borderRadius;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: $productWidth;
+        height: $productHeight;
+        margin: 5px;
+    }
+
+    &__preview {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: none;
+        height: 70%;
+
+        img {
+            max-height: none;
+            width: 80%;
+        }
+    }
+
+    &__details {
+        border-top: 1px solid $lineColor;
+        font-family: $mainFont;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        width: 90%;
+        height: 30%;
+    }
+
+    &__name {
+        color: $lightGray;
+    }
+
+    &__price {
+        color: $lightBlue;
+        font-size: $productPriceFs;
+        margin: 5px 0;
+    }
+
+    &__rating {
+        display: flex;
+    }
+
+    &__settings {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 0px;
+        right: 0px;
+    }
+
+    &__option {
+        margin: 3px 5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

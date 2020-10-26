@@ -7,8 +7,9 @@ $secondFont: "Source Sans Pro", sans-serif;
 // Default Html Font Size: 16px
 // Fs = Font size
 $productPriceFs: 1.25rem;
-$welcomeTitleFs: 1.875rem;
-$welcomeDescFs: 1.4rem;
+$headerTitleFs: 1.875rem;
+$headerDescFs: 1.4rem;
+$totalFs: 1.2rem;
 
 // Bg = Background
 $mainBlue: #23374d;
@@ -27,28 +28,8 @@ $productHeight: 330px;
 
 @import "reset";
 @import "header";
+@import "sectionHeader";
 @import "mainContent";
-@import "display";
-@import "product-list";
-@import "product";
+@import "lds-ring";
+@import "productList";
 @import "footer";
-
-
-.sectionHeader {
-    width: 100%;
-    max-width: $containerMaxWidth;
-    margin: 20px 0;
-
-    &__title {
-        font-family: $mainFont;
-        font-weight: bold;
-        color: $mainBlue;
-        font-size: $welcomeTitleFs;
-    }
-
-    &__desc {
-        font-family: $secondFont;
-        color: $darkGray;
-        font-size: $welcomeDescFs;
-    }
-}
