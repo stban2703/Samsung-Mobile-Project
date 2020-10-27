@@ -1,47 +1,31 @@
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
-    apiKey: "AIzaSyDjUFbImgoRuXvVHXwexaMWMqVe6j3pUlw",
-    authDomain: "online-store-project-d02b8.firebaseapp.com",
-    databaseURL: "https://online-store-project-d02b8.firebaseio.com",
-    projectId: "online-store-project-d02b8",
-    storageBucket: "online-store-project-d02b8.appspot.com",
-    messagingSenderId: "869545136594",
-    appId: "1:869545136594:web:fba8ab9a64cd420a90780b",
-    measurementId: "G-CHNYH0N3HJ"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-// References
-const db = firebase.firestore();
-const productsRef = db.collection('products');
 const productsList = document.querySelector('.productList__view');
 const productListTotal = document.querySelector('.productList__total');
-const loader = document.querySelector('.lds-ring');
-//const form = document.querySelector('.form');
-
 
 // Render products
 function renderProducts(list) {
+    // Reset list
     productsList.innerHTML = '';
+
+    // Total products
     productListTotal.innerHTML = `Total de productos mostrados: <strong>${list.length}</strong>`;
-    let cameraList = [];
-    let storageList = [];
+
     list.forEach(function (elem) {
         const newProduct = document.createElement('article');
         newProduct.classList.add('productList__product');
 
-        cameraList.push(elem.camera);
-        storageList.push(elem.storage)
+        // Format price to money
+        const formattedPrice = new Intl.NumberFormat().format(elem.price);
 
-        newProduct.innerHTML = `
+        // Load first image from each folder in Storage
+        const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
+        previewImageRef.getDownloadURL().then((url) => {
+            newProduct.innerHTML = `
             <div class="productList__preview">
-                <img src="./src/images/galaxys20-1.jpg" alt="Galaxy S20 Ultra">
+                <img src="${url}">
             </div>
             <div class="productList__details">
                 <h2 class="productList__name">${elem.title}</h2>
-                <span class="productList__price">$${elem.price}</span>
+                <span class="productList__price">$ ${formattedPrice}</span>
                 <div class="rating">
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
@@ -55,55 +39,34 @@ function renderProducts(list) {
                     <img class="productList__option" src="./src/icons/edit.svg" alt="Editar producto">
                 </div>
             </div>`;
+
+            setStars(elem, newProduct)
+        });
         productsList.appendChild(newProduct);
     });
-
-    //console.log(storageList.sort(function(a,b){return a - b;}));
-    // Camera: [10, 12, 12, 12, 12, 12, 13, 13, 13, 16, 16, 16, 25, 25, 48, 48, 64, 64, 108, 108]
-    // Storage: [32, 32, 64, 64, 64, 64, 64, 64, 128, 128, 128, 128, 128, 128, 256, 256, 256, 256, 512, 512]
 }
 
 function getProducts() {
     productsRef  // referencia de la colección
-      .get() // pide todos los documentos de la colección
-      .then((querySnapshot) => {
-        const objects = [];
-        querySnapshot.forEach((doc) => {
-          const obj = doc.data();
-          obj.id = doc.id;
-          objects.push(obj);
-          console.log(`${doc.id} => ${doc.data()}`);
-          loader.classList.add('lds-ring--hide')
+        .get() // pide todos los documentos de la colección
+        .then((querySnapshot) => {
+            const objects = [];
+            querySnapshot.forEach((doc) => {
+                const obj = doc.data();
+                obj.id = doc.id;
+                objects.push(obj);
+                //console.log(`${doc.id} => ${doc.data()}`);
+            });
+            renderProducts(objects);
         });
-        renderProducts(objects);
-      });
-  }
-  
-  // render inicial con todos los productos
-  getProducts();
+}
 
+function setStars(obj, ref) {
+    const ratingStar = ref.querySelectorAll('.rating__star');
+    for (let i = 0; i < obj.rate; i++) {
+        ratingStar[i].src = './src/icons/starfilled.svg';
+    }
+}
 
-// Add new product
-/*form.addEventListener('submit', function (event) {
-
-    event.preventDefault();
-
-    const newProduct = {
-        title: form.title.value,
-        price: parseInt(form.price.value),
-        class: form.class.value,
-        rate: parseInt(form.rate.value),
-        storage: parseInt(form.storage.value),
-        camera: parseInt(form.camera.value),
-        description: form.description.value,
-    };
-
-    productsRef
-        .add(newProduct)
-        .then(function (docRef) {
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch(function (error) {
-            console.error("Error adding document: ", error);
-        });
-});*/
+// render inicial con todos los productos
+getProducts();
