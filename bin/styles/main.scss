@@ -15,10 +15,12 @@ $headerTitleFs: 1.875rem;
 $headerDescFs: 1.4rem;
 $totalFs: 1.2rem;
 $headerReturnFs: 1.25rem;
+$customButtonFs: 1.25rem;
 
 // Bg = Background
 $mainBlue: #23374d;
 $lightBlue: #1089ff;
+$darkButton: #4D4D4D;
 $darkGray: rgb(77, 77, 77);
 $lightGray: #7c7c7c;
 $lineColor: #BBBBBB;
@@ -39,4 +41,5 @@ $productHeight: 330px;
 @import "lds-ring";
 @import "productList";
 @import "productView";
+@import "customButton";
 @import "footer";

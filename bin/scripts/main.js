@@ -12,7 +12,6 @@ function renderProducts(list) {
     list.forEach(function (elem) {
         const newProduct = document.createElement('a');
         newProduct.classList.add('productList__product');
-        newProduct.href = `product.html#${elem.id}`
 
         // Format price to money
         const formattedPrice = new Intl.NumberFormat().format(elem.price);

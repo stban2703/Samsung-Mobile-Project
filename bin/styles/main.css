@@ -849,6 +849,42 @@ input[type=button] {
   width: 100%;
 }
 
+.customButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #1089ff;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.customButton__icon {
+  max-width: none;
+  height: 27px;
+  margin: 0 5px;
+}
+
+.customButton__desc {
+  font-size: 1.25rem;
+  margin: 0 5px;
+}
+
+.customButton--dark {
+  background-color: #4D4D4D;
+}
+
 .footer {
   background-color: white;
   border-top: 1px solid #BBBBBB;

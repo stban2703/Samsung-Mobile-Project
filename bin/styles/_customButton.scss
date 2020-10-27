@@ -1,0 +1,28 @@
+.customButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $lightBlue;
+    box-shadow: $shadow;
+    border-radius: $borderRadius;
+    width: 100%;
+    font-family: $mainFont;
+    color: white;
+    padding: 10px 0;
+    margin: 10px 0;
+
+    &__icon {
+        max-width: none;
+        height: 27px;
+        margin: 0 5px;
+    }
+
+    &__desc {
+        font-size: $customButtonFs;
+        margin: 0 5px;
+    }
+
+    &--dark {
+        background-color: $darkButton;
+    }
+}
