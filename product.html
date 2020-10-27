@@ -45,11 +45,29 @@
         </header>
 
         <article class="productView">
-            <section class="productView__gallery">
-                <div>
-
-                </div>
-            </section>
+            <aside class="productView__gallery">
+                <section class="productView__container">
+                    <img class="productView__previous" src="./src/icons/leftarrow.svg" alt="">
+                    <div class="productView__image">
+                        <img src="./src/images/galaxys20-1.jpg" alt="">
+                    </div>
+                    <img class="productView__next" src="./src/icons/rightarrow.svg" alt="">
+                </section>
+                <section class="productView__thumbs">
+                    <div class="productView__thumbnail productView__thumbnail--current">
+                        <img src="./src/images/galaxys20-1.jpg" alt="">
+                    </div>
+                    <div class="productView__thumbnail">
+                        <img src="./src/images/galaxy-2.webp" alt="">
+                    </div>
+                    <div class="productView__thumbnail">
+                        <img src="./src/images/galaxy-3.webp" alt="">
+                    </div>
+                    <div class="productView__thumbnail">
+                        <img src="./src/images/galaxy-4.webp" alt="">
+                    </div>
+                </section>
+            </aside>
             <section class="productView__details">
                 <h2 class="productView__title">Galaxy S20 Ultra</h2>
                 <span class="productView__price">$ 3.999.900</span>
@@ -61,11 +79,30 @@
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
                 </div>
 
-                <p class="productView__desc">Descubre Galaxy S20 Ultra. Con la revolucionaria Captura de Video en 8K que cambia tu forma de capturar no solo videos, sino también fotos. Al agregar la seguridad Samsung Knox, una batería inteligente, un procesador potente y una capacidad masiva de almacenamiento, la serie Galaxy S20 presenta un universo completamente nuevo para dispositivos móviles.</p>
+                <p class="productView__desc">Descubre Galaxy S20 Ultra. Con la revolucionaria Captura de Video en 8K que
+                    cambia tu forma de capturar no solo videos, sino también fotos. Al agregar la seguridad Samsung
+                    Knox, una batería inteligente, un procesador potente y una capacidad masiva de almacenamiento, la
+                    serie Galaxy S20 presenta un universo completamente nuevo para dispositivos móviles.</p>
 
                 <span class="productView__feature"><strong>Clase: </strong>Galaxy S</span>
                 <span class="productView__feature"><strong>Almacenamiento: </strong>128GB</span>
                 <span class="productView__feature"><strong>Cámara: </strong>108MP</span>
+
+                <section class="productView__controls">
+                    <a class="customButton" href="">
+                        <img src="./src/icons/shopcart.svg" alt="">
+                        <span>Añadir al carrito</span>
+                    </a>
+                    <a class="customButton" href="">
+                        <img src="./src/icons/editpencil.svg" alt="">
+                        <span>Editar información</span>
+                    </a>
+                    <a class="customButton" href="">
+                        <img src="./src/icons/trashcan.svg" alt="">
+                        <span>Eliminar producto</span>
+                    </a>
+
+                </section>
             </section>
         </article>
     </main>

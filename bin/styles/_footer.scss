@@ -22,11 +22,12 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 10px 0;
+        padding: 40px 0;
     }
 
     &__contact {
         font-family: $mainFont;
+        font-size: small;
         font-weight: lighter;
         color: $lightGray;
         width: 100%;
@@ -35,7 +36,7 @@
     }
 
     &__certification {
-        margin: 0 auto;
+        margin-left: auto;
     }
 
     &__social-media {

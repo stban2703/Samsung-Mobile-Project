@@ -1,25 +1,108 @@
 .productView {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     max-width: $containerMaxWidth;
     font-family: $mainFont;
+    margin: 10px 0;
+
+    &__gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 10px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $mainBg;
+        box-shadow: $shadow;
+        border-radius: $borderRadius;
+        width: 100%;
+    }
+
+    &__image {
+        padding: 30px;
+        img {
+            max-width: none;
+            width: 100%;
+        }
+    }
+
+    &__previous {
+        margin: 0 10px;
+    }
+
+    &__next {
+        margin: 0 10px;
+    }
+
+    &__thumbs {
+        width: 100%;
+        display: flex;
+    }
+
+    &__thumbnail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $mainBg;
+        box-shadow: $shadow;
+        border-radius: $borderRadius;
+        padding: 10px;
+        margin: 5px;
+
+        img {
+            max-width: none;
+            width: 100%;
+        }
+
+        &--current {
+            border: 2px solid $lightBlue;
+        }
+    }
 
     &__details {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 10px;
     }
 
     &__title {
         color: $darkGray;
-        font-size: $productTitleFs;
         font-weight: bold;
+        font-size: $productTitleBigFs;
     }
 
     &__price {
         color: $lightBlue;
-        font-size: $productPriceFs;
+        font-size: $productTitleBigFs;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    &__desc {
+        font-size: $productDescBigFs;
+        color: $darkGray;
+        margin: 10px 0;
     }
 
     &__feature {
         color: $darkGray;
+        font-size: $productViewBigFs;
+        margin-bottom: 10px;
+    }
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 }
