@@ -1,0 +1,25 @@
+.productView {
+    width: 100%;
+    max-width: $containerMaxWidth;
+    font-family: $mainFont;
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        color: $darkGray;
+        font-size: $productTitleFs;
+        font-weight: bold;
+    }
+
+    &__price {
+        color: $lightBlue;
+        font-size: $productPriceFs;
+    }
+
+    &__feature {
+        color: $darkGray;
+    }
+}

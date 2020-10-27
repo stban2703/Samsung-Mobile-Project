@@ -386,6 +386,24 @@ input[type=button] {
   font-size: 1.4rem;
 }
 
+.sectionHeader__return {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.25rem;
+}
+
+.sectionHeader__return img {
+  max-height: none;
+  margin: 0 5px;
+}
+
+.sectionHeader__return span {
+  font-weight: bolder;
+  color: #4d4d4d;
+}
+
 .mainContent {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -397,11 +415,7 @@ input[type=button] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 100%;
-  margin: 0 10px;
 }
 
 .mainContent__container {
@@ -649,25 +663,20 @@ input[type=button] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 10px 0;
+  margin: 10px 0;
   width: 90%;
   height: 30%;
 }
 
 .productList__name {
   color: #7c7c7c;
+  font-size: 1.25rem;
 }
 
 .productList__price {
   color: #1089ff;
   font-size: 1.25rem;
   margin: 5px 0;
-}
-
-.productList__rating {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .productList__settings {
@@ -691,6 +700,37 @@ input[type=button] {
   cursor: pointer;
 }
 
+.productView {
+  width: 100%;
+  max-width: 960px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.productView__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productView__title {
+  color: #4d4d4d;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.productView__price {
+  color: #1089ff;
+  font-size: 1.25rem;
+}
+
+.productView__feature {
+  color: #4d4d4d;
+}
+
 .footer {
   background-color: white;
   border-top: 1px solid #BBBBBB;
@@ -708,7 +748,6 @@ input[type=button] {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  margin-top: 20px;
 }
 
 .footer__container {

@@ -117,23 +117,20 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 10px 0;
+        margin: 10px 0;
         width: 90%;
         height: 30%;
     }
 
     &__name {
         color: $lightGray;
+        font-size: $productTitleFs;
     }
 
     &__price {
         color: $lightBlue;
         font-size: $productPriceFs;
         margin: 5px 0;
-    }
-
-    &__rating {
-        display: flex;
     }
 
     &__settings {

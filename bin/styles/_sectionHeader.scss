@@ -15,4 +15,20 @@
         color: $darkGray;
         font-size: $headerDescFs;
     }
+
+    &__return {
+        display: flex;
+        font-family: $secondFont;
+        font-size: $headerReturnFs;
+
+        img {
+            max-height: none;
+            margin: 0 5px;
+        }
+
+        span {
+            font-weight: bolder;
+            color: $darkGray;
+        }
+    }
 }

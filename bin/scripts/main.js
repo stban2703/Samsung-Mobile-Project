@@ -18,13 +18,14 @@ function renderProducts(list) {
 
         // Load first image from each folder in Storage
         const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
+        
         previewImageRef.getDownloadURL().then((url) => {
             newProduct.innerHTML = `
             <div class="productList__preview">
                 <img src="${url}">
             </div>
             <div class="productList__details">
-                <h2 class="productList__name">${elem.title}</h2>
+                <h3 class="productList__name">${elem.title}</h3>
                 <span class="productList__price">$ ${formattedPrice}</span>
                 <div class="rating">
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">

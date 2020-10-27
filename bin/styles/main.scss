@@ -6,10 +6,13 @@ $secondFont: "Source Sans Pro", sans-serif;
 
 // Default Html Font Size: 16px
 // Fs = Font size
+$productTitleFs: 1.25rem;
 $productPriceFs: 1.25rem;
+$productFeatureFs: 1.25rem;
 $headerTitleFs: 1.875rem;
 $headerDescFs: 1.4rem;
 $totalFs: 1.2rem;
+$headerReturnFs: 1.25rem;
 
 // Bg = Background
 $mainBlue: #23374d;
@@ -32,4 +35,5 @@ $productHeight: 330px;
 @import "mainContent";
 @import "lds-ring";
 @import "productList";
+@import "productView";
 @import "footer";
