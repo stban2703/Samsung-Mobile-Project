@@ -1,10 +1,12 @@
-const productsList = document.querySelector('.productList__view');
-const productListTotal = document.querySelector('.productList__total');
+const productList = document.querySelector('.productList');
+const productsView = productList.querySelector('.productList__view');
+const productListTotal = productList.querySelector('.productList__total');
+const productListForm = productList.querySelector('.productList__form');
 
 // Render products
 function renderProducts(list) {
     // Reset list
-    productsList.innerHTML = '';
+    productsView.innerHTML = '';
 
     // Total products
     productListTotal.innerHTML = `Total de productos mostrados: <strong>${list.length}</strong>`;
@@ -18,7 +20,7 @@ function renderProducts(list) {
 
         // Load first image from each folder in Storage
         const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
-        
+
         previewImageRef.getDownloadURL().then((url) => {
             newProduct.innerHTML = `
             <div class="productList__preview">
@@ -43,8 +45,9 @@ function renderProducts(list) {
 
             setStars(elem, newProduct)
         });
-        productsList.appendChild(newProduct);
+        productsView.appendChild(newProduct);
     });
+
 }
 
 function getProducts() {
@@ -58,6 +61,7 @@ function getProducts() {
                 objects.push(obj);
                 //console.log(`${doc.id} => ${doc.data()}`);
             });
+
             renderProducts(objects);
         });
 }
@@ -68,6 +72,26 @@ function setStars(obj, ref) {
         ratingStar[i].src = './src/icons/starfilled.svg';
     }
 }
+
+/*function sortProducts(list) {
+
+    console.log(productListForm.sort.value);
+    if (productListForm.sort.value == "none") {
+        renderProducts(list.sort(sortDefault));
+    }
+
+    if (productListForm.sort.value == "lowerPrice") {
+        renderProducts(list.sort(sortByLowerPrice));
+    }
+
+    if (productListForm.sort.value == "higherPrice") {
+        renderProducts(list.sort(sortByHigherPrice));
+    }
+
+    if (productListForm.sort.value == "betterRate") {
+        renderProducts(list.sort(sortByBetterRate));
+    }
+}*/
 
 // render inicial con todos los productos
 getProducts();

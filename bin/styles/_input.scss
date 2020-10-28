@@ -1,0 +1,46 @@
+.input {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__label {
+        position: absolute;
+        font-family: $mainFont;
+        color: $lightGray;
+        pointer-events: none;
+        transition: 0.2s ease;
+
+        &--focus {
+            transition: 0.2s ease;
+            color: $lightBlue;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__field {
+        background: none;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid $lightGray;
+        color: $darkGray;
+        z-index: 1;
+
+        &:focus {
+            outline: none;
+            border-color: $lightBlue;
+
+            + label {
+                transition: 0.2s ease;
+                color: $lightBlue;
+                margin-bottom: 30px;
+            }
+        }
+
+        &:valid {
+            background-color: white;
+            margin-bottom: 30px;
+        }
+    }
+}
