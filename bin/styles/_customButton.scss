@@ -19,10 +19,17 @@
 
     &__desc {
         font-size: $customButtonFs;
+        font-weight: bold;
         margin: 0 5px;
     }
 
     &--dark {
         background-color: $darkButton;
+    }
+
+    
+    &:hover {
+        cursor: pointer;
+        background-color: #57abff;
     }
 }

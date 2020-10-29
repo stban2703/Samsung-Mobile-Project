@@ -1,0 +1,21 @@
+.form {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__altRef {
+        font-family: $secondFont;
+        font-size: $inputFs - 0.1;
+        color: $lightGray;
+        margin: 20px 0;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}

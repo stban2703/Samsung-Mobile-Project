@@ -16,6 +16,9 @@ $headerDescFs: 1.4rem;
 $totalFs: 1.2rem;
 $headerReturnFs: 1.25rem;
 $customButtonFs: 1.25rem;
+$inputFs: 1.25rem;
+
+$labelMarginBottom: 50px;
 
 // Bg = Background
 $mainBlue: #23374d;
@@ -41,6 +44,7 @@ $productHeight: 330px;
 @import "lds-ring";
 @import "productList";
 @import "productView";
+@import "form";
 @import "input";
 @import "customButton";
 @import "footer";

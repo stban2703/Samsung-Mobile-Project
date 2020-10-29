@@ -370,7 +370,7 @@ input[type=button] {
 .sectionHeader {
   width: 100%;
   max-width: 960px;
-  margin: 20px 0;
+  margin: 20px;
 }
 
 .sectionHeader__title {
@@ -417,6 +417,7 @@ input[type=button] {
           align-items: center;
   width: 100%;
   background-color: #FCFAFA;
+  padding: 0 10px;
 }
 
 .mainContent__container {
@@ -849,6 +850,37 @@ input[type=button] {
   width: 100%;
 }
 
+.form {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form__altRef {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.15rem;
+  color: #7c7c7c;
+  margin: 20px 0;
+}
+
+.form__altRef:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .input {
   width: 100%;
   position: relative;
@@ -862,6 +894,7 @@ input[type=button] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 25px 0;
 }
 
 .input__label {
@@ -871,21 +904,27 @@ input[type=button] {
   pointer-events: none;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
+  font-size: 1.25rem;
+  margin: 0 5px;
 }
 
 .input__label--focus {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   color: #1089ff;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  font-size: 0.95rem;
 }
 
 .input__field {
   background: none;
+  padding: 5px;
+  font-family: "Source Sans Pro", sans-serif;
   width: 100%;
   border: none;
   border-bottom: 2px solid #7c7c7c;
   color: #4d4d4d;
+  font-size: 1.25rem;
   z-index: 1;
 }
 
@@ -898,12 +937,21 @@ input[type=button] {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   color: #1089ff;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  font-size: 0.95rem;
 }
 
 .input__field:valid {
-  background-color: white;
-  margin-bottom: 30px;
+  outline: none;
+  border-color: #1089ff;
+}
+
+.input__field:valid + label {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  color: #1089ff;
+  margin-bottom: 50px;
+  font-size: 0.95rem;
 }
 
 .customButton {
@@ -935,11 +983,17 @@ input[type=button] {
 
 .customButton__desc {
   font-size: 1.25rem;
+  font-weight: bold;
   margin: 0 5px;
 }
 
 .customButton--dark {
   background-color: #4D4D4D;
+}
+
+.customButton:hover {
+  cursor: pointer;
+  background-color: #57abff;
 }
 
 .footer {
@@ -992,7 +1046,7 @@ input[type=button] {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  padding: 40px 0;
+  padding: 40px 10px;
 }
 
 .footer__contact {

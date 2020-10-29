@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <title>Registrarse</title>
+    <link rel="icon" href="./src/icons/favicon.ico">
+    <link rel="stylesheet" href="./bin/styles/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <article class="header__container">
+            <img class="header__logo" src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono">
+            <section class="header__search">
+                <input type="text" class="header__input" placeholder="Buscar por nombre, clase, cámara...">
+                <div class="header__button">
+                    <img src="./src/icons/search.svg" alt="Botón buscar">
+                </div>
+            </section>
+            <section class="header__menu">
+                <div class="header__option">
+                    <img src="./src/icons/usericon.svg" alt="Usuario">
+                    <span>Usuario</span>
+                </div>
+                <div class="header__option">
+                    <img src="./src/icons/shopcart.svg" alt="Carrito">
+                    <span>Carrito</span>
+                </div>
+                <div class="header__option">
+                    <img src="./src/icons/order.svg" alt="Pedidos">
+                    <span>Pedidos</span>
+                </div>
+            </section>
+        </article>
+    </header>
+
+    <main class="mainContent">
+
+        <header class="sectionHeader">
+            <h2 class="sectionHeader__title">Registrarse</h2>
+            <p class="sectionHeader__desc">Registrate para comprar productos y consultar tus pedidos.</p>
+        </header>
+
+        <form class="form registerForm">
+            <div class="input">
+                <input class="input__field" type="text" name="userName" autocomplete="username" required>
+                <label class="input__label">Nombre de usuario</label>
+            </div>
+
+            <div class="input">
+                <input class="input__field" type="email" name="userEmail" autocomplete="email" required>
+                <label class="input__label">Tu correo</label>
+            </div>
+
+            <div class="input">
+                <input class="input__field" type="password" name="userPassword" autocomplete="new-password" required>
+                <label class="input__label">Contraseña</label>
+            </div>
+
+            <div class="input">
+                <input class="input__field" type="password" name="userPassword" autocomplete="new-password" required>
+                <label class="input__label">Confirmar contraseña</label>
+            </div>
+            
+            <div class="customButton">
+                <span class="customButton__desc">Registrarse</span>
+            </div>
+
+            <span class="form__altRef">¿Ya tienes cuenta? Puedes iniciar sesión aquí</span>
+        </form>
+
+    </main>
+
+    <footer class="footer">
+        <article class="footer__container">
+            <section class="footer__info">
+                <div class="footer__contact">
+                    <p>Copyright© 1995-2020 Samsung. Todos los derechos reservados.
+                        <br>
+                        Samsung Electronics Colombia S.A. NIT 830.028.931-5
+                        <br>
+                        Direccion Carrera 7 # 113 - 43 Of 607 (Torre
+                        Samsung)
+                        <br>
+                        Teléfonos 600 12 72 - 01 8000 112 112 - # 726
+                        <br>
+                        Este sitio se visualiza mejor desde Microsoft Internet Explorer 11 o superior, y/o la última
+                        versión
+                        de los navegadores Google Chrome y Mozilla Firefox.</p>
+                </div>
+                <img class="footer__certification" src="./src/images/iycslogo.webp"
+                    alt="Industria y Comercio Superintendencia">
+            </section>
+        </article>
+        <article class="footer__social-media">
+            <section class="footer__container">
+                <a target="_blank" href="https://www.facebook.com/SamsungColombia"><img class="footer__icon"
+                        src="./src/icons/facebookicon.svg" alt="Facebook"></a>
+                <a target="_blank" href="https://twitter.com/SamsungCO"><img class="footer__icon"
+                        src="./src/icons/twittericon.svg" alt="Twitter"></a>
+                <a target="_blank" href="https://www.instagram.com/samsungcolombia"><img class="footer__icon"
+                        src="./src/icons/instagramicon.svg" alt="Instagram"></a>
+                <a target="_blank" href="https://www.youtube.com/user/samsungmobileco"><img class="footer__icon"
+                        src="./src/icons/youtubeicon.svg" alt="YouTube"></a>
+            </section>
+        </article>
+    </footer>
+    <script src="./bin/scripts/floatLabel.js"></script>
+    <script src="./bin/scripts/main.js"></script>
+</body>
+
+</html>

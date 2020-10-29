@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,9 @@
 <body>
     <header class="header">
         <article class="header__container">
-            <img class="header__logo" src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono">
+            <a href="index.html"><img class="header__logo" src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono"></a>
             <section class="header__search">
-                <input type="text" class="header__input" placeholder="Buscar por nombre, clase, cámara...">
+                <input type="text" class="header__input" placeholder="Buscar por nombre, clase, cámara..." autocomplete="">
                 <div class="header__button">
                     <img src="./src/icons/search.svg" alt="Botón buscar">
                 </div>
@@ -43,13 +43,23 @@
             <p class="sectionHeader__desc">Al ingresar con tu cuenta, podrás comprar productos y consultar tus pedidos.</p>
         </header>
 
-        <article>
+        <form class="form loginForm">
             <div class="input">
-                <input class="input__field" type="email" required>
+                <input class="input__field" type="email" name="userEmail" autocomplete="email" required>
                 <label class="input__label">Tu correo</label>
             </div>
 
-        </article>
+            <div class="input">
+                <input class="input__field" type="password" name="userPassword" autocomplete="new-password" required>
+                <label class="input__label">Contraseña</label>
+            </div>
+            
+            <div class="customButton">
+                <span class="customButton__desc">Iniciar sesión</span>
+            </div>
+
+            <span class="form__altRef">¿No tienes cuenta? Puedes registrarte aquí</span>
+        </form>
 
     </main>
 
@@ -88,6 +98,7 @@
         </article>
     </footer>
     <script src="./bin/scripts/floatLabel.js"></script>
+    <script src="./bin/scripts/main.js"></script>
 </body>
 
 </html>
