@@ -1,0 +1,39 @@
+.dropDownList {
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 150px;
+    top: 55px;
+    border-radius: 10x;
+    z-index: 1;
+    background-color: $mainBlue;
+
+    &__title {
+        background-color: $mainBlue;
+        font-family: $mainFont;
+        color: white;
+        padding: 10px;
+        width: 100%;
+    }
+
+    &__option {
+        width: 100%;
+        background-color: $mainBg;
+        font-family: $secondFont;
+        padding: 10px;
+
+        span {
+            color: $mainBlue;
+        }
+
+        &:hover {
+            background-color: $lightGray;
+            span {
+                color: $mainBg;
+            }
+        }
+    }
+}

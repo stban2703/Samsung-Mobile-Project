@@ -13,26 +13,46 @@
     <header class="header">
         <article class="header__container">
             <a class="header__logo" href="index.html"><img src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono"></a>
-            <section class="header__search">
-                <input type="text" class="header__input" placeholder="Buscar por nombre, clase, cámara...">
-                <div class="header__button">
+            <section class="queryInput">
+                <input type="text" class="queryInput__field" placeholder="Buscar por nombre, clase, cámara...">
+                <div class="queryInput__button">
                     <img src="./src/icons/search.svg" alt="Botón buscar">
                 </div>
             </section>
-            <section class="header__menu">
-                <div class="header__option">
-                    <img src="./src/icons/usericon.svg" alt="Usuario">
-                    <span>Usuario</span>
-                </div>
-                <div class="header__option">
-                    <img src="./src/icons/shopcart.svg" alt="Carrito">
-                    <span>Carrito</span>
-                </div>
-                <div class="header__option">
-                    <img src="./src/icons/order.svg" alt="Pedidos">
-                    <span>Pedidos</span>
-                </div>
-            </section>
+            <nav class="header__nav">
+                <article class="header__option">
+                    <a class="header__button">
+                        <img class="header__icon" src="./src/icons/usericon.svg" alt="Usuario">
+                        <span class="header__tag">Usuario</span>
+                    </a>
+                    <section class="dropDownList dropDownList--signOut">
+                        <a class="dropDownList__title">
+                            <span>Nombre usuario</span>
+                        </a>
+                        <a class="dropDownList__option" href="login.html">
+                            <span>Iniciar sesión</span>
+                        </a>
+                        <a class="dropDownList__option" href="register.html">
+                            <span>Registrarse</span>
+                        </a>
+                        <a class="dropDownList__option">
+                            <span>Cerrar sesión</span>
+                        </a>
+                    </section>
+                </article>
+                <article class="header__option">
+                    <a class="header__button">
+                        <img class="header__icon" src="./src/icons/shopcart.svg" alt="Carrito">
+                        <span class="header__tag">Carrito</span>
+                    </a>
+                </article>
+                <article class="header__option">
+                    <a class="header__button">
+                        <img class="header__icon" src="./src/icons/order.svg" alt="Pedidos">
+                        <span class="header__tag">Pedidos</span>
+                </article>
+                </a>
+            </nav>
         </article>
     </header>
 
@@ -63,7 +83,7 @@
                 <input class="input__field" type="password" name="userPassword" autocomplete="new-password" required>
                 <label class="input__label">Confirmar contraseña</label>
             </div>
-            
+
             <a class="customButton customButton--blue">
                 <span class="customButton__desc">Registrarse</span>
             </a>
