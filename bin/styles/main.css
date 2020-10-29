@@ -273,12 +273,8 @@ input[type=button] {
           justify-content: space-between;
 }
 
-.header__logo {
-  max-height: none;
-}
-
-.header__logo:hover {
-  cursor: pointer;
+.header__logo img {
+  max-width: none;
 }
 
 .header__search {
@@ -370,7 +366,6 @@ input[type=button] {
 .sectionHeader {
   width: 100%;
   max-width: 960px;
-  margin: 20px;
 }
 
 .sectionHeader__title {
@@ -417,7 +412,7 @@ input[type=button] {
           align-items: center;
   width: 100%;
   background-color: #FCFAFA;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 .mainContent__container {
@@ -429,13 +424,17 @@ input[type=button] {
 }
 
 .lds-ring {
-  position: relative;
+  position: absolute;
   left: 50%;
-  margin-left: -100px;
-  width: 100%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
-.lds-ring div {
+.lds-ring__container {
+  position: relative;
+}
+
+.lds-ring__container div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
@@ -450,23 +449,19 @@ input[type=button] {
   border-color: #1089ff transparent transparent transparent;
 }
 
-.lds-ring div:nth-child(1) {
+.lds-ring__container div:nth-child(1) {
   -webkit-animation-delay: -0.45s;
           animation-delay: -0.45s;
 }
 
-.lds-ring div:nth-child(2) {
+.lds-ring__container div:nth-child(2) {
   -webkit-animation-delay: -0.3s;
           animation-delay: -0.3s;
 }
 
-.lds-ring div:nth-child(3) {
+.lds-ring__container div:nth-child(3) {
   -webkit-animation-delay: -0.15s;
           animation-delay: -0.15s;
-}
-
-.lds-ring--hide {
-  display: none;
 }
 
 @-webkit-keyframes lds-ring {
@@ -867,6 +862,7 @@ input[type=button] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 10px 0;
 }
 
 .form__altRef {
@@ -964,7 +960,6 @@ input[type=button] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #1089ff;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -987,13 +982,24 @@ input[type=button] {
   margin: 0 5px;
 }
 
+.customButton--blue {
+  background-color: #1089ff;
+}
+
+.customButton--blue:hover {
+  background-color: #57abff;
+}
+
 .customButton--dark {
   background-color: #4D4D4D;
 }
 
+.customButton--dark:hover {
+  background-color: #8a8a8a;
+}
+
 .customButton:hover {
   cursor: pointer;
-  background-color: #57abff;
 }
 
 .footer {
@@ -1081,5 +1087,9 @@ input[type=button] {
   margin: 10px;
   max-width: none;
   width: 50px;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

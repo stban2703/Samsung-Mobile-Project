@@ -2,6 +2,7 @@ const productList = document.querySelector('.productList');
 const productsView = productList.querySelector('.productList__view');
 const productListTotal = productList.querySelector('.productList__total');
 const productListForm = productList.querySelector('.productList__form');
+const loader = document.querySelector('.lds-ring');
 
 // Render products
 function renderProducts(list) {
@@ -61,7 +62,7 @@ function getProducts() {
                 objects.push(obj);
                 //console.log(`${doc.id} => ${doc.data()}`);
             });
-
+            loader.classList.add('hidden')
             renderProducts(objects);
         });
 }

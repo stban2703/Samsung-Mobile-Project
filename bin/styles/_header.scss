@@ -16,10 +16,8 @@
     }
 
     &__logo {
-         max-height: none;
-
-        &:hover {
-            cursor: pointer;
+        img {
+            max-width: none;
         }
     }
 
