@@ -246,7 +246,7 @@ input[type=button] {
 .header {
   background-color: #23374d;
   width: 100%;
-  padding: 10px 0;
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,7 +261,6 @@ input[type=button] {
 .header__container {
   width: 100%;
   max-width: 960px;
-  margin: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,6 +270,10 @@ input[type=button] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.header__logo {
+  margin-right: 5px;
 }
 
 .header__logo img {
@@ -315,7 +318,7 @@ input[type=button] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 10px;
+  margin-left: 5px;
 }
 
 .header__button:hover {
@@ -337,7 +340,7 @@ input[type=button] {
   background-color: white;
   width: 100%;
   max-width: 600px;
-  margin: 0 30px;
+  margin: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

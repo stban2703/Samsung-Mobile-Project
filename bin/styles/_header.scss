@@ -1,7 +1,7 @@
 .header {
     background-color: $mainBlue;
     width: 100%;
-    padding: 10px 0;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,13 +9,13 @@
     &__container {
         width: 100%;
         max-width: 960px;
-        margin: 0 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
     &__logo {
+        margin-right: 5px;
         img {
             max-width: none;
         }
@@ -39,7 +39,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0 10px;
+        margin-left: 5px;
 
         &:hover {
             cursor: pointer;
