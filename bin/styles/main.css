@@ -318,6 +318,10 @@ input[type=button] {
   margin: 0 10px;
 }
 
+.header__button:hover {
+  cursor: pointer;
+}
+
 .header__icon {
   height: 25px;
   max-height: none;

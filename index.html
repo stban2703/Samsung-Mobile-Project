@@ -25,7 +25,7 @@
                         <img class="header__icon" src="./src/icons/usericon.svg" alt="Usuario">
                         <span class="header__tag">Usuario</span>
                     </a>
-                    <section class="dropDownList dropDownList--signOut">
+                    <section class="dropDownList dropDownList--signOut hidden">
                         <a class="dropDownList__title">
                             <span>Nombre usuario</span>
                         </a>
@@ -77,6 +77,7 @@
                                     <option value="none">Ningún orden</option>
                                     <option value="lowerPrice">Menor a mayor precio</option>
                                     <option value="higherPrice">Mayor a menor precio</option>
+                                    <option value="lowerRate">Menor a mayor valoración</option>
                                     <option value="betterRate">Mayor a menor valoración</option>
                                 </select>
                             </div>
@@ -237,8 +238,10 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
     <script src="./bin/scripts/firestore.js"></script>
     <script src="./bin/scripts/storage.js"></script>
-    <script src="./bin/scripts/sort-filter.js"></script>
-    <script src="./bin/scripts/main.js"></script>
+    <script src="./bin/scripts/sort.js"></script>
+    <script src="./bin/scripts/renderProducts.js"></script>
+    <script src="./bin/scripts/setStars.js"></script>
+    <script src="./bin/scripts/dropDownList.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,6 @@ function sortDefault(a, b) {
     return 0;
 }
 
-
 function sortByLowerPrice(a, b) {
     return a.price - b.price;
 }
@@ -19,4 +18,8 @@ function sortByHigherPrice(a, b) {
 
 function sortByBetterRate(a, b) {
     return b.rate - a.rate;
+}
+
+function sortByLowerRate(a, b) {
+    return a.rate - b.rate;
 }
