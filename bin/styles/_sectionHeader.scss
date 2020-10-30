@@ -2,11 +2,12 @@
     width: 100%;
     max-width: $containerMaxWidth;
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
     &__info {
         display: flex;
         flex-direction: column;
+        margin: 10px 0;
     }
 
     &__title {
@@ -26,6 +27,8 @@
         display: flex;
         font-family: $secondFont;
         font-size: $headerReturnFs;
+        margin: 10px 0;
+        width: fit-content;
 
         img {
             max-height: none;

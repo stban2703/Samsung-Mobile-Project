@@ -57,13 +57,52 @@
     </header>
 
     <main class="mainContent">
-
         <header class="sectionHeader">
+            <a href="index.html" class="sectionHeader__return">
+                <img src="./src/icons/returnarrow.svg" alt="Flecha atrás">
+                <span>Regresar</span>
+            </a>
             <section class="sectionHeader__info">
-                <h2 class="sectionHeader__title">¡Bienvenido a Samsung Mobile!</h2>
-                <p class="sectionHeader__desc">La tienda oficial de productos móviles Samsung.</p>
+                <h2 class="sectionHeader__title">Crear nuevo producto</h2>
             </section>
         </header>
+
+        <form class="form createForm">
+
+            <article class="form__section">
+
+                <h4 class="form__title">Información</h4>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="productTitle" required>
+                    <label class="input__label">Nombre del producto</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="productDesc" required>
+                    <label class="input__label">Descripción</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="productClass" required>
+                    <label class="input__label">Clase</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="number" name="productStorage" required>
+                    <label class="input__label">Almacenamiento (GB)</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="number" name="productStorage" required>
+                    <label class="input__label">Cámara (MP)</label>
+                </div>
+            </article>
+
+            <a class="customButton customButton--blue">
+                <span class="customButton__desc">Crear producto</span>
+            </a>
+        </form>
 
     </main>
 
