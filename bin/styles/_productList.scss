@@ -3,6 +3,7 @@
     max-width: $containerMaxWidth;
     display: flex;
     flex-direction: column;
+    position: relative;
 
     &__total {
         font-family: $secondFont;
@@ -13,6 +14,7 @@
 
     &__container {
         display: flex;
+        justify-content: space-between;
     }
 
     &__controls {
@@ -24,20 +26,21 @@
         width: $controlsWidth;
         height: fit-content;
         color: $darkGray;
+        padding: 15px;
         margin: 5px 0;
     }
 
     &__section {
         display: flex;
         flex-direction: column;
-        margin: 15px;
+        margin: 20px 0;
     }
 
     &__title {
         font-family: $mainFont;
         font-weight: bold;
         color: $darkGray;
-        margin: 10px 0;
+        margin: 5px 0;
     }
 
     &__subtitle {
@@ -51,7 +54,7 @@
         color: $darkGray;
         display: flex;
         flex-direction: column;
-        margin: 0 10px;
+        margin: 5px 10px;
 
         select {
             font-family: $secondFont;

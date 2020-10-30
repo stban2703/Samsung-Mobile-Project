@@ -2,6 +2,10 @@ const productList = document.querySelector('.productList');
 const productsView = productList.querySelector('.productList__view');
 const productListTotal = productList.querySelector('.productList__total');
 const productListForm = productList.querySelector('.productList__form');
+const sortForm = productListForm.sort;
+const filterClass = productListForm.class;
+const filterStorage = productListForm.storage;
+const filterCamera = productListForm.camera;
 
 const loader = document.querySelector('.lds-ring');
 
@@ -95,8 +99,6 @@ function getProducts(sort, filter) {
             }
         });
 }
-
-const sortForm = productListForm.sort;
 
 sortForm.addEventListener('change', function () {
     let newSort = sortForm.value;

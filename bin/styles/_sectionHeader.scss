@@ -1,6 +1,13 @@
 .sectionHeader {
     width: 100%;
     max-width: $containerMaxWidth;
+    display: flex;
+    align-items: center;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
 
     &__title {
         font-family: $mainFont;

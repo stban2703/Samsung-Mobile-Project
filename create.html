@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <title>Nuevo producto</title>
+    <link rel="icon" href="./src/icons/favicon.ico">
+    <link rel="stylesheet" href="./bin/styles/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <article class="header__container">
+            <a class="header__logo" href="index.html"><img src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono"></a>
+            <section class="queryInput">
+                <input type="text" class="queryInput__field" placeholder="Buscar por nombre, clase, cámara...">
+                <div class="queryInput__button">
+                    <img src="./src/icons/search.svg" alt="Botón buscar">
+                </div>
+            </section>
+            <nav class="header__nav">
+                <article class="header__option">
+                    <a class="header__button">
+                        <img class="header__icon" src="./src/icons/usericon.svg" alt="Usuario">
+                        <span class="header__tag">Usuario</span>
+                    </a>
+                    <section class="dropDownList dropDownList--signOut hidden">
+                        <a class="dropDownList__title">
+                            <span>Nombre usuario</span>
+                        </a>
+                        <a class="dropDownList__option" href="login.html">
+                            <span>Iniciar sesión</span>
+                        </a>
+                        <a class="dropDownList__option" href="register.html">
+                            <span>Registrarse</span>
+                        </a>
+                        <a class="dropDownList__option">
+                            <span>Cerrar sesión</span>
+                        </a>
+                    </section>
+                </article>
+                <article class="header__option">
+                    <a class="header__button">
+                        <img class="header__icon" src="./src/icons/shopcart.svg" alt="Carrito">
+                        <span class="header__tag">Carrito</span>
+                    </a>
+                </article>
+                <article class="header__option">
+                    <a class="header__button">
+                        <img class="header__icon" src="./src/icons/order.svg" alt="Pedidos">
+                        <span class="header__tag">Pedidos</span>
+                </article>
+                </a>
+            </nav>
+        </article>
+    </header>
+
+    <main class="mainContent">
+
+        <header class="sectionHeader">
+            <section class="sectionHeader__info">
+                <h2 class="sectionHeader__title">¡Bienvenido a Samsung Mobile!</h2>
+                <p class="sectionHeader__desc">La tienda oficial de productos móviles Samsung.</p>
+            </section>
+        </header>
+
+    </main>
+
+    <footer class="footer">
+        <article class="footer__container">
+            <section class="footer__info">
+                <div class="footer__contact">
+                    <p>Copyright© 1995-2020 Samsung. Todos los derechos reservados.
+                        <br>
+                        Samsung Electronics Colombia S.A. NIT 830.028.931-5
+                        <br>
+                        Direccion Carrera 7 # 113 - 43 Of 607 (Torre
+                        Samsung)
+                        <br>
+                        Teléfonos 600 12 72 - 01 8000 112 112 - # 726
+                        <br>
+                        Este sitio se visualiza mejor desde Microsoft Internet Explorer 11 o superior, y/o la última
+                        versión
+                        de los navegadores Google Chrome y Mozilla Firefox.</p>
+                </div>
+                <img class="footer__certification" src="./src/images/iycslogo.webp"
+                    alt="Industria y Comercio Superintendencia">
+            </section>
+        </article>
+        <article class="footer__social-media">
+            <section class="footer__container">
+                <a target="_blank" href="https://www.facebook.com/SamsungColombia"><img class="footer__icon"
+                        src="./src/icons/facebookicon.svg" alt="Facebook"></a>
+                <a target="_blank" href="https://twitter.com/SamsungCO"><img class="footer__icon"
+                        src="./src/icons/twittericon.svg" alt="Twitter"></a>
+                <a target="_blank" href="https://www.instagram.com/samsungcolombia"><img class="footer__icon"
+                        src="./src/icons/instagramicon.svg" alt="Instagram"></a>
+                <a target="_blank" href="https://www.youtube.com/user/samsungmobileco"><img class="footer__icon"
+                        src="./src/icons/youtubeicon.svg" alt="YouTube"></a>
+            </section>
+        </article>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+    <script src="./bin/scripts/firestore.js"></script>
+    <script src="./bin/scripts/storage.js"></script>
+    <script src="./bin/scripts/dropDownList.js"></script>
+
+</body>
+
+</html>

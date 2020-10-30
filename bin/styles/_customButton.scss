@@ -7,7 +7,7 @@
     width: 100%;
     font-family: $mainFont;
     color: white;
-    padding: 10px 0;
+    padding: 10px 5px;
     margin: 10px 0;
 
     &__icon {
@@ -38,7 +38,14 @@
         }
     }
 
-    
+    &--small {
+        margin: 0;
+
+        .customButton__desc {
+            font-size: $customButtonFs - 0.2;
+        }
+    }
+
     &:hover {
         cursor: pointer;
     }
