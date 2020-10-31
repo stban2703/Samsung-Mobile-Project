@@ -1,38 +1,32 @@
 // From https://loading.io/css/
 .lds-ring {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-
-  &__container {
-    position: relative;
-
-    & div {
-      box-sizing: border-box;
-      display: block;
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      margin: 20px;
-      border: 20px solid $lightBlue;
-      border-radius: 50%;
-      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-      border-color: $lightBlue transparent transparent transparent;
-  
-      &:nth-child(1) {
-        animation-delay: -0.45s;
-      }
-      &:nth-child(2) {
-        animation-delay: -0.3s;
-      }
-      &:nth-child(3) {
-        animation-delay: -0.15s;
-      }
-    }
-    
-  }
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 70vh;
+  margin: 10px;
 }
-
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 184px;
+  height: 184px;
+  margin: 8px;
+  border: 10px solid $lightBlue;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $lightBlue transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);

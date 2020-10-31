@@ -1,5 +1,5 @@
 const productList = document.querySelector('.productList');
-const productsView = productList.querySelector('.productList__view');
+const productListView = productList.querySelector('.productList__view');
 const productListTotal = productList.querySelector('.productList__total');
 const productListForm = productList.querySelector('.productList__form');
 const sortForm = productListForm.sort;
@@ -12,13 +12,17 @@ const loader = document.querySelector('.lds-ring');
 // Render products
 function renderProducts(list) {
     // Reset list
-    productsView.innerHTML = '';
+    productListView.innerHTML = '';
 
     // Total products
     productListTotal.innerHTML = `Total de productos mostrados: <strong>${list.length}</strong>`;
 
     list.forEach(function (elem) {
         const newProduct = document.createElement('a');
+
+        let url = `product.html?${elem.id}-${elem.title}`;
+
+        newProduct.setAttribute('href', url);
         newProduct.classList.add('productList__product');
 
         // Format price to money
@@ -51,12 +55,12 @@ function renderProducts(list) {
 
             setStars(elem, newProduct)
         });
-        productsView.appendChild(newProduct);
+        productListView.appendChild(newProduct);
     });
 
 }
 
-function getProducts(sort, filter) {
+function getProducts(sort, type, storage) {
     loader.classList.remove('hidden');
     productsRef  // referencia de la colección
         .get() // pide todos los documentos de la colección
@@ -69,41 +73,52 @@ function getProducts(sort, filter) {
                 //console.log(`${doc.id} => ${doc.data()}`);
             });
 
+            let filteredList = objects
+
             loader.classList.add('hidden');
+            productList.classList.remove('hidden');
 
-            switch (sort) {
-                case "none":
-                    objects.sort(sortDefault);
-                    renderProducts(objects);
-                    break;
+    switch (sort) {
+        case "none":
+            filteredList.sort(sortDefault);
+            renderProducts(filteredList);
+            break;
 
-                case "lowerPrice":
-                    objects.sort(sortByLowerPrice);
-                    renderProducts(objects);
-                    break;
+        case "lowerPrice":
+            filteredList.sort(sortByLowerPrice);
+            renderProducts(filteredList);
+            break;
 
-                case "higherPrice":
-                    objects.sort(sortByHigherPrice);
-                    renderProducts(objects);
-                    break;
+        case "higherPrice":
+            filteredList.sort(sortByHigherPrice);
+            renderProducts(filteredList);
+            break;
 
-                case "betterRate":
-                    objects.sort(sortByBetterRate);
-                    renderProducts(objects);
-                    break;
+        case "betterRate":
+            filteredList.sort(sortByBetterRate);
+            renderProducts(filteredList);
+            break;
 
-                case "lowerRate":
-                    objects.sort(sortByLowerRate);
-                    renderProducts(objects);
-                    break;
-            }
-        });
+        case "lowerRate":
+            filteredList.sort(sortByLowerRate);
+            renderProducts(filteredList);
+            break;
+    }
+});
 }
 
-sortForm.addEventListener('change', function () {
+productListForm.addEventListener('change', function () {
     let newSort = sortForm.value;
-    getProducts(newSort);
+    let newClass = filterClass.value;
+    let newStorage = filterStorage.value;
+    let newCamera = filterCamera.value;
+
+    getProducts(newSort, newClass, newStorage);
+
+    /*console.log(newClass)
+    console.log(newStorage)
+    console.log(newCamera)*/
 })
 
 // render inicial con todos los productos
-getProducts("none");
+getProducts("none", null, null);

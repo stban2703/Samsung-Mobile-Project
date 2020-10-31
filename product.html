@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <title>Document</title>
+    <title>Samsung Mobile</title>
     <link rel="icon" href="./src/icons/favicon.ico">
     <link rel="stylesheet" href="./bin/styles/main.css">
 </head>
@@ -64,7 +64,14 @@
             </a>
         </header>
 
-        <article class="productView">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <article class="productView hidden">
             <aside class="productView__gallery">
                 <section class="productView__container">
                     <img class="productView__previous" src="./src/icons/leftarrow.svg" alt="">
@@ -74,7 +81,7 @@
                     <img class="productView__next" src="./src/icons/rightarrow.svg" alt="">
                 </section>
                 <section class="productView__thumbs">
-                    <div class="productView__thumbnail productView__thumbnail--current">
+                    <!--<div class="productView__thumbnail productView__thumbnail--current">
                         <img src="./src/images/galaxys20-1.jpg" alt="">
                     </div>
                     <div class="productView__thumbnail">
@@ -85,7 +92,7 @@
                     </div>
                     <div class="productView__thumbnail">
                         <img src="./src/images/galaxy-4.webp" alt="">
-                    </div>
+                    </div>-->
                 </section>
             </aside>
             <section class="productView__details">
@@ -104,9 +111,16 @@
                     Knox, una batería inteligente, un procesador potente y una capacidad masiva de almacenamiento, la
                     serie Galaxy S20 presenta un universo completamente nuevo para dispositivos móviles.</p>
 
-                <span class="productView__feature"><strong>Clase: </strong>Galaxy S</span>
-                <span class="productView__feature"><strong>Almacenamiento: </strong>128GB</span>
-                <span class="productView__feature"><strong>Cámara: </strong>108MP</span>
+                <p class="productView__feature"><strong>Clase: </strong>
+                    <span class="productView__class">Galaxy S</span> 
+                </p>
+
+                <p class="productView__feature"><strong>Almacenamiento: </strong>
+                    <span class="productView__storage">128</span>GB
+                </p>
+                <p class="productView__feature"><strong>Cámara: </strong>
+                    <span class="productView__camera">108</span>MP
+                </p>
 
                 <section class="productView__controls">
                     <a class="customButton customButton--blue" href="">
@@ -161,8 +175,14 @@
             </section>
         </article>
     </footer>
-
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+    <script src="./bin/scripts/firestore.js"></script>
+    <script src="./bin/scripts/storage.js"></script>
     <script src="./bin/scripts/dropDownList.js"></script>
+    <script src="./bin/scripts/setStars.js"></script>
+    <script src="./bin/scripts/productView.js"></script>
 </body>
 
 </html>

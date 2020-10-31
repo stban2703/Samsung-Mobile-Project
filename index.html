@@ -65,7 +65,14 @@
             </section>
         </header>
 
-        <article class="productList">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <article class="productList hidden">
 
             <span class="productList__total"></span>
 
@@ -95,31 +102,31 @@
                                 <h4 class="productList__subtitle">Clase: </h4>
 
                                 <label>
-                                    <input type="radio" name="class" value="galaxyA"> Galaxy A
+                                    <input type="radio" name="class" value="Galaxy A"> Galaxy A
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="galaxyFold"> Galaxy Fold
+                                    <input type="radio" name="class" value="Galaxy Fold"> Galaxy Fold
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="galaxyNote"> Galaxy Note
+                                    <input type="radio" name="class" value="Galaxy Note"> Galaxy Note
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="galaxyS"> Galaxy S
+                                    <input type="radio" name="class" value="Galaxy S"> Galaxy S
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="galaxyXCover"> Galaxy XCover
+                                    <input type="radio" name="class" value="Galaxy XCover"> Galaxy XCover
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="galaxyZ"> Galaxy Z
+                                    <input type="radio" name="class" value="Galaxy Z"> Galaxy Z
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="all"> Todas
+                                    <input type="radio" name="class" value=""> Todas
                                 </label>
                             </div>
 
@@ -148,7 +155,7 @@
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="storage" value="all"> Todas
+                                    <input type="radio" name="storage" value=""> Todas
                                 </label>
                             </div>
 
@@ -156,19 +163,19 @@
                                 <h4 class="productList__subtitle">Cámara: </h4>
 
                                 <label>
-                                    <input type="radio" name="camera" value="16"> 10 ~ 16 MP
+                                    <input type="radio" name="camera" value="10,16"> 10 ~ 16 MP
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="24"> 17 ~ 24 MP
+                                    <input type="radio" name="camera" value="17,24"> 17 ~ 24 MP
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="48"> 25 ~ 48 MP
+                                    <input type="radio" name="camera" value="25,48"> 25 ~ 48 MP
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="64"> 49 ~ 64 MP
+                                    <input type="radio" name="camera" value="49,64"> 49 ~ 64 MP
                                 </label>
 
                                 <label>
@@ -176,21 +183,12 @@
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="all"> Todas
+                                    <input type="radio" name="camera" value=""> Todas
                                 </label>
                             </div>
                         </div>
                     </form>
                 </aside>
-
-                <div class="lds-ring">
-                    <div class="lds-ring__container">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
 
                 <section class="productList__view">
 
@@ -239,6 +237,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
     <script src="./bin/scripts/firestore.js"></script>
     <script src="./bin/scripts/storage.js"></script>
+    <script src="./bin/scripts/filter.js"></script>
     <script src="./bin/scripts/sort.js"></script>
     <script src="./bin/scripts/renderProducts.js"></script>
     <script src="./bin/scripts/setStars.js"></script>

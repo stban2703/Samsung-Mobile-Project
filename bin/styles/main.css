@@ -515,42 +515,39 @@ input[type=button] {
 }
 
 .lds-ring {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-
-.lds-ring__container {
+  display: inline-block;
   position: relative;
+  width: 200px;
+  height: 70vh;
+  margin: 10px;
 }
 
-.lds-ring__container div {
+.lds-ring div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  border: 20px solid #1089ff;
+  width: 184px;
+  height: 184px;
+  margin: 8px;
+  border: 10px solid #1089ff;
   border-radius: 50%;
   -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
           animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #1089ff transparent transparent transparent;
 }
 
-.lds-ring__container div:nth-child(1) {
+.lds-ring div:nth-child(1) {
   -webkit-animation-delay: -0.45s;
           animation-delay: -0.45s;
 }
 
-.lds-ring__container div:nth-child(2) {
+.lds-ring div:nth-child(2) {
   -webkit-animation-delay: -0.3s;
           animation-delay: -0.3s;
 }
 
-.lds-ring__container div:nth-child(3) {
+.lds-ring div:nth-child(3) {
   -webkit-animation-delay: -0.15s;
           animation-delay: -0.15s;
 }
@@ -880,7 +877,8 @@ input[type=button] {
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   padding: 10px;
-  margin: 5px;
+  width: 20%;
+  margin: 5px 0;
 }
 
 .productView__thumbnail img {
