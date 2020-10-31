@@ -27,7 +27,7 @@
     }
 
     &__image {
-        padding: 10px;   
+        padding: 10px;
 
         img {
             max-width: none;
@@ -51,32 +51,11 @@
         display: flex;
     }
 
-    &__thumbnail {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $mainBg;
-        box-shadow: $shadow;
-        border-radius: $borderRadius - 5;
-        padding: 3px;
-        width: 20%;
-        margin: 5px 2px;
-
-        img {
-            max-width: none;
-            width: 100%;
-        }
-
-        &--current {
-            border: 2px solid $lightBlue;
-        }
-    }
-
     &__details {
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 420px;
+        max-width: $galleryMaxWidth;
         margin-left: 30px;
     }
 
@@ -119,9 +98,7 @@
         justify-content: center;
 
         &__details {
-            width: 100%;
-            max-width: none;
-            margin: 20px 0;
+            margin-top: 10px;
         }
     }
 }

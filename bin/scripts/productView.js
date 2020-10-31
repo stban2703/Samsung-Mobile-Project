@@ -15,30 +15,31 @@ productsRef.doc(productId).get().then(
         let elem = snapshot.data();
         const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
         previewImageRef.getDownloadURL().then((url) => {
+            productViewImage.src = url;
             productViewTitle.innerText = elem.title;
             productViewPrice.innerText = `$ ${new Intl.NumberFormat().format(elem.price)}`;
             productViewDesc.innerText = elem.description;
             productViewClass.innerText = elem.class;
             productViewStorage.innerText = elem.storage;
             productViewCamera.innerText = elem.camera;
-            productViewImage.src = url;
             setStars(elem, productView);
-            renderThumbnails(productId, productView);
+            const loader = document.querySelector('.lds-ring');
+            loader.classList.add('hidden');
+            productView.classList.remove('hidden');
         });
     }
 )
 
-function renderThumbnails(id, ref) {
-    const productViewThumbs = ref.querySelector('.productView__thumbs');
+/*function renderImages(id, ref) {
+    const productViewImage = ref.querySelector('.productView__image');
 
     productImageRef.child(id).listAll().then(function (res) {
         res.items.forEach(function (itemRef) {
             // All the items under listRef.
             itemRef.getDownloadURL().then(function (url) {
-                const newThumbnail = document.createElement('div');
-                newThumbnail.classList.add('productView__thumbnail');
-                newThumbnail.innerHTML = `<img src="${url}" alt="">`;
-                productViewThumbs.appendChild(newThumbnail);
+                const newImage = document.createElement('img');
+                newImage.src = url;
+                productViewImage.appendChild(newImage);
                 const loader = document.querySelector('.lds-ring');
                 loader.classList.add('hidden');
                 productView.classList.remove('hidden');
@@ -52,4 +53,4 @@ function renderThumbnails(id, ref) {
         // Uh-oh, an error occurred!
         console.log(error);
     });
-}
+}*/
