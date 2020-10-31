@@ -7,8 +7,6 @@ const filterClass = productListForm.class;
 const filterStorage = productListForm.storage;
 const filterCamera = productListForm.camera;
 
-const loader = document.querySelector('.lds-ring');
-
 // Render products
 function renderProducts(list) {
     // Reset list
@@ -19,8 +17,8 @@ function renderProducts(list) {
 
     list.forEach(function (elem) {
         const newProduct = document.createElement('a');
-
-        let url = `product.html?${elem.id}-${elem.title}`;
+        const urlTitle = elem.title.replace(" ", "_");
+        let url = `product.html?${elem.id}-${urlTitle}`;
 
         newProduct.setAttribute('href', url);
         newProduct.classList.add('productList__product');
@@ -61,6 +59,7 @@ function renderProducts(list) {
 }
 
 function getProducts(sort, type, storage) {
+    const loader = document.querySelector('.lds-ring');
     loader.classList.remove('hidden');
     productsRef  // referencia de la colección
         .get() // pide todos los documentos de la colección
@@ -74,7 +73,6 @@ function getProducts(sort, type, storage) {
             });
 
             let filteredList = objects
-
             loader.classList.add('hidden');
             productList.classList.remove('hidden');
 

@@ -10,9 +10,6 @@ const productViewCamera = productView.querySelector('.productView__camera');
 let parts = location.search.split("-")
 let productId = parts[0].replace("?", "");
 
-//let imageList = productImageRef.child(productId).listAll().value;
-//console.log(imageList)
-
 productsRef.doc(productId).get().then(
     function (snapshot) {
         let elem = snapshot.data();
@@ -38,7 +35,6 @@ function renderThumbnails(id, ref) {
         res.items.forEach(function (itemRef) {
             // All the items under listRef.
             itemRef.getDownloadURL().then(function (url) {
-                console.log(url)
                 const newThumbnail = document.createElement('div');
                 newThumbnail.classList.add('productView__thumbnail');
                 newThumbnail.innerHTML = `<img src="${url}" alt="">`;
