@@ -58,7 +58,7 @@ function renderProducts(list) {
 
 }
 
-function getProducts(sort, type, storage) {
+function getProducts(sort) {
     const loader = document.querySelector('.lds-ring');
     loader.classList.remove('hidden');
     productsRef  // referencia de la colección
@@ -107,16 +107,9 @@ function getProducts(sort, type, storage) {
 
 productListForm.addEventListener('change', function () {
     let newSort = sortForm.value;
-    let newClass = filterClass.value;
-    let newStorage = filterStorage.value;
-    let newCamera = filterCamera.value;
-
-    getProducts(newSort, newClass, newStorage);
-
-    /*console.log(newClass)
-    console.log(newStorage)
-    console.log(newCamera)*/
+ 
+    getProducts(newSort);
 })
 
 // render inicial con todos los productos
-getProducts("none", null, null);
+getProducts("none");

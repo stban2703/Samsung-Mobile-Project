@@ -1,0 +1,50 @@
+.customFileInput {
+    background-color: $mainBg;
+    box-shadow: $shadow;
+    border-radius: $borderRadius;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    margin: 10px 0;
+
+    &__file {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+    }
+
+    &__title {
+        font-family:
+        $secondFont;
+        margin: 0 5px;
+        color: $darkGray;
+    }
+
+    &__thumb {
+        height: 80%;
+        margin-left: 5px;
+    }
+
+    &__add {
+        max-width: none;
+        height: 50px;
+        position: absolute;
+        right: 5px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__remove {
+        max-width: none;
+        height: 50px;
+        position: absolute;
+        right: 5px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

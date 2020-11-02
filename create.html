@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <title>Nuevo producto</title>
+    <title>Samsung Mobile</title>
     <link rel="icon" href="./src/icons/favicon.ico">
     <link rel="stylesheet" href="./bin/styles/main.css">
 </head>
@@ -63,11 +63,54 @@
                 <span>Regresar</span>
             </a>
             <section class="sectionHeader__info">
-                <h2 class="sectionHeader__title">Crear nuevo producto</h2>
+                <h1 class="sectionHeader__title">Crear nuevo producto</h1>
             </section>
         </header>
 
         <form class="form createForm">
+            
+            <article class="form__section">
+                <h4 class="form__title">Imágenes del producto (Mínimo 1, máximo 5)</h4>
+                <div class="customFileInput">
+                    <img class="customFileInput__thumb hidden" src="" alt="">
+                    <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>                   
+                    <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
+                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
+                </div>
+
+                <div class="customFileInput">
+                    <img class="customFileInput__thumb hidden" src="" alt="">
+                    <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>
+                    <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
+                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
+                </div>
+
+                <div class="customFileInput">
+                    <img class="customFileInput__thumb hidden" src="" alt="">
+                    <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>
+                    <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
+                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
+                </div>
+
+                <div class="customFileInput">
+                    <img class="customFileInput__thumb hidden" src="" alt="">
+                    <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>
+                    <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
+                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
+                </div>
+
+                <div class="customFileInput">
+                    <img class="customFileInput__thumb hidden" src="" alt="">
+                    <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>
+                    <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
+                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
+                </div>
+            </article>
 
             <article class="form__section">
 
@@ -146,6 +189,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
     <script src="./bin/scripts/firestore.js"></script>
     <script src="./bin/scripts/storage.js"></script>
+    <script src="./bin/scripts/createProduct.js"></script>
     <script src="./bin/scripts/dropDownList.js"></script>
 
 </body>
