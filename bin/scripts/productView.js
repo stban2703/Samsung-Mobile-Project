@@ -22,7 +22,7 @@ productsRef.doc(productId).get().then(
             productViewClass.innerText = elem.class;
             productViewStorage.innerText = elem.storage;
             productViewCamera.innerText = elem.camera;
-            setStars(elem, productView);
+            loadStars(elem, productView);
             const loader = document.querySelector('.lds-ring');
             loader.classList.add('hidden');
             productView.classList.remove('hidden');

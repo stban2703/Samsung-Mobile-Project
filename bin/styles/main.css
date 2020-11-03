@@ -930,6 +930,21 @@ input[type=button] {
   }
 }
 
+.rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rating--big {
+  width: 100%;
+}
+
+.rating--big .rating__star {
+  width: 100%;
+  margin: 0 8px;
+}
+
 .form {
   width: 100%;
   max-width: 500px;
@@ -969,6 +984,7 @@ input[type=button] {
   font-weight: bold;
   color: #23374d;
   font-size: 1.4rem;
+  margin-bottom: 30px;
 }
 
 .form__altRef {
@@ -1131,6 +1147,8 @@ input[type=button] {
   color: white;
   padding: 10px 5px;
   margin: 10px 0;
+  border-style: none;
+  outline: none;
 }
 
 .customButton__icon {

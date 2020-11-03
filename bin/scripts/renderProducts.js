@@ -51,7 +51,7 @@ function renderProducts(list) {
                 </div>
             </div>`;
 
-            setStars(elem, newProduct)
+            loadStars(elem, newProduct)
         });
         productListView.appendChild(newProduct);
     });

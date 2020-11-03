@@ -1,2 +1,2 @@
-const imageRef = firebase.storage().ref();
-const productImageRef = imageRef.child('products');
+const storageRef = firebase.storage().ref();
+const productImageRef = storageRef.child('products');

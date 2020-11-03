@@ -67,7 +67,7 @@
             </section>
         </header>
 
-        <form class="form createForm">
+        <form class="form form--create">
             
             <article class="form__section">
                 <h4 class="form__title">Imágenes del producto (Mínimo 1, máximo 5)</h4>
@@ -75,7 +75,7 @@
                     <img class="customFileInput__thumb hidden" src="" alt="">
                     <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>                   
                     <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
-                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp" required>
                     <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
                 </div>
 
@@ -117,34 +117,51 @@
                 <h4 class="form__title">Información</h4>
 
                 <div class="input">
-                    <input class="input__field" type="text" name="productTitle" required>
+                    <input class="input__field" type="text" name="title" required>
                     <label class="input__label">Nombre del producto</label>
                 </div>
 
                 <div class="input">
-                    <input class="input__field" type="text" name="productDesc" required>
+                    <input class="input__field" type="number" name="price" required>
+                    <label class="input__label">Precio</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="description" required>
                     <label class="input__label">Descripción</label>
                 </div>
 
                 <div class="input">
-                    <input class="input__field" type="text" name="productClass" required>
+                    <input class="input__field" type="text" name="class" required>
                     <label class="input__label">Clase</label>
                 </div>
 
                 <div class="input">
-                    <input class="input__field" type="number" name="productStorage" required>
+                    <input class="input__field" type="number" name="storage" required>
                     <label class="input__label">Almacenamiento (GB)</label>
                 </div>
 
                 <div class="input">
-                    <input class="input__field" type="number" name="productStorage" required>
+                    <input class="input__field" type="number" name="camera" required>
                     <label class="input__label">Cámara (MP)</label>
                 </div>
             </article>
 
-            <a class="customButton customButton--blue">
+            <article class="form__section">
+                <h4 class="form__title">Valoración</h4>
+
+                <div class="rating rating--big">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                    <img class="rating__star" src="./src/icons/starempty.svg" alt="">
+                </div>
+            </article>
+
+            <button class="customButton customButton--blue">
                 <span class="customButton__desc">Crear producto</span>
-            </a>
+            </button>
         </form>
 
     </main>
@@ -189,6 +206,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
     <script src="./bin/scripts/firestore.js"></script>
     <script src="./bin/scripts/storage.js"></script>
+    <script src="./bin/scripts/stars.js"></script>
     <script src="./bin/scripts/createProduct.js"></script>
     <script src="./bin/scripts/dropDownList.js"></script>
 

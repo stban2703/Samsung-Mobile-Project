@@ -1,0 +1,12 @@
+.rating {
+    display: flex;
+    
+    &--big {
+        width: 100%;
+
+        .rating__star {
+            width: 100%;
+            margin: 0 8px;
+        }
+    }
+}
