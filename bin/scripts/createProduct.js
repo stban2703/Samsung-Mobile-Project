@@ -54,7 +54,6 @@ createForm.addEventListener('submit', function (event) {
                         imageRef: docRef.id
                     })
                     uploadImages(docRef, createForm);
-
                 })
                 .catch(function (error) {
                     console.error("Error adding document: ", error);
@@ -68,13 +67,19 @@ createForm.addEventListener('submit', function (event) {
                 .set(newProduct)
                 .then(function (docRef) {
                     console.log('Producto actualizado');
-                    let productUrl = `product.html?${productId}-${newProduct.title}`;
-                    window.location = productUrl;
+                    handleRedirect(productId, newProduct.title);
+                })
+                .catch(function (error) {
                     console.error("Error updating document: ", error);
-                });
+                });;
         }
 
     } else if (filledStar.length == 0) {
         alert('Ponele estrellas hombre')
     }
 });
+
+function handleRedirect(id, title) {
+    let productUrl = `product.html?${id}-${title}`;
+    window.location = productUrl;
+}
