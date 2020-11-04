@@ -30,6 +30,23 @@ productsRef.doc(productId).get().then(
             let editUrl = `create.html?${productId}-${elem.title}`
             productViewEdit.setAttribute('href', editUrl);
         });
+
+        const deleteBtn = productView.querySelector('.delete');
+        deleteBtn.addEventListener('click', function () {
+            //loader.classList.add('loader--show');
+            productsRef // referencia de la colección
+                .doc(productId) // referencia de un documento específico en esa colección
+                .delete() // elimine el documento asociado a esa referencia
+                .then(function () {
+                    // debería entrar si todo sale bien
+                    console.log("Document successfully deleted!");
+                    window.location = 'index.html'
+                })
+                .catch(function (error) {
+                    // debería entrar si ocurre algún error
+                    console.error("Error removing document: ", error);
+                });
+        });
     }
 )
 

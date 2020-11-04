@@ -1,23 +1,3 @@
-function getImages(id) {
-    let urlList = [];
-    productImageRef.child(id).listAll().then(function (res) {
-        res.items.forEach(function (itemRef) {
-            // All the items under listRef.
-            itemRef.getDownloadURL().then(function (url) {
-                urlList.push(url);
-            }).catch(function (error) {
-                console.log(error);
-            });
-        });
-
-    }).catch(function (error) {
-        // Uh-oh, an error occurred!
-        console.log(error);
-    });
-
-    return urlList;
-}
-
 function uploadImages(docRef, ref) {
     const fileInput = ref.querySelectorAll('.customFileInput__file');
 

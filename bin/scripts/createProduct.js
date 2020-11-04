@@ -24,8 +24,6 @@ if (productId) {
 
     const submitBtn = document.querySelector('.customButton--blue span');
     submitBtn.innerText = 'Actualizar producto';
-
-    //let imagesList = getImages(productId);
 }
 
 createForm.addEventListener('submit', function (event) {
