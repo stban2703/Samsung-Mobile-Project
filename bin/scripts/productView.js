@@ -6,6 +6,7 @@ const productViewDesc = productView.querySelector('.productView__desc');
 const productViewClass = productView.querySelector('.productView__class');
 const productViewStorage = productView.querySelector('.productView__storage');
 const productViewCamera = productView.querySelector('.productView__camera');
+const productViewEdit = productView.querySelector('.edit');
 
 let parts = location.search.split("-")
 let productId = parts[0].replace("?", "");
@@ -26,6 +27,8 @@ productsRef.doc(productId).get().then(
             const loader = document.querySelector('.lds-ring');
             loader.classList.add('hidden');
             productView.classList.remove('hidden');
+            let editUrl = `create.html?${productId}-${elem.title}`
+            productViewEdit.setAttribute('href', editUrl);
         });
     }
 )

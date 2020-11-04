@@ -19,7 +19,7 @@ function renderProducts(list) {
         const newProduct = document.createElement('div');
         const urlTitle = elem.title.replace(" ", "_");
         let productUrl = `product.html?${elem.id}-${urlTitle}`;
-        let editUrl = `create.html?${elem.id}-${urlTitle}`
+        let editUrl = `create.html?${elem.id}-${urlTitle}`;
 
         //newProduct.setAttribute('href', url);
         newProduct.classList.add('productList__product');
