@@ -16,9 +16,16 @@ if (productId) {
         createForm.storage.value = obj.storage;
         createForm.camera.value = obj.camera;
         createForm.description.value = obj.description;
+        loadStars(obj, createForm);
     });
 
-    let imagesList = getImages(productId);
+    const title = document.querySelector('.sectionHeader__title');
+    title.innerText = 'Editar producto';
+
+    const submitBtn = document.querySelector('.customButton--blue span');
+    submitBtn.innerText = 'Actualizar producto';
+
+    //let imagesList = getImages(productId);
 }
 
 createForm.addEventListener('submit', function (event) {
@@ -38,20 +45,34 @@ createForm.addEventListener('submit', function (event) {
             imageRef: ""
         };
 
-        productsRef // referencia de la colección
-            .add(newProduct) // cree un nuevo elemento en la colección
-            .then(function (docRef) {
-                console.log("Document written with ID: ", docRef.id);
-                docRef.update({
-                    imageRef: docRef.id
+        if (!productId) {
+            productsRef // referencia de la colección
+                .add(newProduct) // cree un nuevo elemento en la colección
+                .then(function (docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    docRef.update({
+                        imageRef: docRef.id
+                    })
+                    uploadImages(docRef, createForm);
+
                 })
+                .catch(function (error) {
+                    console.error("Error adding document: ", error);
+                });
 
-                uploadImages(docRef, createForm);
+        } else {
+            newProduct.imageRef = productId;
 
-            })
-            .catch(function (error) {
-                console.error("Error adding document: ", error);
-            });
+            productsRef
+                .doc(productId)
+                .set(newProduct)
+                .then(function (docRef) {
+                    console.log('Producto actualizado');
+                    let productUrl = `product.html?${productId}-${newProduct.title}`;
+                    window.location = productUrl;
+                    console.error("Error updating document: ", error);
+                });
+        }
 
     } else if (filledStar.length == 0) {
         alert('Ponele estrellas hombre')

@@ -16,3 +16,7 @@ firebase.initializeApp(firebaseConfig);
 // References
 const db = firebase.firestore();
 const productsRef = db.collection('products');
+
+function handleThen(docRef) {
+    
+}
