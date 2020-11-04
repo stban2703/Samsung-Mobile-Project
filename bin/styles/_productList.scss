@@ -97,16 +97,25 @@
         margin: 5px;
     }
 
+    &__ref {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     &__preview {
         display: flex;
         align-items: center;
         justify-content: center;
         max-height: none;
-        width: 70%;
+        width: 100%;
         height: 70%;
 
         img {
-            height: 160px;
+            height: 150px;
             max-height: none;
             object-fit: cover;
         }
@@ -120,8 +129,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 10px 0;
-        width: 90%;
+        margin-top: auto;
+        margin-bottom: 10px;
+        width: 100%;
         height: 30%;
     }
 
@@ -146,9 +156,7 @@
 
     &__option {
         margin: 3px 5px;
-
-        &:hover {
-            cursor: pointer;
-        }
+        max-width: none;
+        width: 40px;
     }
 }

@@ -16,11 +16,12 @@ function renderProducts(list) {
     productListTotal.innerHTML = `Total de productos mostrados: <strong>${list.length}</strong>`;
 
     list.forEach(function (elem) {
-        const newProduct = document.createElement('a');
+        const newProduct = document.createElement('div');
         const urlTitle = elem.title.replace(" ", "_");
-        let url = `product.html?${elem.id}-${urlTitle}`;
+        let productUrl = `product.html?${elem.id}-${urlTitle}`;
+        let editUrl = `create.html?${elem.id}-${urlTitle}`
 
-        newProduct.setAttribute('href', url);
+        //newProduct.setAttribute('href', url);
         newProduct.classList.add('productList__product');
 
         // Format price to money
@@ -31,6 +32,7 @@ function renderProducts(list) {
 
         previewImageRef.getDownloadURL().then((url) => {
             newProduct.innerHTML = `
+            <a class=productList__ref href=${productUrl}>
             <div class="productList__preview">
                 <img src="${url}">
             </div>
@@ -44,11 +46,12 @@ function renderProducts(list) {
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
                     <img class="rating__star" src="./src/icons/starempty.svg" alt="">
                 </div>
-                <div class="productList__settings">
-                    <img class="productList__option" src="./src/icons/delete.svg" alt="Borrar producto">
-                    <img class="productList__option" src="./src/icons/addtocart.svg" alt="Agregar al carrito">
-                    <img class="productList__option" src="./src/icons/edit.svg" alt="Editar producto">
-                </div>
+            </div>
+            </a>
+            <div class="productList__settings">
+                <a><img class="productList__option" src="./src/icons/delete.svg" alt="Borrar producto"></a>
+                <a><img class="productList__option" src="./src/icons/addtocart.svg" alt="Agregar al carrito"></a>
+                <a href=${editUrl}><img class="productList__option" src="./src/icons/edit.svg" alt="Editar producto"></a>
             </div>`;
 
             loadStars(elem, newProduct)
@@ -76,38 +79,38 @@ function getProducts(sort) {
             loader.classList.add('hidden');
             productList.classList.remove('hidden');
 
-    switch (sort) {
-        case "none":
-            filteredList.sort(sortDefault);
-            renderProducts(filteredList);
-            break;
+            switch (sort) {
+                case "none":
+                    filteredList.sort(sortDefault);
+                    renderProducts(filteredList);
+                    break;
 
-        case "lowerPrice":
-            filteredList.sort(sortByLowerPrice);
-            renderProducts(filteredList);
-            break;
+                case "lowerPrice":
+                    filteredList.sort(sortByLowerPrice);
+                    renderProducts(filteredList);
+                    break;
 
-        case "higherPrice":
-            filteredList.sort(sortByHigherPrice);
-            renderProducts(filteredList);
-            break;
+                case "higherPrice":
+                    filteredList.sort(sortByHigherPrice);
+                    renderProducts(filteredList);
+                    break;
 
-        case "betterRate":
-            filteredList.sort(sortByBetterRate);
-            renderProducts(filteredList);
-            break;
+                case "betterRate":
+                    filteredList.sort(sortByBetterRate);
+                    renderProducts(filteredList);
+                    break;
 
-        case "lowerRate":
-            filteredList.sort(sortByLowerRate);
-            renderProducts(filteredList);
-            break;
-    }
-});
+                case "lowerRate":
+                    filteredList.sort(sortByLowerRate);
+                    renderProducts(filteredList);
+                    break;
+            }
+        });
 }
 
 productListForm.addEventListener('change', function () {
     let newSort = sortForm.value;
- 
+
     getProducts(newSort);
 })
 
