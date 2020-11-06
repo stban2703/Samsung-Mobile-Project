@@ -27,7 +27,7 @@
                     </a>
                     <section class="dropDownList dropDownList--signOut hidden">
                         <a class="dropDownList__title">
-                            <span>Nombre usuario</span>
+                            <span class="currentUser">Anónimo</span>
                         </a>
                         <a class="dropDownList__option" href="login.html">
                             <span>Iniciar sesión</span>
@@ -35,7 +35,7 @@
                         <a class="dropDownList__option" href="register.html">
                             <span>Registrarse</span>
                         </a>
-                        <a class="dropDownList__option">
+                        <a class="dropDownList__option logout">
                             <span>Cerrar sesión</span>
                         </a>
                     </section>
@@ -55,17 +55,6 @@
             </nav>
         </article>
     </header>
-
-    <main class="mainContent">
-        <header class="sectionHeader">
-            <a href="index.html" class="sectionHeader__return">
-                <img src="./src/icons/returnarrow.svg" alt="Flecha atrás">
-                <span>Regresar</span>
-            </a>
-            <section class="sectionHeader__info">
-                <h1 class="sectionHeader__title">Crear nuevo producto</h1>
-            </section>
-        </header>
 
         <form class="form form--create">
             
@@ -204,6 +193,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
     <script src="./bin/scripts/firestore.js"></script>
     <script src="./bin/scripts/storage.js"></script>
     <script src="./bin/scripts/images.js"></script>

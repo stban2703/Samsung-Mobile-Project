@@ -426,6 +426,7 @@ input[type=button] {
 
 .dropDownList__option:hover {
   background-color: #7c7c7c;
+  cursor: pointer;
 }
 
 .dropDownList__option:hover span {
@@ -807,6 +808,10 @@ input[type=button] {
   width: 40px;
 }
 
+.productList__option:hover {
+  cursor: pointer;
+}
+
 .productView {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -979,6 +984,7 @@ input[type=button] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 10px;
 }
 
 .form__section {

@@ -31,6 +31,7 @@
 
         &:hover {
             background-color: $lightGray;
+            cursor: pointer;
             span {
                 color: $mainBg;
             }

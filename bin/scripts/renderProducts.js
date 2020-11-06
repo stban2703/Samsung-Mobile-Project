@@ -28,13 +28,14 @@ function renderProducts(list) {
         const formattedPrice = new Intl.NumberFormat().format(elem.price);
 
         // Load first image from each folder in Storage
-        //const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
-        //previewImageRef.getDownloadURL().then((url) => {
+        const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
 
-        newProduct.innerHTML = `
+        previewImageRef.getDownloadURL().then((url) => {
+
+            newProduct.innerHTML = `
             <a class=productList__ref href=${productUrl}>
             <div class="productList__preview">
-                <img src="./src/images/galaxys20-1.jpg">
+                <img src=${url}>
             </div>
             <div class="productList__details">
                 <h3 class="productList__name">${elem.title}</h3>
@@ -54,25 +55,28 @@ function renderProducts(list) {
                 <a href=${editUrl}><img class="productList__option" src="./src/icons/edit.svg" alt="Editar producto"></a>
             </div>`;
 
-        loadStars(elem, newProduct)
-        productListView.appendChild(newProduct);
+            loadStars(elem, newProduct);
 
-        const deleteBtn = newProduct.querySelector('.delete');
-        deleteBtn.addEventListener('click', function () {
-            //loader.classList.add('loader--show');
-            productsRef // referencia de la colección
-                .doc(elem.id) // referencia de un documento específico en esa colección
-                .delete() // elimine el documento asociado a esa referencia
-                .then(function () {
-                    // debería entrar si todo sale bien
-                    console.log("Document successfully deleted!");
-                    getProducts('none'); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
-                })
-                .catch(function (error) {
-                    // debería entrar si ocurre algún error
-                    console.error("Error removing document: ", error);
-                });
+            const deleteBtn = newProduct.querySelector('.delete');
+            deleteBtn.addEventListener('click', function () {
+                //loader.classList.add('loader--show');
+                productsRef // referencia de la colección
+                    .doc(elem.id) // referencia de un documento específico en esa colección
+                    .delete() // elimine el documento asociado a esa referencia
+                    .then(function () {
+                        // debería entrar si todo sale bien
+                        console.log("Document successfully deleted!");
+                        getProducts('none'); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
+                    })
+                    .catch(function (error) {
+                        // debería entrar si ocurre algún error
+                        console.error("Error removing document: ", error);
+                    });
+            });
+
         });
+
+        productListView.appendChild(newProduct);
 
     })
 

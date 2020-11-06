@@ -27,7 +27,7 @@
                     </a>
                     <section class="dropDownList dropDownList--signOut hidden">
                         <a class="dropDownList__title">
-                            <span>Nombre usuario</span>
+                            <span class="currentUser">Anónimo</span>
                         </a>
                         <a class="dropDownList__option" href="login.html">
                             <span>Iniciar sesión</span>
@@ -35,7 +35,7 @@
                         <a class="dropDownList__option" href="register.html">
                             <span>Registrarse</span>
                         </a>
-                        <a class="dropDownList__option">
+                        <a class="dropDownList__option logout">
                             <span>Cerrar sesión</span>
                         </a>
                     </section>
@@ -60,7 +60,7 @@
 
         <header class="sectionHeader">
             <section class="sectionHeader__info">
-                <h2 class="sectionHeader__title">¡Bienvenido a Samsung Mobile!</h2>
+                <h2 class="sectionHeader__title">¡Bienvenido a Samsung Mobile! <span class="sectionHeader__title currentUser"></span></h2>
                 <p class="sectionHeader__desc">La tienda oficial de productos móviles Samsung.</p>
             </section>
         </header>
@@ -235,7 +235,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
     <script src="./bin/scripts/firestore.js"></script>
+    <script src="./bin/scripts/auth.js"></script>
     <script src="./bin/scripts/storage.js"></script>
     <script src="./bin/scripts/filter.js"></script>
     <script src="./bin/scripts/sort.js"></script>
@@ -243,6 +245,7 @@
     <script src="./bin/scripts/renderProducts.js"></script>
     <script src="./bin/scripts/stars.js"></script>
     <script src="./bin/scripts/dropDownList.js"></script>
+    <script src="./bin/scripts/main.js"></script>
 </body>
 
 </html>

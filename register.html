@@ -27,7 +27,7 @@
                     </a>
                     <section class="dropDownList dropDownList--signOut hidden">
                         <a class="dropDownList__title">
-                            <span>Nombre usuario</span>
+                            <span class="currentUser">Anónimo</span>
                         </a>
                         <a class="dropDownList__option" href="login.html">
                             <span>Iniciar sesión</span>
@@ -35,7 +35,7 @@
                         <a class="dropDownList__option" href="register.html">
                             <span>Registrarse</span>
                         </a>
-                        <a class="dropDownList__option">
+                        <a class="dropDownList__option logout">
                             <span>Cerrar sesión</span>
                         </a>
                     </section>
@@ -65,28 +65,28 @@
 
         <form class="form registerForm">
             <div class="input">
-                <input class="input__field" type="text" name="userName" required>
+                <input class="input__field" type="text" name="userName" autocomplete="username" required>
                 <label class="input__label">Nombre de usuario</label>
             </div>
 
             <div class="input">
-                <input class="input__field" type="email" name="userEmail" required>
+                <input class="input__field" type="email" name="userEmail" autocomplete="email" required>
                 <label class="input__label">Tu correo</label>
             </div>
 
             <div class="input">
-                <input class="input__field" type="password" name="userPassword" required>
+                <input class="input__field" type="password" name="userPassword" autocomplete="new-password" required>
                 <label class="input__label">Contraseña</label>
             </div>
 
             <div class="input">
-                <input class="input__field" type="password" name="userPassword" required>
+                <input class="input__field" type="password" name="confirmPassword" autocomplete="new-password" required>
                 <label class="input__label">Confirmar contraseña</label>
             </div>
 
-            <a class="customButton customButton--blue">
+            <button class="customButton customButton--blue">
                 <span class="customButton__desc">Registrarse</span>
-            </a>
+            </button>
 
             <span class="form__altRef">¿Ya tienes cuenta? Puedes iniciar sesión aquí</span>
         </form>
@@ -127,8 +127,14 @@
             </section>
         </article>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="./bin/scripts/firestore.js"></script>
+    <script src="./bin/scripts/auth.js"></script>
     <script src="./bin/scripts/floatLabel.js"></script>
     <script src="./bin/scripts/dropDownList.js"></script>
+    <script src="./bin/scripts/register.js"></script>
 </body>
 
 </html>
