@@ -9,7 +9,11 @@ function uploadImages(docRef, ref) {
             let newImageRef = productImageRef.child(`${docRef.id}/image${i + 1}`);
             newImageRef.put(file).then(function (snapshot) {
                 console.log('Uploaded a blob or file!');
+                loaderContainer.classList.add('hidden');
                 handleRedirect(docRef.id, createForm.title.value);
+            }).catch(function(error) {
+                console.log('Error: ' + error.message);
+                loaderContainer.classList.add('hidden');
             });
         }
     })

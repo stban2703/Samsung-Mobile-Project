@@ -1,4 +1,17 @@
 // From https://loading.io/css/
+.lds-container {
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #000000, $alpha: .5);
+  z-index: 10;
+}
+
 .lds-ring {
   display: inline-block;
   position: relative;

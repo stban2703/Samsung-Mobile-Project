@@ -28,10 +28,10 @@ if (productId) {
 
 createForm.addEventListener('submit', function (event) {
     event.preventDefault();
-
     const filledStar = document.querySelectorAll('.rating__star--filled');
 
     if (filledStar.length > 0) {
+        loaderContainer.classList.remove('hidden');
         const newProduct = {
             title: createForm.title.value,
             price: parseInt(createForm.price.value),
@@ -55,6 +55,7 @@ createForm.addEventListener('submit', function (event) {
                 })
                 .catch(function (error) {
                     console.error("Error adding document: ", error);
+                    loaderContainer.classList.add('hidden');
                 });
 
         } else {
@@ -68,6 +69,7 @@ createForm.addEventListener('submit', function (event) {
                     handleRedirect(productId, newProduct.title);
                 })
                 .catch(function (error) {
+                    loaderContainer.classList.add('hidden');
                     console.error("Error updating document: ", error);
                 });;
         }

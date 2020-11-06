@@ -56,15 +56,27 @@
         </article>
     </header>
 
+    <main class="mainContent">
+        <header class="sectionHeader">
+            <a href="index.html" class="sectionHeader__return">
+                <img src="./src/icons/returnarrow.svg" alt="Flecha atrás">
+                <span>Regresar</span>
+            </a>
+            <section class="sectionHeader__info">
+                <h1 class="sectionHeader__title">Crear nuevo producto</h1>
+            </section>
+        </header>
+
         <form class="form form--create">
-            
+
             <article class="form__section">
                 <h4 class="form__title">Imágenes del producto (Mínimo 1, máximo 5)</h4>
                 <div class="customFileInput">
                     <img class="customFileInput__thumb hidden" src="" alt="">
-                    <h5 class="customFileInput__title">Sube o arrastra la imagen principal</h5>                   
+                    <h5 class="customFileInput__title">Sube o arrastra la imagen principal</h5>
                     <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
-                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp" required>
+                    <input type="file" name="image1" class="customFileInput__file"
+                        accept="image/png, image/jpeg, image/webp" required>
                     <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
                 </div>
 
@@ -72,7 +84,8 @@
                     <img class="customFileInput__thumb hidden" src="" alt="">
                     <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>
                     <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
-                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <input type="file" name="image1" class="customFileInput__file"
+                        accept="image/png, image/jpeg, image/webp">
                     <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
                 </div>
 
@@ -80,7 +93,8 @@
                     <img class="customFileInput__thumb hidden" src="" alt="">
                     <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>
                     <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
-                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <input type="file" name="image1" class="customFileInput__file"
+                        accept="image/png, image/jpeg, image/webp">
                     <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
                 </div>
 
@@ -88,7 +102,8 @@
                     <img class="customFileInput__thumb hidden" src="" alt="">
                     <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>
                     <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
-                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <input type="file" name="image1" class="customFileInput__file"
+                        accept="image/png, image/jpeg, image/webp">
                     <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
                 </div>
 
@@ -96,7 +111,8 @@
                     <img class="customFileInput__thumb hidden" src="" alt="">
                     <h5 class="customFileInput__title">Sube o arrastra una imagen</h5>
                     <img class="customFileInput__add" src="./src/icons/addtocart.svg" alt="">
-                    <input type="file" name="image1" class="customFileInput__file" accept="image/png, image/jpeg, image/webp">
+                    <input type="file" name="image1" class="customFileInput__file"
+                        accept="image/png, image/jpeg, image/webp">
                     <img class="customFileInput__remove hidden" src="./src/icons/delete.svg" alt="">
                 </div>
             </article>
@@ -189,6 +205,15 @@
             </section>
         </article>
     </footer>
+
+    <div class="lds-container hidden">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
