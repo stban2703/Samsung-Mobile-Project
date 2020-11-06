@@ -66,7 +66,7 @@
 
         <form class="form loginForm">
             <div class="input">
-                <input class="input__field" type="email" name="userEmail" required>
+                <input class="input__field" type="email" name="userEmail" autocomplete="email" required>
                 <label class="input__label">Tu correo</label>
             </div>
 
@@ -75,11 +75,11 @@
                 <label class="input__label">Contraseña</label>
             </div>
 
-            <a class="customButton customButton--blue">
+            <button class="customButton customButton--blue">
                 <span class="customButton__desc">Iniciar sesión</span>
-            </a>
+            </button>
 
-            <span class="form__altRef">¿No tienes cuenta? Puedes registrarte aquí</span>
+            <a class="form__altRef" href="register.html">¿No tienes cuenta? Puedes registrarte aquí</a>
         </form>
 
     </main>
@@ -121,8 +121,11 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="./bin/scripts/firestore.js"></script>
+    <script src="./bin/scripts/auth.js"></script>
+    <script src="./bin/scripts/login.js"></script>
     <script src="./bin/scripts/floatLabel.js"></script>
-    <script src="./bin/scripts/dropDownList.js"></script>
+    <script src="./bin/scripts/main.js"></script>
 </body>
 
 </html>

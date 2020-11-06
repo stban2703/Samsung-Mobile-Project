@@ -6,10 +6,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             if (doc.exists) {
                 const data = doc.data();
                 currentUser = data;
-                const currentUserName = document.querySelectorAll('.currentUser');
-                currentUserName.forEach(element => {
-                    element.innerText = `${currentUser.name}`
-                });
+                handleCurrent();
             }
         });
     } else {
@@ -17,9 +14,15 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 
+function handleCurrent() {
+    const currentUserName = document.querySelectorAll('.currentUser');
+    currentUserName.forEach(element => {
+        element.innerText = `${currentUser.name}`
+    });
+}
 
 const logOutBtn = document.querySelector('.logout');
-logOutBtn.addEventListener('click', function(event) {
+logOutBtn.addEventListener('click', function (event) {
     event.preventDefault();
     firebase.auth().signOut();
     window.location.href = "login.html"
