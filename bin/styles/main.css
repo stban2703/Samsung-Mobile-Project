@@ -770,8 +770,6 @@ input[type=button] {
 .productList__preview img {
   height: 150px;
   max-height: none;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .productList__details {
@@ -1112,6 +1110,47 @@ input[type=button] {
   color: #1089ff;
   margin-bottom: 50px;
   font-size: 0.95rem;
+}
+
+.customAlert {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.customAlert__container {
+  margin: 10px;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 760px;
+}
+
+.customAlert__message {
+  font-family: "Open Sans", sans-serif;
+  color: #4d4d4d;
+  font-size: 1.4rem;
+}
+
+.customAlert__controls {
+  margin-top: 30px;
 }
 
 .customFileInput {

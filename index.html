@@ -60,7 +60,8 @@
 
         <header class="sectionHeader">
             <section class="sectionHeader__info">
-                <h2 class="sectionHeader__title">¡Bienvenido a Samsung Mobile! <span class="sectionHeader__title currentUser"></span></h2>
+                <h2 class="sectionHeader__title">¡Bienvenido a Samsung Mobile! <span
+                        class="sectionHeader__title currentUser"></span></h2>
                 <p class="sectionHeader__desc">La tienda oficial de productos móviles Samsung.</p>
             </section>
         </header>
@@ -86,7 +87,7 @@
                             <h3 class="productList__title" for="sort">Ordenar por:</h3>
                             <div class="productList__options">
                                 <select name="sort">
-                                    <option value="none">Ningún orden</option>
+                                    <option value="">Ningún orden</option>
                                     <option value="lowerPrice">Menor a mayor precio</option>
                                     <option value="higherPrice">Mayor a menor precio</option>
                                     <option value="lowerRate">Menor a mayor valoración</option>
@@ -167,11 +168,11 @@
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="17,24"> 17 ~ 24 MP
+                                    <input type="radio" name="camera" value="17,25"> 17 ~ 25 MP
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="25,48"> 25 ~ 48 MP
+                                    <input type="radio" name="camera" value="26,48"> 26 ~ 48 MP
                                 </label>
 
                                 <label>
@@ -179,7 +180,7 @@
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="108"> 65 ~ 108 MP
+                                    <input type="radio" name="camera" value="65,108"> 65 ~ 108 MP
                                 </label>
 
                                 <label>
@@ -231,6 +232,21 @@
             </section>
         </article>
     </footer>
+
+    <div class="customAlert hidden">
+        <section class="customAlert__container">
+            <span class="customAlert__message">¿Estás seguro de que quieres eliminar este producto? Esta acción <strong>no se
+                puede deshacer</strong></span>
+            <div class="customAlert__controls">
+                <button class="customButton customButton--blue customAlert__delete">
+                    <span class="customButton__desc">Sí, eliminar</span>
+                </button>
+                <button class="customButton customButton--dark customAlert__cancel">
+                    <span class="customButton__desc">Cancelar</span>
+                </button>
+            </div>
+        </section>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>

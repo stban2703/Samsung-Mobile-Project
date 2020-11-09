@@ -1,0 +1,32 @@
+.customAlert {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: .5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        margin: 10px;
+        padding: 20px;
+        background: white;
+        border-radius: $borderRadius;
+        width: 100%;
+        max-width: $containerMaxWidth - 200;
+    }
+
+    &__message {
+        font-family: $mainFont;
+        color: $darkGray;
+        font-size: 1.4rem;
+    }
+
+    &__controls {
+        margin-top: 30px;
+    }
+
+}
