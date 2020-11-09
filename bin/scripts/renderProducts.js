@@ -124,39 +124,33 @@ productListForm.addEventListener('input', function () {
 
 
     if (newClass) {
-        {
-            copy = copy.filter(function (elem) {
-                if (elem.class === newClass) {
-                    return true;
-                }
-            })
-        }
+        copy = copy.filter(function (elem) {
+            if (elem.class === newClass) {
+                return true;
+            }
+        })
     }
 
     if (newStorage) {
-        {
-            copy = copy.filter(function (elem) {
-                if (elem.storage == parseInt(newStorage)) {
-                    return true;
-                }
-            })
-        }
+        copy = copy.filter(function (elem) {
+            if (elem.storage == parseInt(newStorage)) {
+                return true;
+            }
+        })
     }
 
     if (newCamera) {
-        {
-            let range = newCamera.split(',');
-            let min = parseInt(range[0]);
-            let max = parseInt(range[1]);
+        let range = newCamera.split(',');
+        let min = parseInt(range[0]);
+        let max = parseInt(range[1]);
 
-            console.log(min + " " + max);
+        console.log(min + " " + max);
 
-            copy = copy.filter(function (elem) {
-                if (elem.camera >= min && elem.camera <= max) {
-                    return true;
-                }
-            })
-        }
+        copy = copy.filter(function (elem) {
+            if (elem.camera >= min && elem.camera <= max) {
+                return true;
+            }
+        })
     }
 
     renderProducts(copy)
