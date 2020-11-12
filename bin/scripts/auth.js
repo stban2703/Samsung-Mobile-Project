@@ -1,23 +1,23 @@
-let currentUser;
+var userInfo;
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         userRef.doc(user.uid).get().then(function (doc) {
             if (doc.exists) {
                 const data = doc.data();
-                currentUser = data;
+                userInfo = data;
                 handleCurrent();
             }
         });
     } else {
-        currentUser = null;
+        userInfo = null;
     }
 });
 
 function handleCurrent() {
     const currentUserName = document.querySelectorAll('.currentUser');
     currentUserName.forEach(element => {
-        element.innerText = `${currentUser.name}`
+        element.innerText = `${userInfo.name}`
     });
 }
 

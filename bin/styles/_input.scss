@@ -57,5 +57,15 @@
                 font-size: $inputFs - 0.3;
             }
         }
+
+        &--quantity {
+            text-align: center;
+            font-size: $productViewBigFs + .2;
+            font-weight: bold;
+        }
+    }
+
+    &--quantity {
+        padding: 0;
     }
 }

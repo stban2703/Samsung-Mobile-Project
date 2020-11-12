@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <title>Registrarse</title>
+    <title>Samsung Mobile</title>
     <link rel="icon" href="./src/icons/favicon.ico">
     <link rel="stylesheet" href="./bin/styles/main.css">
 </head>
@@ -59,37 +59,30 @@
     <main class="mainContent">
 
         <header class="sectionHeader">
-            <h2 class="sectionHeader__title">Registrarse</h2>
-            <p class="sectionHeader__desc">Registrate para comprar productos y consultar tus pedidos.</p>
+            <a href="index.html" class="sectionHeader__return">
+                <img src="./src/icons/returnarrow.svg" alt="Flecha atrás">
+                <span>Regresar</span>
+            </a>
+            <section class="sectionHeader__info">
+                <h1 class="sectionHeader__title">Carrito</h1>
+            </section>
         </header>
 
-        <form class="form registerForm">
-            <div class="input">
-                <input class="input__field" type="text" name="userName" autocomplete="username" required>
-                <label class="input__label">Nombre de usuario</label>
-            </div>
+        <article class="orderList">
+            <span class="ordertList__total">Total de articulos en carrito</span>
 
-            <div class="input">
-                <input class="input__field" type="email" name="userEmail" autocomplete="email" required>
-                <label class="input__label">Tu correo</label>
-            </div>
-
-            <div class="input">
-                <input class="input__field" type="password" name="userPassword" autocomplete="new-password" required>
-                <label class="input__label">Contraseña</label>
-            </div>
-
-            <div class="input">
-                <input class="input__field" type="password" name="confirmPassword" autocomplete="new-password" required>
-                <label class="input__label">Confirmar contraseña</label>
-            </div>
-
-            <button class="customButton customButton--blue">
-                <span class="customButton__desc">Registrarse</span>
-            </button>
-
-            <a class="form__altRef" href="login.html">¿Ya tienes cuenta? Puedes iniciar sesión aquí</a>
-        </form>
+            <section class="orderList__container">
+                <div class="orderList__order">
+                    <img class="orderList__thumb" src="./src/images/galaxys20-1.jpg" alt="">
+                    <div class="orderList__info">
+                        <h5 class="orderList__title"><strong>Samsung Galaxy S20</strong></h5>
+                        <h5 class="orderList__quantity"><strong>Cantidad: </strong>1</h5>
+                        <h5 class="orderList__totalPrice"><strong>Precio total: </strong>$ 3.999.900</h5>
+                    </div>
+                    <img class="orderList__remove" src="./src/icons/delete.svg" alt="">
+                </div>
+            </section>
+        </article>
 
     </main>
 
@@ -127,21 +120,31 @@
             </section>
         </article>
     </footer>
-    <div class="lds-container hidden">
-        <div class="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+
+    <div class="customAlert hidden">
+        <section class="customAlert__container">
+            <span class="customAlert__message">¿Estás seguro de que quieres eliminar este producto? Esta acción
+                <strong>no se
+                    puede deshacer</strong></span>
+            <div class="customAlert__controls">
+                <button class="customButton customButton--blue customAlert__delete">
+                    <span class="customButton__desc">Sí, eliminar</span>
+                </button>
+                <button class="customButton customButton--dark customAlert__cancel">
+                    <span class="customButton__desc">Cancelar</span>
+                </button>
+            </div>
+        </section>
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
     <script src="./bin/scripts/firestore.js"></script>
     <script src="./bin/scripts/auth.js"></script>
-    <script src="./bin/scripts/floatLabel.js"></script>
-    <script src="./bin/scripts/register.js"></script>
+    <script src="./bin/scripts/storage.js"></script>
+    <script src="./bin/scripts/images.js"></script>
     <script src="./bin/scripts/main.js"></script>
 </body>
 

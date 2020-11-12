@@ -7,6 +7,8 @@ const productViewClass = productView.querySelector('.productView__class');
 const productViewStorage = productView.querySelector('.productView__storage');
 const productViewCamera = productView.querySelector('.productView__camera');
 const productViewEdit = productView.querySelector('.edit');
+const productViewQuantity = productView.querySelector('.productView__quantity input');
+const quantityButtons = productView.querySelectorAll('.productView__btn');
 
 let parts = location.search.split("-")
 let productId = parts[0].replace("?", "");
@@ -49,6 +51,27 @@ productsRef.doc(productId).get().then(
         });
     }
 )
+
+function handleQuantity() {
+    productViewQuantity.addEventListener('input', function() {
+        if(productViewQuantity.value <= 0) {
+            productViewQuantity.value = 1;
+        }
+    });
+
+    quantityButtons[0].addEventListener('click', function() {
+        productViewQuantity.value--;
+        if(productViewQuantity.value <= 0) {
+            productViewQuantity.value = 1;
+        }
+    })
+
+    quantityButtons[1].addEventListener('click', function() {
+        productViewQuantity.value++;
+    })
+}
+
+handleQuantity();
 
 /*function renderImages(id, ref) {
     const productViewImage = ref.querySelector('.productView__image');
