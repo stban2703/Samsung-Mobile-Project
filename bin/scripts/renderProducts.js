@@ -58,11 +58,15 @@ function renderProducts(list) {
 
             loadStars(elem, newProduct);
 
-            const deleteOption = newProduct.querySelectorAll('.productList__option');
+            const productListOption = newProduct.querySelectorAll('.productList__option');
 
-            deleteOption[0].addEventListener('click', function () {
+            productListOption[0].addEventListener('click', function () {
                 customAlert.classList.remove('hidden');
                 handleDelete(elem.id);
+            });
+
+            productListOption[1].addEventListener('click', function () {
+                handleAddToCart(elem, 1);
             });
 
         });

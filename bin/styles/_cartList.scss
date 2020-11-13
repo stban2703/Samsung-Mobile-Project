@@ -1,6 +1,13 @@
-.orderList {
+.cartList {
     width: 100%;
     max-width: $containerMaxWidth;
+
+    &__total {
+        font-family: $secondFont;
+        font-size: $totalFs;
+        color: $darkGray;
+        margin: 5px 0;
+    }
 
     &__order {
         background-color: $mainBg;
@@ -9,30 +16,37 @@
         display: flex;
         position: relative;
         width: 100%;
-        height: 80px;
+        height: 150px;
         align-items: center;
         margin: 10px 0;
     }
 
     &__title {
         font-family: $secondFont;
-        color: $darkGray;
+        font-size: $cartTitleFs;
+        color: $mainBlue;
+    }
+
+    &__info {
+        margin-left: 10px;
     }
 
     &__quantity {
         font-family: $secondFont;
-        color: $darkGray;
+        font-size: $cartTitleFs;
+        color: $mainBlue;
     }
 
     &__totalPrice {
         font-family: $secondFont;
-        color: $darkGray;
+        font-size: $cartTitleFs;
+        color: $mainBlue;
     }
 
     &__thumb {
         height: 80%;
         max-width: none;
-        margin-left: 5px;
+        margin: 0 10px;
     }
 
     &__remove {

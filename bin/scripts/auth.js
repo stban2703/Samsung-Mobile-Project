@@ -6,13 +6,37 @@ firebase.auth().onAuthStateChanged(function (user) {
             if (doc.exists) {
                 const data = doc.data();
                 userInfo = data;
+                userInfo.uid = user.uid;
                 handleCurrent();
+                getCart();
             }
         });
     } else {
         userInfo = null;
     }
 });
+
+function getCart() {
+    //const loader = document.querySelector('.lds-ring');
+    //loader.classList.remove('hidden');
+    let objectList = [];
+    userRef.doc(userInfo.uid).collection('cart')
+        .get()
+        .then((querySnapshot) => {
+            objectList = [];
+            querySnapshot.forEach((doc) => {
+                const obj = doc.data();
+                obj.id = doc.id;
+                objectList.push(obj);
+                console.log(obj)
+                //console.log(`${doc.id} => ${doc.data()}`);
+            });
+
+            //loader.classList.add('hidden');
+            //cartList.classList.remove('hidden');
+            //renderProducts(objectList);
+        });
+}
 
 function handleCurrent() {
     const currentUserName = document.querySelectorAll('.currentUser');

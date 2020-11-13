@@ -16,6 +16,7 @@ let productId = parts[0].replace("?", "");
 productsRef.doc(productId).get().then(
     function (snapshot) {
         let elem = snapshot.data();
+        elem.id = productId;
         const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
         previewImageRef.getDownloadURL().then((url) => {
             productViewImage.src = url;
@@ -33,6 +34,11 @@ productsRef.doc(productId).get().then(
             productViewEdit.setAttribute('href', editUrl);
         });
 
+        const addBtn = productView.querySelector('.add');
+        addBtn.addEventListener('click', function() {
+            handleAddToCart(elem, parseInt(productViewQuantity.value));
+        })
+
         const deleteBtn = productView.querySelector('.delete');
         deleteBtn.addEventListener('click', function () {
             //loader.classList.add('loader--show');
@@ -49,8 +55,7 @@ productsRef.doc(productId).get().then(
                     console.error("Error removing document: ", error);
                 });
         });
-    }
-)
+    });
 
 function handleQuantity() {
     productViewQuantity.addEventListener('input', function() {
