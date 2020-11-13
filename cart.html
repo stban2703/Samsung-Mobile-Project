@@ -69,17 +69,21 @@
         </header>
 
         <article class="cartList">
-            <span class="cartList__total">Total de articulos en carrito</span>
+            <span class="cartList__total"></span>
 
             <section class="cartList__container">
-                <div class="cartList__order">
-                    <img class="cartList__thumb" src="./src/images/galaxys20-1.jpg" alt="">
-                    <div class="cartList__info">
-                        <h5 class="cartList__title">Samsung Galaxy S20</h5>
-                        <h5 class="cartList__quantity"><strong>Cantidad: </strong>1</h5>
-                        <h5 class="cartList__totalPrice"><strong>Precio total: </strong>$ 3.999.900</h5>
-                    </div>
-                    <img class="cartList__remove" src="./src/icons/delete.svg" alt="">
+                
+            </section>
+
+            <span class="cartList__priceSum"></span>
+
+            <section class="cartList__controls">
+                <a href="" class="customButton customButton--blue">
+                    <span class="customButton__desc">Continuar compra</span>
+                </a>
+                <div class="customButton customButton--dark deleteAll" href="">
+                    <img class="customButton__icon" src="./src/icons/trashcan.svg" alt="">
+                    <span class="customButton__desc">Vaciar carrtio</span>
                 </div>
             </section>
         </article>

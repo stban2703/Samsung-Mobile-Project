@@ -17,25 +17,27 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 function getCart() {
-    //const loader = document.querySelector('.lds-ring');
-    //loader.classList.remove('hidden');
-    let objectList = [];
-    userRef.doc(userInfo.uid).collection('cart')
-        .get()
-        .then((querySnapshot) => {
-            objectList = [];
-            querySnapshot.forEach((doc) => {
-                const obj = doc.data();
-                obj.id = doc.id;
-                objectList.push(obj);
-                console.log(obj)
-                //console.log(`${doc.id} => ${doc.data()}`);
-            });
+    const cartList = document.querySelector('.cartList');
+    if (cartList) {
+        //const loader = document.querySelector('.lds-ring');
+        //loader.classList.remove('hidden');
+        let objectList = [];
+        userRef.doc(userInfo.uid).collection('cart')
+            .get().then(function (querySnapshot) {
+                objectList = [];
+                querySnapshot.forEach((doc) => {
+                    const obj = doc.data();
+                    obj.id = doc.id;
+                    objectList.push(obj);
+                    console.log(obj)
+                    //console.log(`${doc.id} => ${doc.data()}`);
+                });
 
-            //loader.classList.add('hidden');
-            //cartList.classList.remove('hidden');
-            //renderProducts(objectList);
-        });
+                //loader.classList.add('hidden');
+                //cartList.classList.remove('hidden');
+                renderCart(objectList);
+            });
+    }
 }
 
 function handleCurrent() {

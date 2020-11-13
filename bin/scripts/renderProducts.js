@@ -176,7 +176,7 @@ function handleDelete(id) {
             .then(function () {
                 // debería entrar si todo sale bien
                 console.log("Document successfully deleted!");
-                getProducts('none'); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
+                getProducts(); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
                 customAlert.classList.add('hidden');
             })
             .catch(function (error) {

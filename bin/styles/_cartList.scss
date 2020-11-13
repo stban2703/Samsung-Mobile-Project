@@ -1,12 +1,22 @@
 .cartList {
     width: 100%;
     max-width: $containerMaxWidth;
+    display: flex;
+    flex-direction: column;
 
     &__total {
         font-family: $secondFont;
         font-size: $totalFs;
         color: $darkGray;
         margin: 5px 0;
+    }
+
+    &__priceSum {
+        font-family: $secondFont;
+        font-size: $totalFs + 0.5;
+        color: $darkGray;
+        margin: 20px 0;
+        align-self: center;
     }
 
     &__order {
@@ -45,6 +55,8 @@
 
     &__thumb {
         height: 80%;
+        width: 100px;
+        object-fit: contain;
         max-width: none;
         margin: 0 10px;
     }
@@ -53,7 +65,7 @@
         max-width: none;
         height: 50px;
         position: absolute;
-        right: 5px;
+        right: 10px;
         &:hover {
             cursor: pointer;
         }
