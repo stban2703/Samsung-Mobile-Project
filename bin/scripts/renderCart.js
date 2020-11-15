@@ -2,8 +2,7 @@ const cartList = document.querySelector('.cartList');
 const cartListTotal = cartList.querySelector('.cartList__total');
 const cartListContainer = cartList.querySelector('.cartList__container');
 const cartListTotalPrice = cartList.querySelector('.cartList__priceSum');
-const cartListDeleteAll = cartList.querySelector('.deleteAll')
-console.log(cartListTotalPrice)
+const cartListDeleteAll = cartList.querySelector('.deleteAll');
 
 function renderCart(list) {
     cartListContainer.innerHTML = '';
@@ -39,45 +38,49 @@ function renderCart(list) {
                     <img class="cartList__remove" src="./src/icons/delete.svg" alt="">`;
 
                 const cartListRemove = newCart.querySelector('.cartList__remove');
-                cartListRemove.addEventListener('click', function () {
-                    userRef.doc(userInfo.uid).collection('cart') // referencia de la colección
-                        .doc(elem.id)
-                        .delete() // elimine el documento asociado a esa referencia
-                        .then(function () {
-                            // debería entrar si todo sale bien
-                            console.log("Document successfully deleted!");
-                            getCart(); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
-                            //customAlert.classList.add('hidden');
-                        })
-                        .catch(function (error) {
-                            // debería entrar si ocurre algún error
-                            console.error("Error removing document: ", error);
-                            // customAlert.classList.add('hidden');
-                        });
-                })
+                if (cartListRemove) {
+                    cartListRemove.addEventListener('click', function () {
+                        userRef.doc(userInfo.uid).collection('cart') // referencia de la colección
+                            .doc(elem.id)
+                            .delete() // elimine el documento asociado a esa referencia
+                            .then(function () {
+                                // debería entrar si todo sale bien
+                                console.log("Document successfully deleted!");
+                                getCart(); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
+                                //customAlert.classList.add('hidden');
+                            })
+                            .catch(function (error) {
+                                // debería entrar si ocurre algún error
+                                console.error("Error removing document: ", error);
+                                // customAlert.classList.add('hidden');
+                            });
+                    })
+                }
 
             });
             cartListContainer.appendChild(newCart);
             cartListTotalPrice.innerHTML = `Precio total: <strong>$ ${new Intl.NumberFormat().format(priceSum)}</strong>`;
         })
 
-        cartListDeleteAll.addEventListener('click', function () {
-            const promises = list.map(function (elem) {
-                return userRef.doc(userInfo.uid).collection('cart').doc(elem.id)
-                    .delete() // elimine el documento asociado a esa referencia
-            })
+        if (cartListDeleteAll) {
+            cartListDeleteAll.addEventListener('click', function () {
+                const promises = list.map(function (elem) {
+                    return userRef.doc(userInfo.uid).collection('cart').doc(elem.id)
+                        .delete() // elimine el documento asociado a esa referencia
+                })
 
-            Promise.all(promises).then(function () {
-                console.log("Document successfully deleted!");
-                getCart(); 
-                //customAlert.classList.add('hidden');
-            })
-            .catch(function (error) {
-                // debería entrar si ocurre algún error
-                console.error("Error removing document: ", error);
-                // customAlert.classList.add('hidden');
+                Promise.all(promises).then(function () {
+                    console.log("Document successfully deleted!");
+                    getCart();
+                    //customAlert.classList.add('hidden');
+                })
+                    .catch(function (error) {
+                        // debería entrar si ocurre algún error
+                        console.error("Error removing document: ", error);
+                        // customAlert.classList.add('hidden');
+                    });
             });
-        });
+        }
 
     } else {
         cartListTotal.innerHTML = `No hay nada en el carrito`;

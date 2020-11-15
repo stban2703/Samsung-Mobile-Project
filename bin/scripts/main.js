@@ -36,3 +36,27 @@ function handleAddToCart(product, quantity) {
         console.log('No has iniciado sesion')
     }
 }
+
+let cartProducts = [];
+function getCart() {
+    const cartList = document.querySelector('.cartList');
+    if (cartList) {
+        //const loader = document.querySelector('.lds-ring');
+        //loader.classList.remove('hidden');
+        
+        userRef.doc(userInfo.uid).collection('cart')
+            .get().then(function (querySnapshot) {
+                cartProducts = [];
+                querySnapshot.forEach((doc) => {
+                    const obj = doc.data();
+                    obj.id = doc.id;
+                    cartProducts.push(obj);
+                    //console.log(`${doc.id} => ${doc.data()}`);
+                });
+
+                //loader.classList.add('hidden');
+                //cartList.classList.remove('hidden');
+                renderCart(cartProducts);
+            });
+    }
+}

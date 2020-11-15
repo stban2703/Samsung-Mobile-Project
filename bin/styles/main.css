@@ -1063,7 +1063,7 @@ input[type=button] {
 
 .cartList__thumb {
   height: 80%;
-  width: 100px;
+  width: 80px;
   -o-object-fit: contain;
      object-fit: contain;
   max-width: none;
@@ -1139,6 +1139,17 @@ input[type=button] {
   margin-bottom: 30px;
 }
 
+.form__twoColumn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.form__twoColumn .input {
+  margin: 5px;
+}
+
 .form__altRef {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.15rem;
@@ -1196,6 +1207,17 @@ input[type=button] {
   color: #4d4d4d;
   font-size: 1.25rem;
   z-index: 1;
+  /*&:valid {
+            outline: none;
+            border-color: $lightBlue;
+
+            + label {
+                transition: 0.2s ease;
+                color: $lightBlue;
+                margin-bottom: $labelMarginBottom;
+                font-size: $inputFs - 0.3;
+            }
+        }*/
 }
 
 .input__field:focus {
@@ -1204,19 +1226,6 @@ input[type=button] {
 }
 
 .input__field:focus + label {
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-  color: #1089ff;
-  margin-bottom: 50px;
-  font-size: 0.95rem;
-}
-
-.input__field:valid {
-  outline: none;
-  border-color: #1089ff;
-}
-
-.input__field:valid + label {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   color: #1089ff;
@@ -1349,7 +1358,7 @@ input[type=button] {
   font-family: "Open Sans", sans-serif;
   color: white;
   padding: 10px 5px;
-  margin: 10px 0;
+  margin: 15px 0;
   border-style: none;
   outline: none;
 }

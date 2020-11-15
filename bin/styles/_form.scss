@@ -24,6 +24,15 @@
         margin-bottom: 30px;
     }
 
+    &__twoColumn {
+        display: flex;
+        width: 100%;
+        
+        .input {
+            margin: 5px;
+        }
+    }
+
     &__altRef {
         font-family: $secondFont;
         font-size: $inputFs - 0.1;

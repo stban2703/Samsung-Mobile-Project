@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <title>Carrito</title>
+    <title>Compra</title>
     <link rel="icon" href="./src/icons/favicon.ico">
     <link rel="stylesheet" href="./bin/styles/main.css">
 </head>
@@ -59,35 +59,98 @@
     <main class="mainContent">
 
         <header class="sectionHeader">
-            <a href="index.html" class="sectionHeader__return">
+            <a href="cart.html" class="sectionHeader__return">
                 <img src="./src/icons/returnarrow.svg" alt="Flecha atrás">
                 <span>Regresar</span>
             </a>
             <section class="sectionHeader__info">
-                <h1 class="sectionHeader__title">Carrito</h1>
+                <h1 class="sectionHeader__title">Pagar pedido</h1>
             </section>
         </header>
 
-        <article class="cartList">
-            <span class="cartList__total"></span>
+        <form class="form form--buy">
+            <article class="form__section form__section--card">
 
-            <section class="cartList__container">
-                
-            </section>
+                <h4 class="form__title">Información de tarjeta</h4>
 
-            <span class="cartList__priceSum"></span>
-
-            <section class="cartList__controls">
-                <a href="buy.html" class="customButton customButton--blue">
-                    <span class="customButton__desc">Continuar compra</span>
-                </a>
-                <div class="customButton customButton--dark deleteAll" href="">
-                    <img class="customButton__icon" src="./src/icons/trashcan.svg" alt="">
-                    <span class="customButton__desc">Vaciar carrito</span>
+                <div class="input">
+                    <input class="input__field" type="number" name="cardNumber" required>
+                    <label class="input__label">Número de la tarjeta</label>
                 </div>
-            </section>
-        </article>
 
+                <section class="form__twoColumn">
+                    <div class="input">
+                        <input class="input__field" type="number" name="month" min="0" max="99" required>
+                        <label class="input__label">Mes (MM)</label>
+                    </div>
+                    <div class="input">
+                        <input class="input__field" type="number" name="year" min="0" max="99" required>
+                        <label class="input__label">Año (AA)</label>
+                    </div>
+                </section>
+
+                <div class="input">
+                    <input class="input__field" type="number" name="cvv" min="0" max="999" required>
+                    <label class="input__label">Código de seguridad (CVV)</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="userName" required>
+                    <label class="input__label">Nombre del propietario</label>
+                </div>
+            </article>
+
+            <article class="form__section">
+
+                <h4 class="form__title">Dirección</h4>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="departament" required>
+                    <label class="input__label">Departamento</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="city" required>
+                    <label class="input__label">Ciudad</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="address" required>
+                    <label class="input__label">Dirección</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="neighborhood" required>
+                    <label class="input__label">Barrio</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="place" required>
+                    <label class="input__label">Tipo de vivienda</label>
+                </div>
+
+                <div class="input">
+                    <input class="input__field" type="text" name="additional">
+                    <label class="input__label">Información adicional</label>
+                </div>
+            </article>
+
+            <article class="form__section">
+                <article class="cartList">
+                    <span class="cartList__total"></span>
+
+                    <section class="cartList__container">
+
+                    </section>
+
+                    <span class="cartList__priceSum"></span>
+                </article>
+            </article>
+
+            <button class="customButton customButton--blue saveOrder">
+                <span class="customButton__desc">Continuar</span>
+            </button>
+        </form>
     </main>
 
     <footer class="footer">
@@ -125,16 +188,23 @@
         </article>
     </footer>
 
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <div class="customAlert hidden">
         <section class="customAlert__container">
             <span class="customAlert__message">¿Estás seguro de que quieres eliminar este producto? Esta acción
                 <strong>no se
                     puede deshacer</strong></span>
             <div class="customAlert__controls">
-                <button class="customButton customButton--blue customAlert__delete">
+                <button class="customButton customButton--blue">
                     <span class="customButton__desc">Sí, eliminar</span>
                 </button>
-                <button class="customButton customButton--dark customAlert__cancel">
+                <button class="customButton customButton--dark">
                     <span class="customButton__desc">Cancelar</span>
                 </button>
             </div>
@@ -149,7 +219,9 @@
     <script src="./bin/scripts/auth.js"></script>
     <script src="./bin/scripts/storage.js"></script>
     <script src="./bin/scripts/images.js"></script>
+    <script src="./bin/scripts/floatLabel.js"></script>
     <script src="./bin/scripts/renderCart.js"></script>
+    <script src="./bin/scripts/createOrder.js"></script>
     <script src="./bin/scripts/main.js"></script>
 </body>
 
