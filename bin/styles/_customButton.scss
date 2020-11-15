@@ -48,6 +48,14 @@
         }
     }
 
+    &--smallest {
+        margin: 10px 5px;
+
+        .customButton__desc {
+            font-size: $customButtonFs - 0.28;
+        }
+    }
+
     &:hover {
         cursor: pointer;
     }

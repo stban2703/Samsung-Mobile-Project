@@ -12,13 +12,10 @@
 <body>
     <header class="header">
         <article class="header__container">
+            <img class="header__menu" src="./src/icons/burguermenuicon.svg" alt="Menú">
+
             <a class="header__logo" href="index.html"><img src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono"></a>
-            <section class="queryInput">
-                <input type="text" class="queryInput__field" placeholder="Buscar por nombre, clase, cámara...">
-                <div class="queryInput__button">
-                    <img src="./src/icons/search.svg" alt="Botón buscar">
-                </div>
-            </section>
+     
             <nav class="header__nav">
                 <article class="header__option">
                     <a class="header__button">
@@ -78,7 +75,18 @@
             <span class="productList__total"></span>
 
             <section class="productList__container">
+
+                <aside class="productList__responsive">
+                    <div class="customButton customButton--dark customButton--smallest">
+                        <img class="customButton__icon"src="./src/icons/filter.svg" alt="">
+                        <span class="customButton__desc">Ordenar / filtrar</span>
+                    </div>
+                    <a class="customButton customButton--blue customButton--smallest responsiveFilterSort" href="create.html">
+                        <span class="customButton__desc">+ Nuevo producto</span>
+                    </a>
+                </aside>
                 <aside class="productList__controls">
+                    
                     <a class="customButton customButton--blue customButton--small" href="create.html">
                         <span class="customButton__desc">+ Nuevo producto</span>
                     </a>
@@ -103,31 +111,31 @@
                                 <h4 class="productList__subtitle">Clase: </h4>
 
                                 <label>
-                                    <input type="radio" name="class" value="Galaxy A"> Galaxy A
+                                    <input type="radio" name="class" value="Galaxy A"><span class="productList__radioTag">Galaxy A</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="Galaxy Fold"> Galaxy Fold
+                                    <input type="radio" name="class" value="Galaxy Fold"><span class="productList__radioTag">Galaxy Fold</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="Galaxy Note"> Galaxy Note
+                                    <input type="radio" name="class" value="Galaxy Note"><span class="productList__radioTag">Galaxy Note</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="Galaxy S"> Galaxy S
+                                    <input type="radio" name="class" value="Galaxy S"><span class="productList__radioTag">Galaxy S</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="Galaxy XCover"> Galaxy XCover
+                                    <input type="radio" name="class" value="Galaxy XCover"><span class="productList__radioTag">Galaxy XCover</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value="Galaxy Z"> Galaxy Z
+                                    <input type="radio" name="class" value="Galaxy Z"><span class="productList__radioTag">Galaxy Z</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="class" value=""> Todas
+                                    <input type="radio" name="class" value=""><span class="productList__radioTag">Todas</span>
                                 </label>
                             </div>
 
@@ -136,27 +144,27 @@
                                 <h4 class="productList__subtitle">Almacenamiento: </h4>
 
                                 <label>
-                                    <input type="radio" name="storage" value="32"> 32GB
+                                    <input type="radio" name="storage" value="32"><span class="productList__radioTag">32GB</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="storage" value="64"> 64GB
+                                    <input type="radio" name="storage" value="64"><span class="productList__radioTag">64GB</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="storage" value="128"> 128GB
+                                    <input type="radio" name="storage" value="128"><span class="productList__radioTag">128GB</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="storage" value="256"> 256GB
+                                    <input type="radio" name="storage" value="256"><span class="productList__radioTag">256GB</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="storage" value="512"> 512GB
+                                    <input type="radio" name="storage" value="512"><span class="productList__radioTag">512GB</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="storage" value=""> Todas
+                                    <input type="radio" name="storage" value=""><span class="productList__radioTag">Todas</span>
                                 </label>
                             </div>
 
@@ -164,27 +172,27 @@
                                 <h4 class="productList__subtitle">Cámara: </h4>
 
                                 <label>
-                                    <input type="radio" name="camera" value="10,16"> 10 ~ 16 MP
+                                    <input type="radio" name="camera" value="10,16"><span class="productList__radioTag">10 ~ 16 MP</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="17,25"> 17 ~ 25 MP
+                                    <input type="radio" name="camera" value="17,25"><span class="productList__radioTag">17 ~ 25 MP</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="26,48"> 26 ~ 48 MP
+                                    <input type="radio" name="camera" value="26,48"><span class="productList__radioTag">26 ~ 48 MP</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="49,64"> 49 ~ 64 MP
+                                    <input type="radio" name="camera" value="49,64"><span class="productList__radioTag">49 ~ 64 MP</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value="65,108"> 65 ~ 108 MP
+                                    <input type="radio" name="camera" value="65,108"><span class="productList__radioTag">65 ~ 108 MP</span>
                                 </label>
 
                                 <label>
-                                    <input type="radio" name="camera" value=""> Todas
+                                    <input type="radio" name="camera" value=""><span class="productList__radioTag">Todas</span>
                                 </label>
                             </div>
                         </div>
@@ -245,6 +253,37 @@
                     <span class="customButton__desc">Cancelar</span>
                 </button>
             </div>
+        </section>
+    </div>
+
+    <div class="darken hidden"></div>
+
+    <div class="burguer-menu">
+        <header class="burguer-menu__header">
+            <img class="burguer-menu__close" src="./src/icons/closeicon.svg" alt="Close">
+        </header>
+        <section class="burguer-menu__content">
+            <a class="burguer-menu__option">
+                <img class="burguer-menu__icon" src="./src/icons/usericon.svg" alt="">
+                <span class="burguer-menu__text">Usuario</span>
+            </a>
+            <a href="cart.html" class="burguer-menu__option">
+                <img class="burguer-menu__icon" src="./src/icons/shopcart.svg" alt="">
+                <span class="burguer-menu__text">Carrito</span>
+            </a>
+            <a href="order.html" class="burguer-menu__option">
+                <img class="burguer-menu__icon" src="./src/icons/order.svg" alt="">
+                <span class="burguer-menu__text">Pedidos</span>
+            </a>
+            <a href="login.html" class="burguer-menu__option">
+                <span class="burguer-menu__text">Iniciar sesion</span>
+            </a>
+            <a href="register.html" class="burguer-menu__option">
+                <span class="burguer-menu__text">Registro</span>
+            </a>
+            <a class="burguer-menu__option">
+                <span class="burguer-menu__text">Cerrar sesión</span>
+            </a>
         </section>
     </div>
 

@@ -13,13 +13,13 @@ $productDescBigFs: 1rem;
 $productViewBigFs: 1.25rem;
 $headerTitleFs: 1.875rem;
 $headerDescFs: 1.4rem;
+$burguerFs: 1.2rem;
 $totalFs: 1.2rem;
 $cartTitleFs: 1.3rem;
 $headerReturnFs: 1.25rem;
 $orderListFs: 1rem;
 $customButtonFs: 1.25rem;
 $inputFs: 1.25rem;
-
 $labelMarginBottom: 50px;
 
 // Bg = Background
@@ -41,8 +41,11 @@ $controlsWidth: 240px;
 $productWidth: 220px;
 $productHeight: 330px;
 
+$responsiveMaxWidth: 960px;
+
 @import "reset";
 @import "header";
+@import "burguer-menu";
 @import "queryInput";
 @import "dropDownList";
 @import "sectionHeader";
@@ -60,6 +63,16 @@ $productHeight: 330px;
 @import "customFileInput";
 @import "customButton";
 @import "footer";
+
+.darken {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+}
 
 .hidden {
     display: none;

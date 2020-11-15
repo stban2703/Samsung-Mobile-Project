@@ -1,0 +1,70 @@
+.burguer-menu {
+    background-color: black;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    transform: translate(-100%, 0);
+    top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    z-index: 100;
+    transition: .3s ease-out;
+
+    &__header {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        background-color: $mainBlue;
+    }
+
+    &__close {
+        align-self: flex-start;
+        max-width: none;
+        width: 25px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__option {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 15 0px;
+        padding: 10px;
+        padding-right: 50px;
+        &:hover {
+            background-color: $lightBlue;
+        }
+    }
+
+    &__icon {
+        max-width: none;
+        height: 30px;
+        margin: 0 5px;
+    }
+
+    &__text {
+        font-family: $mainFont;
+        font-size: $burguerFs;
+        color: white;
+        text-align: left;
+        margin: 0 5px;
+    }
+
+    &--move {
+        transform: translate(0, 0);
+        transition: .3s ease-in;
+    }
+}
+
+

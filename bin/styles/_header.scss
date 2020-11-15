@@ -6,6 +6,13 @@
     align-items: center;
     justify-content: center;
 
+    &__menu {
+        display: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     &__container {
         width: 100%;
         max-width: 960px;
@@ -25,7 +32,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 300px;
     }
 
     &__option {
@@ -33,7 +39,7 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        margin: 0 5px;
+        margin: 0 10px;
     }
 
     &__button {
@@ -47,7 +53,7 @@
     }
 
     &__icon {
-        height: 25px;
+        height: 30px;
         max-width: none;
         max-height: none;
     }
@@ -57,5 +63,17 @@
         font-family: $secondFont;
         font-size: 0.8rem;
         font-weight: lighter;
+    }
+}
+
+@media (max-width: $responsiveMaxWidth) {
+    .header {
+        &__menu {
+            display: block;
+        }
+
+        &__button {
+            display: none;
+        }
     }
 }

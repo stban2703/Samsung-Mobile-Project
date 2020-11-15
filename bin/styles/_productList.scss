@@ -17,6 +17,11 @@
         justify-content: space-between;
     }
 
+    &__responsive {
+        display: flex;
+        width: 100%;
+    }
+
     &__controls {
         display: flex;
         flex-direction: column;
@@ -28,6 +33,20 @@
         color: $darkGray;
         padding: 15px;
         margin: 5px 0;
+
+        &--responsive {
+            background-color: white;
+            box-shadow: none;
+            border-radius: 0;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            overflow: scroll;
+        }
     }
 
     &__section {
@@ -46,7 +65,7 @@
     &__subtitle {
         font-family: $mainFont;
         font-weight: bold;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     &__options {
@@ -71,15 +90,14 @@
         input[type="radio"] {
             color: blue;
             vertical-align: middle;
-            margin: 10px 0;
-            font-size: 0.9rem;
+            margin: 15px 0;
         }
     }
 
     &__view {
         display: flex;
         flex-wrap: wrap;
-        margin-left: 10px;
+        margin-left: auto;
         width: 100%;
         height: fit-content;
     }
@@ -96,6 +114,8 @@
         width: $productWidth;
         height: $productHeight;
         margin: 5px;
+        padding: 5px;
+        flex-grow: 1;
     }
 
     &__ref {
@@ -154,12 +174,35 @@
     }
 
     &__option {
-        margin: 3px 5px;
+        margin: 5px 5px;
         max-width: none;
         width: 40px;
 
         &:hover {
             cursor: pointer;
+        }
+    }
+
+    &__radioTag {
+        vertical-align: middle;
+        color: $lightGray;
+        font-size: 1.2rem;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: $responsiveMaxWidth) {
+    .productList {
+        &__container {
+            flex-direction: column;
+        }
+
+        &__option {
+            width: 50px;
+        }
+
+        &__options {
+            margin: 5px 10px;
         }
     }
 }

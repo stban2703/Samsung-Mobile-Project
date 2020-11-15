@@ -82,3 +82,26 @@ function getOrders() {
             });
     }
 }
+
+const burguerBtn = document.querySelector(".header__menu");
+const burguerMenu = document.querySelector(".burguer-menu");
+const closeBurguerBtn = document.querySelector(".burguer-menu__close");
+const darken = document.querySelector(".darken");
+const html = document.querySelector("html");
+
+function handleOpenBurguer() {
+  darken.classList.remove("hidden")
+  burguerMenu.classList.add("burguer-menu--move");
+  html.style.overflow = "hidden";
+}
+
+function handleCloseBurguer() {
+  if (!darken.classList.contains("hidden") && burguerMenu.classList.contains("burguer-menu--move")) {
+    darken.classList.add("hidden")
+    burguerMenu.classList.remove("burguer-menu--move");
+    html.style.overflow = "visible";
+  }
+}
+
+burguerBtn.addEventListener('click', handleOpenBurguer);
+closeBurguerBtn.addEventListener('click', handleCloseBurguer);
