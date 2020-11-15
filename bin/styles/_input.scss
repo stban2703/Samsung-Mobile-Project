@@ -68,4 +68,21 @@
     &--quantity {
         padding: 0;
     }
+
+    &--locked {
+        .input__label {
+            &--focus {
+                color: $lightGray;
+                margin-bottom: $labelMarginBottom;
+            }
+        }
+
+        .input__field {    
+            color: $lightGray;
+            &:focus {
+                color: $lightGray;
+                border-color: $lightGray;
+            }
+        }
+    }
 }

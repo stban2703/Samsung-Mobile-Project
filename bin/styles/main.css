@@ -1243,6 +1243,20 @@ input[type=button] {
   padding: 0;
 }
 
+.input--locked .input__label--focus {
+  color: #7c7c7c;
+  margin-bottom: 50px;
+}
+
+.input--locked .input__field {
+  color: #7c7c7c;
+}
+
+.input--locked .input__field:focus {
+  color: #7c7c7c;
+  border-color: #7c7c7c;
+}
+
 .customAlert {
   width: 100vw;
   height: 100vh;

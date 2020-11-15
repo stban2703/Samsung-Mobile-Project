@@ -61,10 +61,10 @@
         <header class="sectionHeader">
             <a href="cart.html" class="sectionHeader__return">
                 <img src="./src/icons/returnarrow.svg" alt="Flecha atrás">
-                <span>Regresar</span>
+                <span>Salir</span>
             </a>
             <section class="sectionHeader__info">
-                <h1 class="sectionHeader__title">Pagar pedido</h1>
+                <h1 class="sectionHeader__title">Comprar pedido</h1>
             </section>
         </header>
 
@@ -150,6 +150,14 @@
             <button class="customButton customButton--blue saveOrder">
                 <span class="customButton__desc">Continuar</span>
             </button>
+
+            <div class="customButton customButton--blue buyOrder hidden">
+                <span class="customButton__desc">Comprar</span>
+            </div>
+
+            <div class="customButton customButton--dark editOrder hidden">
+                <span class="customButton__desc">Corregir datos</span>
+            </div>
         </form>
     </main>
 
@@ -187,13 +195,6 @@
             </section>
         </article>
     </footer>
-
-    <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
 
     <div class="customAlert hidden">
         <section class="customAlert__container">

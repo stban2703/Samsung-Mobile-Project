@@ -17,3 +17,4 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const productsRef = db.collection('products');
 const userRef = db.collection('users');
+const ordersRef = db.collection('orders');

@@ -1,10 +1,19 @@
 const buyForm = document.querySelector('.form--buy');
-const saveBtn = buyForm.querySelector('.saveOrder');
-const inputs = buyForm.querySelectorAll('.form--buy input')
+const buyButtons = buyForm.querySelectorAll('.customButton');
+const inputFields = buyForm.querySelectorAll('.form--buy input')
+const allInputs = buyForm.querySelectorAll('.input');
+const buyTitle = document.querySelector('.sectionHeader__title');
 
 let newOrder;
 
-saveBtn.addEventListener('click', function (event) {
+window.addEventListener('load', function() {
+    inputFields.forEach(function(elem, i) {
+        elem.value = '';
+    })
+})
+
+// Save orden in temporal list
+buyForm.addEventListener('submit', function (event) {
     event.preventDefault();
     if (userInfo) {
         let today = new Date();
@@ -16,8 +25,8 @@ saveBtn.addEventListener('click', function (event) {
 
         let totalSum = 0;
 
-        cartProducts.forEach(function(elem, i) {
-            totalSum += elem.price;
+        cartProducts.forEach(function (elem, i) {
+            totalSum += (elem.price * elem.quantity);
         })
 
         newOrder = {
@@ -35,10 +44,62 @@ saveBtn.addEventListener('click', function (event) {
             totalPrice: totalSum
         }
 
-        inputs.forEach(function(elem, i) {
+        inputFields.forEach(function (elem, i) {
             elem.readOnly = true;
         })
 
-        console.log(newOrder);
+        allInputs.forEach(function (elem, i) {
+            elem.classList.add('input--locked')
+        });
+
+        console.log(newOrder.totalPrice);
+        buyTitle.innerText = 'Verifica si la información es correcta';
+        window.scrollTo(0, 0);
     }
+
+    buyButtons[1].classList.remove('hidden');
+    buyButtons[2].classList.remove('hidden');
+    buyButtons[0].classList.add('hidden');
+    const cartListRemove = document.querySelectorAll('.cartList__remove');
+    cartListRemove.forEach(element => {
+        element.classList.add('hidden');
+    });
+});
+
+// Buy order
+buyButtons[1].addEventListener('click', function (event) {
+    event.preventDefault();
+    if (userInfo) {
+        console.log('ok');
+        ordersRef.doc(userInfo.uid).collection('orders').add(newOrder).then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        }).catch(function (error) {
+            console.error("Error adding document: ", error);
+        });;
+    }
+});
+
+// Edit order
+buyButtons[2].addEventListener('click', function (event) {
+    event.preventDefault();
+
+    inputFields.forEach(function (elem, i) {
+        elem.readOnly = false;
+    })
+
+    allInputs.forEach(function (elem, i) {
+        elem.classList.remove('input--locked')
+    });
+
+    buyTitle.innerText = 'Comprar pedido';
+    window.scrollTo(0, 0);
+
+    buyButtons[1].classList.add('hidden');
+    buyButtons[2].classList.add('hidden');
+    buyButtons[0].classList.remove('hidden');
+
+    const cartListRemove = document.querySelectorAll('.cartList__remove');
+    cartListRemove.forEach(element => {
+        element.classList.remove('hidden');
+    });
 });
