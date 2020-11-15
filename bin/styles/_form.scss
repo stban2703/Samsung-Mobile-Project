@@ -1,6 +1,6 @@
 .form {
     width: 100%;
-    max-width: 500px;
+    max-width: $formMaxWidth;
     height: 100%;
     display: flex;
     flex-direction: column;

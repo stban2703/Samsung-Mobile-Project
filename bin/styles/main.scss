@@ -35,6 +35,7 @@ $shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 
 $borderRadius: 15px;
 $containerMaxWidth: 960px;
+$formMaxWidth: 500px;
 $galleryMaxWidth: 480px;
 $controlsWidth: 240px;
 $productWidth: 220px;
@@ -51,6 +52,7 @@ $productHeight: 330px;
 @import "productView";
 @import "cartList";
 @import "orderList";
+@import "orderView";
 @import "rating";
 @import "form";
 @import "input";

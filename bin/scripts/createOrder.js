@@ -18,10 +18,22 @@ buyForm.addEventListener('submit', function (event) {
     if (userInfo) {
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
         let yyyy = today.getFullYear();
         
         today = mm + '/' + dd + '/' + yyyy;
+
+
+        // Delivery date
+        let orderDate = new Date(today);
+        let result = orderDate.setDate(orderDate.getDate() + 5);
+        let deliveryDate = new Date(result);
+
+        let deliverydd = String(deliveryDate.getDate()).padStart(2, '0');
+        let deliverymm = String(deliveryDate.getMonth() + 1).padStart(2, '0');
+        let deliveryyyyy = deliveryDate.getFullYear();
+        
+        deliveryDate = deliverymm + '/' + deliverydd + '/' + deliveryyyyy;
 
         let totalSum = 0;
 
@@ -33,6 +45,7 @@ buyForm.addEventListener('submit', function (event) {
             userid: userInfo.uid,
             userName: userInfo.name,
             date: today,
+            deliveryDate: deliveryDate,
             products: cartProducts,
             departament: buyForm.departament.value,
             city: buyForm.city.value,
@@ -40,7 +53,7 @@ buyForm.addEventListener('submit', function (event) {
             neighborhood: buyForm.neighborhood.value,
             place: buyForm.place.value,
             additional: buyForm.additional.value,
-            status: 'sent',
+            status: 'Enviado',
             totalPrice: totalSum
         }
 

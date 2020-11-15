@@ -334,6 +334,7 @@ input[type=button] {
 .header__tag {
   color: white;
   font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.8rem;
   font-weight: lighter;
 }
 
@@ -1155,6 +1156,76 @@ input[type=button] {
 
 .orderList__price {
   color: #1089ff;
+}
+
+.orderView {
+  width: 100%;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.orderView__statusIcon {
+  max-width: none;
+  width: 100%;
+}
+
+.orderView__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.orderView__status {
+  color: #1089ff;
+}
+
+.orderView__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: #23374d;
+  font-size: 1.4rem;
+  margin: 20px 0;
+}
+
+.orderView__details {
+  width: 100%;
+}
+
+.orderView__info {
+  font-family: "Open Sans", sans-serif;
+  color: #4d4d4d;
+  margin: 10px 0;
+}
+
+.orderView__list {
+  width: 100%;
+}
+
+.orderView__totalPrice {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.8rem;
+  color: #23374d;
+  margin: 10px 0;
+}
+
+.orderView__totalPrice span {
+  color: #1089ff;
+  font-weight: bold;
 }
 
 .rating {

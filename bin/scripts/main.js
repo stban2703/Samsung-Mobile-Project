@@ -75,9 +75,8 @@ function getOrders() {
                     const obj = doc.data();
                     obj.id = doc.id;
                     orders.push(obj);
-                    console.log(`${doc.id} => ${doc.data()}`);
+                    //console.log(`${doc.id} => ${doc.data()}`);
                 });
-                console.log(orders)
                 //loader.classList.add('hidden');
                 renderOrders(orders);
             });

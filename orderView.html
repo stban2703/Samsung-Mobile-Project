@@ -23,7 +23,7 @@
                 <article class="header__option">
                     <a class="header__button">
                         <img class="header__icon" src="./src/icons/usericon.svg" alt="Usuario">
-                        <span class="header__tag">Usuario</span>
+                        <span class="header__tag">Mi usuario</span>
                     </a>
                     <section class="dropDownList dropDownList--signOut hidden">
                         <a class="dropDownList__title">
@@ -47,7 +47,7 @@
                     </a>
                 </article>
                 <article class="header__option">
-                    <a class="header__button">
+                    <a class="header__button" href="order.html">
                         <img class="header__icon" src="./src/icons/order.svg" alt="Pedidos">
                         <span class="header__tag">Pedidos</span>
                 </article>
@@ -64,9 +64,48 @@
                 <span>Regresar</span>
             </a>
             <section class="sectionHeader__info">
-                <h1 class="sectionHeader__title">Pedido N: </h1>
+                <h1 class="sectionHeader__title">Id del pedido: <span></span></h1>
             </section>
         </header>
+
+        <article class="orderView">
+
+            <section class="orderView__section">
+                <h4 class="orderView__title"><strong>Estado: </strong><span class="orderView__status"></span></h4>
+                <img class="orderView__statusIcon hidden" src="./src/icons/statusorder.svg" alt="En camino">
+                <img class="orderView__statusIcon hidden" src="./src/icons/statusorderfinal.svg" alt="Entregado">
+            </section>
+
+            <section class="orderView__section">
+                <h4 class="orderView__title">Información</h4>
+                <section class="orderView__details">
+                    <h4 class="orderView__info"><strong>Cliente: </strong><span class="orderView__client"></span></h4>
+                    <h4 class="orderView__info"><strong>Fecha de pedido: </strong><span class="orderView__date"></span>
+                    </h4>
+                    <h4 class="orderView__info"><strong>Fecha de entrega estimada: </strong><span
+                            class="orderView__delivery"></span></h4>
+                    <h4 class="orderView__info"><strong>Departamento: </strong><span
+                            class="orderView__departament"></span></h4>
+                    <h4 class="orderView__info"><strong>Ciudad: </strong><span class="orderView__city"></span></h4>
+                    <h4 class="orderView__info"><strong>Dirección: </strong><span class="orderView__address"></span>
+                    </h4>
+                    <h4 class="orderView__info"><strong>Barrio: </strong><span class="orderView__neighborhood"></span>
+                    </h4>
+                    <h4 class="orderView__info"><strong>Tipo de vivienda: </strong><span
+                            class="orderView__place"></span></h4>
+                    <h4 class="orderView__info"><strong>Información adicional: </strong><span
+                            class="orderView__additional"></span></h4>
+                </section>
+            </section>
+
+            <section class="orderView__section">
+                <h4 class="orderView__title"><strong>Productos comprados</strong><span class="orderView__status"></span></h4>
+                <div class="orderView__list">
+
+                </div>
+                <h4 class="orderView__totalPrice"><strong>Total pagado: </strong><span></span></h4>
+            </section>
+        </article>
 
 
     </main>
