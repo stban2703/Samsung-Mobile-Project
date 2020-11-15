@@ -16,6 +16,7 @@ $headerDescFs: 1.4rem;
 $totalFs: 1.2rem;
 $cartTitleFs: 1.3rem;
 $headerReturnFs: 1.25rem;
+$orderListFs: 1rem;
 $customButtonFs: 1.25rem;
 $inputFs: 1.25rem;
 
@@ -49,6 +50,7 @@ $productHeight: 330px;
 @import "productList";
 @import "productView";
 @import "cartList";
+@import "orderList";
 @import "rating";
 @import "form";
 @import "input";

@@ -35,7 +35,7 @@ productsRef.doc(productId).get().then(
         });
 
         const addBtn = productView.querySelector('.add');
-        addBtn.addEventListener('click', function() {
+        addBtn.addEventListener('click', function () {
             handleAddToCart(elem, parseInt(productViewQuantity.value));
         })
 
@@ -58,20 +58,20 @@ productsRef.doc(productId).get().then(
     });
 
 function handleQuantity() {
-    productViewQuantity.addEventListener('input', function() {
-        if(productViewQuantity.value <= 0) {
+    productViewQuantity.addEventListener('input', function () {
+        if (productViewQuantity.value <= 0) {
             productViewQuantity.value = 1;
         }
     });
 
-    quantityButtons[0].addEventListener('click', function() {
+    quantityButtons[0].addEventListener('click', function () {
         productViewQuantity.value--;
-        if(productViewQuantity.value <= 0) {
+        if (productViewQuantity.value <= 0) {
             productViewQuantity.value = 1;
         }
     })
 
-    quantityButtons[1].addEventListener('click', function() {
+    quantityButtons[1].addEventListener('click', function () {
         productViewQuantity.value++;
     })
 }

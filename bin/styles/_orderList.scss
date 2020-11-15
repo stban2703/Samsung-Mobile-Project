@@ -1,0 +1,55 @@
+.orderList {
+    width: 100%;
+    max-width: $containerMaxWidth;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__total {
+        font-family: $secondFont;
+        font-size: $totalFs;
+        color: $darkGray;
+        margin: 5px 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__order {
+        background-color: $mainBg;
+        position: relative;
+        box-shadow: $shadow;
+        border-radius: $borderRadius;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 5px;
+        padding: 10px 20px;
+    }
+
+    &__info {
+        font-family: $mainFont;
+        color: $darkGray;
+        font-size: $orderListFs;
+        margin: 5px 0;
+    }
+
+    &__arrow {
+        position: absolute;
+        max-width: none;
+        right: 10px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    &__status {
+        color: $lightBlue;
+    }
+
+    &__price {
+        color: $lightBlue;
+    }
+
+}

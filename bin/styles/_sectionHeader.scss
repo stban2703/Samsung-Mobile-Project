@@ -15,6 +15,10 @@
         font-weight: bold;
         color: $mainBlue;
         font-size: $headerTitleFs;
+
+        &--blue {
+            color: $lightBlue;
+        }
     }
 
     &__desc {

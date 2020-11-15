@@ -43,7 +43,7 @@ function getCart() {
     if (cartList) {
         //const loader = document.querySelector('.lds-ring');
         //loader.classList.remove('hidden');
-        
+
         userRef.doc(userInfo.uid).collection('cart')
             .get().then(function (querySnapshot) {
                 cartProducts = [];
@@ -57,6 +57,29 @@ function getCart() {
                 //loader.classList.add('hidden');
                 //cartList.classList.remove('hidden');
                 renderCart(cartProducts);
+            });
+    }
+}
+
+let orders = [];
+function getOrders() {
+    const orderList = document.querySelector('.orderList');
+    if (orderList) {
+        //const loader = document.querySelector('.lds-ring');
+        //loader.classList.remove('hidden');
+        ordersRef.doc(userInfo.uid).collection('orders')  // referencia de la colección
+            .get() // pide todos los documentos de la colección
+            .then((querySnapshot) => {
+                orders = [];
+                querySnapshot.forEach((doc) => {
+                    const obj = doc.data();
+                    obj.id = doc.id;
+                    orders.push(obj);
+                    console.log(`${doc.id} => ${doc.data()}`);
+                });
+                console.log(orders)
+                //loader.classList.add('hidden');
+                renderOrders(orders);
             });
     }
 }

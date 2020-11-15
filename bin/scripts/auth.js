@@ -9,6 +9,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                 userInfo.uid = user.uid;
                 handleCurrent();
                 getCart();
+                getOrders();
             }
         });
     } else {

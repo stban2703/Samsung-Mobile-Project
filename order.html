@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <title>Pedidos</title>
+    <link rel="icon" href="./src/icons/favicon.ico">
+    <link rel="stylesheet" href="./bin/styles/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <article class="header__container">
+            <a class="header__logo" href="index.html"><img src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono"></a>
+            <section class="queryInput">
+                <input type="text" class="queryInput__field" placeholder="Buscar por nombre, clase, cámara...">
+                <div class="queryInput__button">
+                    <img src="./src/icons/search.svg" alt="Botón buscar">
+                </div>
+            </section>
+            <nav class="header__nav">
+                <article class="header__option">
+                    <a class="header__button">
+                        <img class="header__icon" src="./src/icons/usericon.svg" alt="Usuario">
+                        <span class="header__tag">Usuario</span>
+                    </a>
+                    <section class="dropDownList dropDownList--signOut hidden">
+                        <a class="dropDownList__title">
+                            <span class="currentUser">Anónimo</span>
+                        </a>
+                        <a class="dropDownList__option" href="login.html">
+                            <span>Iniciar sesión</span>
+                        </a>
+                        <a class="dropDownList__option" href="register.html">
+                            <span>Registrarse</span>
+                        </a>
+                        <a class="dropDownList__option logout">
+                            <span>Cerrar sesión</span>
+                        </a>
+                    </section>
+                </article>
+                <article class="header__option">
+                    <a class="header__button" href="cart.html">
+                        <img class="header__icon" src="./src/icons/shopcart.svg" alt="Carrito">
+                        <span class="header__tag">Carrito</span>
+                    </a>
+                </article>
+                <article class="header__option">
+                    <a class="header__button">
+                        <img class="header__icon" src="./src/icons/order.svg" alt="Pedidos">
+                        <span class="header__tag">Pedidos</span>
+                </article>
+                </a>
+            </nav>
+        </article>
+    </header>
+
+    <main class="mainContent">
+
+        <header class="sectionHeader">
+            <a href="index.html" class="sectionHeader__return">
+                <img src="./src/icons/returnarrow.svg" alt="Flecha atrás">
+                <span>Regresar</span>
+            </a>
+            <section class="sectionHeader__info">
+                <h1 class="sectionHeader__title">Pedidos</h1>
+            </section>
+        </header>
+
+        <article class="orderList">
+            <span class="orderList__total"></span>
+
+            <section class="orderList__container">
+                
+            </section>
+        </article>
+
+    </main>
+
+    <footer class="footer">
+        <article class="footer__container">
+            <section class="footer__info">
+                <div class="footer__contact">
+                    <p>Copyright© 1995-2020 Samsung. Todos los derechos reservados.
+                        <br>
+                        Samsung Electronics Colombia S.A. NIT 830.028.931-5
+                        <br>
+                        Direccion Carrera 7 # 113 - 43 Of 607 (Torre
+                        Samsung)
+                        <br>
+                        Teléfonos 600 12 72 - 01 8000 112 112 - # 726
+                        <br>
+                        Este sitio se visualiza mejor desde Microsoft Internet Explorer 11 o superior, y/o la última
+                        versión
+                        de los navegadores Google Chrome y Mozilla Firefox.</p>
+                </div>
+                <img class="footer__certification" src="./src/images/iycslogo.webp"
+                    alt="Industria y Comercio Superintendencia">
+            </section>
+        </article>
+        <article class="footer__social-media">
+            <section class="footer__container">
+                <a target="_blank" href="https://www.facebook.com/SamsungColombia"><img class="footer__icon"
+                        src="./src/icons/facebookicon.svg" alt="Facebook"></a>
+                <a target="_blank" href="https://twitter.com/SamsungCO"><img class="footer__icon"
+                        src="./src/icons/twittericon.svg" alt="Twitter"></a>
+                <a target="_blank" href="https://www.instagram.com/samsungcolombia"><img class="footer__icon"
+                        src="./src/icons/instagramicon.svg" alt="Instagram"></a>
+                <a target="_blank" href="https://www.youtube.com/user/samsungmobileco"><img class="footer__icon"
+                        src="./src/icons/youtubeicon.svg" alt="YouTube"></a>
+            </section>
+        </article>
+    </footer>
+
+    <div class="customAlert hidden">
+        <section class="customAlert__container">
+            <span class="customAlert__message">¿Estás seguro de que quieres eliminar este producto? Esta acción
+                <strong>no se
+                    puede deshacer</strong></span>
+            <div class="customAlert__controls">
+                <button class="customButton customButton--blue customAlert__delete">
+                    <span class="customButton__desc">Sí, eliminar</span>
+                </button>
+                <button class="customButton customButton--dark customAlert__cancel">
+                    <span class="customButton__desc">Cancelar</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="./bin/scripts/firestore.js"></script>
+    <script src="./bin/scripts/auth.js"></script>
+    <script src="./bin/scripts/storage.js"></script>
+    <script src="./bin/scripts/renderOrders.js"></script>
+    <script src="./bin/scripts/main.js"></script>
+</body>
+
+</html>
