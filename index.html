@@ -77,17 +77,19 @@
             <section class="productList__container">
 
                 <aside class="productList__responsive">
-                    <div class="customButton customButton--dark customButton--smallest">
+                    <div class="customButton customButton--dark customButton--smallest productList__responsiveControls">
                         <img class="customButton__icon"src="./src/icons/filter.svg" alt="">
                         <span class="customButton__desc">Ordenar / filtrar</span>
                     </div>
-                    <a class="customButton customButton--blue customButton--smallest responsiveFilterSort" href="create.html">
+                    <a class="customButton customButton--blue customButton--smallest" href="create.html">
                         <span class="customButton__desc">+ Nuevo producto</span>
                     </a>
                 </aside>
                 <aside class="productList__controls">
-                    
-                    <a class="customButton customButton--blue customButton--small" href="create.html">
+                    <a class="customButton customButton--dark customButton--small productList__close hidden">
+                        <span class="customButton__desc">Cerrar</span>
+                    </a>
+                    <a class="customButton customButton--blue customButton--small createButton" href="create.html">
                         <span class="customButton__desc">+ Nuevo producto</span>
                     </a>
                     <form class="productList__form">

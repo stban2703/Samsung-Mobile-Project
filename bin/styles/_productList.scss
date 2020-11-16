@@ -18,7 +18,7 @@
     }
 
     &__responsive {
-        display: flex;
+        display: none;
         width: 100%;
     }
 
@@ -33,6 +33,7 @@
         color: $darkGray;
         padding: 15px;
         margin: 5px 0;
+        position: relative;
 
         &--responsive {
             background-color: white;
@@ -203,6 +204,10 @@
 
         &__options {
             margin: 5px 10px;
+        }
+
+        &__responsive {
+            display: block;
         }
     }
 }

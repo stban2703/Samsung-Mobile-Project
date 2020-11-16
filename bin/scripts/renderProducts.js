@@ -2,6 +2,10 @@ const productList = document.querySelector('.productList');
 const productListView = productList.querySelector('.productList__view');
 const productListTotal = productList.querySelector('.productList__total');
 const productListForm = productList.querySelector('.productList__form');
+const productListConstrols = productList.querySelector('.productList__controls');
+const productListCreateBtn = productList.querySelector('.createButton');
+const productListResponsiveControls = productList.querySelector('.productList__responsiveControls');
+const productListControlsClose = productList.querySelector('.productList__close');
 const sortForm = productListForm.sort;
 const filterClass = productListForm.class;
 const filterStorage = productListForm.storage;
@@ -102,6 +106,11 @@ productListForm.addEventListener('input', function () {
     let newStorage = filterStorage.value;
     let newCamera = filterCamera.value;
 
+    if (window.innerWidth <= 960) {
+        html.style.overflow = "visible";
+        productListConstrols.classList.add('hidden');
+    }
+
     console.log(newSort)
     switch (newSort) {
         case "lowerPrice":
@@ -190,3 +199,40 @@ function handleDelete(id) {
         customAlert.classList.add('hidden');
     })
 }
+
+
+if (window.innerWidth <= 960) {
+    productListConstrols.classList.add('hidden');
+    productListControlsClose.classList.remove('hidden');
+} else {
+    productListConstrols.classList.remove('hidden');
+    productListControlsClose.classList.add('hidden');
+    productListConstrols.classList.remove('productList__controls--responsive');
+}
+
+window.onresize = function() {
+    if (window.innerWidth <= 960 && !productListConstrols.classList.contains("productList__controls--responsive")) {
+        productListConstrols.classList.add('hidden');
+        productListControlsClose.classList.remove('hidden');
+    } else {
+        productListConstrols.classList.remove('hidden');
+        productListConstrols.classList.remove('productList__controls--responsive');
+        productListControlsClose.classList.add('hidden');
+    }
+};
+
+productListResponsiveControls.addEventListener('click', function () {
+
+    if (window.innerWidth <= 960) {
+        html.style.overflow = "hidden";
+        productListConstrols.classList.remove('hidden');
+        productListConstrols.classList.add("productList__controls--responsive");
+    }
+})
+
+productListControlsClose.addEventListener('click', function() {
+    if(productListConstrols.classList.contains("productList__controls--responsive")) {
+        html.style.overflow = "visible";
+        productListConstrols.classList.add('hidden');
+    }
+});

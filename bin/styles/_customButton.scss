@@ -41,7 +41,7 @@
     }
 
     &--small {
-        margin: 0;
+        margin: 5px 0;
 
         .customButton__desc {
             font-size: $customButtonFs - 0.2;
@@ -49,10 +49,15 @@
     }
 
     &--smallest {
-        margin: 10px 5px;
+        margin: 10px 0;
 
         .customButton__desc {
             font-size: $customButtonFs - 0.28;
+        }
+
+        
+        .customButton__icon {
+            height: 20px;
         }
     }
 

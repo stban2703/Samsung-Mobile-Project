@@ -744,9 +744,7 @@ input[type=button] {
 }
 
 .productList__responsive {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   width: 100%;
 }
 
@@ -769,6 +767,7 @@ input[type=button] {
   color: #4d4d4d;
   padding: 15px;
   margin: 5px 0;
+  position: relative;
 }
 
 .productList__controls--responsive {
@@ -995,6 +994,9 @@ input[type=button] {
   }
   .productList__options {
     margin: 5px 10px;
+  }
+  .productList__responsive {
+    display: block;
   }
 }
 
@@ -1715,7 +1717,7 @@ input[type=button] {
 }
 
 .customButton--small {
-  margin: 0;
+  margin: 5px 0;
 }
 
 .customButton--small .customButton__desc {
@@ -1723,11 +1725,15 @@ input[type=button] {
 }
 
 .customButton--smallest {
-  margin: 10px 5px;
+  margin: 10px 0;
 }
 
 .customButton--smallest .customButton__desc {
   font-size: 0.97rem;
+}
+
+.customButton--smallest .customButton__icon {
+  height: 20px;
 }
 
 .customButton:hover {
