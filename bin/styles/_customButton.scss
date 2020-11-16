@@ -7,7 +7,7 @@
     width: 100%;
     font-family: $mainFont;
     color: white;
-    padding: 10px 5px;
+    padding: 15px 5px;
     margin: 15px 0;
     border-style: none;
     outline: none;
@@ -49,13 +49,12 @@
     }
 
     &--smallest {
-        margin: 10px 0;
+        margin: 10px 2px;
 
         .customButton__desc {
             font-size: $customButtonFs - 0.28;
         }
 
-        
         .customButton__icon {
             height: 20px;
         }
@@ -63,5 +62,13 @@
 
     &:hover {
         cursor: pointer;
+    }
+}
+
+@media (max-width: 357px) {
+    .customButton {
+        &--smallest {
+            margin: 5px 0;
+        }
     }
 }

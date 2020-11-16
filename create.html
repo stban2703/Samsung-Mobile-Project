@@ -12,18 +12,15 @@
 <body>
     <header class="header">
         <article class="header__container">
+            <img class="header__menu" src="./src/icons/burguermenuicon.svg" alt="Menú">
+
             <a class="header__logo" href="index.html"><img src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono"></a>
-            <section class="queryInput">
-                <input type="text" class="queryInput__field" placeholder="Buscar por nombre, clase, cámara...">
-                <div class="queryInput__button">
-                    <img src="./src/icons/search.svg" alt="Botón buscar">
-                </div>
-            </section>
+     
             <nav class="header__nav">
                 <article class="header__option">
                     <a class="header__button">
                         <img class="header__icon" src="./src/icons/usericon.svg" alt="Usuario">
-                        <span class="header__tag">Mi suario</span>
+                        <span class="header__tag">Mi usuario</span>
                     </a>
                     <section class="dropDownList dropDownList--signOut hidden">
                         <a class="dropDownList__title">
@@ -47,6 +44,18 @@
                     </a>
                 </article>
                 <article class="header__option">
+                    <a class="header__button" href="order.html">
+                        <img class="header__icon" src="./src/icons/order.svg" alt="Pedidos">
+                        <span class="header__tag">Pedidos</span>
+                </article>
+
+                <article class="header__option header__option--responsive hidden">
+                    <a class="header__button" href="cart.html">
+                        <img class="header__icon" src="./src/icons/shopcart.svg" alt="Carrito">
+                        <span class="header__tag">Carrito</span>
+                    </a>
+                </article>
+                <article class="header__option header__option--responsive hidden">
                     <a class="header__button" href="order.html">
                         <img class="header__icon" src="./src/icons/order.svg" alt="Pedidos">
                         <span class="header__tag">Pedidos</span>
@@ -213,6 +222,37 @@
             <div></div>
             <div></div>
         </div>
+    </div>
+
+    <div class="darken hidden"></div>
+
+    <div class="burguer-menu">
+        <header class="burguer-menu__header">
+            <img class="burguer-menu__close" src="./src/icons/closeicon.svg" alt="Close">
+        </header>
+        <section class="burguer-menu__content">
+            <a class="burguer-menu__option">
+                <img class="burguer-menu__icon" src="./src/icons/usericon.svg" alt="">
+                <span class="burguer-menu__text">Mi usuario</span>
+            </a>
+            <a href="cart.html" class="burguer-menu__option">
+                <img class="burguer-menu__icon" src="./src/icons/shopcart.svg" alt="">
+                <span class="burguer-menu__text">Carrito</span>
+            </a>
+            <a href="order.html" class="burguer-menu__option">
+                <img class="burguer-menu__icon" src="./src/icons/order.svg" alt="">
+                <span class="burguer-menu__text">Pedidos</span>
+            </a>
+            <a href="login.html" class="burguer-menu__option">
+                <span class="burguer-menu__text">Iniciar sesion</span>
+            </a>
+            <a href="register.html" class="burguer-menu__option">
+                <span class="burguer-menu__text">Registro</span>
+            </a>
+            <a class="burguer-menu__option">
+                <span class="burguer-menu__text">Cerrar sesión</span>
+            </a>
+        </section>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>

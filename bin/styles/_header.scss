@@ -68,6 +68,12 @@
 
 @media (max-width: $responsiveMaxWidth) {
     .header {
+        &__logo {
+            img {
+                height: 30px;
+            }
+        }
+
         &__menu {
             display: block;
         }

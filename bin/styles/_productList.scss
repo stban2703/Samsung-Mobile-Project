@@ -116,7 +116,7 @@
         height: $productHeight;
         margin: 5px;
         padding: 5px;
-        flex-grow: 1;
+        //flex-grow: 1;
     }
 
     &__ref {
@@ -198,6 +198,10 @@
             flex-direction: column;
         }
 
+        &__product {
+            flex-grow: 1;
+        }
+
         &__option {
             width: 50px;
         }
@@ -207,7 +211,15 @@
         }
 
         &__responsive {
-            display: block;
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 357px) {
+    .productList {
+        &__responsive {
+            flex-direction: column;
         }
     }
 }

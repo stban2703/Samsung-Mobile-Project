@@ -19,9 +19,13 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 function handleCurrent() {
     const currentUserName = document.querySelectorAll('.currentUser');
+    const burguerUserName = document.querySelectorAll('.burguer-menu__text');
     currentUserName.forEach(element => {
         element.innerText = `${userInfo.name}`
     });
+
+    
+    burguerUserName[0].innerText = userInfo.name;
 }
 
 const logOutBtn = document.querySelector('.logout');
