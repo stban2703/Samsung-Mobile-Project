@@ -157,31 +157,35 @@
 
     &__name {
         color: $lightGray;
-        font-size: $productTitleFs;
+        font-size: $productTitleFs + 0.2;
     }
 
     &__price {
         color: $lightBlue;
-        font-size: $productPriceFs;
+        font-size: $productPriceFs + 0.2;
         margin: 5px 0;
     }
 
     &__settings {
+        background-color: white;
+        border-radius: $borderRadius + 2;
+        box-shadow: $shadow;
         position: absolute;
         display: flex;
         flex-direction: column;
         top: 0px;
         right: 0px;
+        padding: 0 3px;
     }
 
     &__option {
-        background-color: white;
+        /*background-color: white;
         padding: 2px;
         border-radius: $borderRadius - 1;
-        box-shadow: $shadow;
-        margin: 2px 5px;
+        box-shadow: $shadow;*/
+        margin: 7px 0;
         max-width: none;
-        width: 40px;
+        width: 35px;
 
         &:hover {
             cursor: pointer;

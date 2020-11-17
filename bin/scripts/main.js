@@ -2,16 +2,16 @@ const headerButton = document.querySelectorAll('.header__button');
 const dropDownList = document.querySelector('.dropDownList');
 const loaderContainer = document.querySelector('.lds-container');
 
-headerButton[1].addEventListener('click', function() {
-    if(userInfo) {
+headerButton[1].addEventListener('click', function () {
+    if (userInfo) {
         window.location = 'cart.html'
     } else {
         window.location = 'login.html'
     }
 })
 
-headerButton[2].addEventListener('click', function() {
-    if(userInfo) {
+headerButton[2].addEventListener('click', function () {
+    if (userInfo) {
         window.location = 'order.html'
     } else {
         window.location = 'login.html'
@@ -47,7 +47,7 @@ function handleAddToCart(product, quantity) {
             //alert('agregado')
             success.classList.add('success--display');
 
-            setTimeout(function() {
+            setTimeout(function () {
                 success.classList.remove('success--display');
             }, 1500);
 
@@ -105,7 +105,7 @@ function getCart() {
                     //console.log(`${doc.id} => ${doc.data()}`);
                 });
                 renderCart(cartProducts);
-                
+
             });
     }
 }
@@ -114,21 +114,40 @@ let orders = [];
 function getOrders() {
     const orderList = document.querySelector('.orderList');
     if (orderList) {
-        //const loader = document.querySelector('.lds-ring');
-        //loader.classList.remove('hidden');
-        ordersRef.doc(userInfo.uid).collection('orders')  // referencia de la colección
-            .get() // pide todos los documentos de la colección
-            .then((querySnapshot) => {
-                orders = [];
+        if (userInfo.admin) {
+            let userIds = [];
+            userRef.get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
+                    orders = [];
                     const obj = doc.data();
                     obj.id = doc.id;
-                    orders.push(obj);
-                    //console.log(`${doc.id} => ${doc.data()}`);
+                    userIds.push(obj);
                 });
-                //loader.classList.add('hidden');
-                renderOrders(orders);
-            });
+
+                userIds.forEach(elem => {
+                    ordersRef.doc(elem.id).collection('orders').get().then((querySnapshot) => {
+                        querySnapshot.forEach((doc) => {
+                            const obj = doc.data();
+                            obj.id = doc.id;
+                            orders.push(obj);
+                        });
+                        renderOrders(orders);
+                    });
+                })
+            })
+        } else {
+            ordersRef.doc(userInfo.uid).collection('orders')  // referencia de la colección
+                .get() // pide todos los documentos de la colección
+                .then((querySnapshot) => {
+                    orders = [];
+                    querySnapshot.forEach((doc) => {
+                        const obj = doc.data();
+                        obj.id = doc.id;
+                        orders.push(obj);
+                    });
+                    renderOrders(orders);
+                });
+        }
     }
 }
 
@@ -139,17 +158,17 @@ const darken = document.querySelector(".darken");
 const html = document.querySelector("html");
 
 function handleOpenBurguer() {
-  darken.classList.remove("hidden")
-  burguerMenu.classList.add("burguer-menu--move");
-  html.style.overflow = "hidden";
+    darken.classList.remove("hidden")
+    burguerMenu.classList.add("burguer-menu--move");
+    html.style.overflow = "hidden";
 }
 
 function handleCloseBurguer() {
-  if (!darken.classList.contains("hidden") && burguerMenu.classList.contains("burguer-menu--move")) {
-    darken.classList.add("hidden")
-    burguerMenu.classList.remove("burguer-menu--move");
-    html.style.overflow = "visible";
-  }
+    if (!darken.classList.contains("hidden") && burguerMenu.classList.contains("burguer-menu--move")) {
+        darken.classList.add("hidden")
+        burguerMenu.classList.remove("burguer-menu--move");
+        html.style.overflow = "visible";
+    }
 }
 
 burguerBtn.addEventListener('click', handleOpenBurguer);
