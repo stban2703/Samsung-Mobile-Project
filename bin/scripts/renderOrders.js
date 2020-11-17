@@ -37,12 +37,14 @@ function renderOrders(list) {
             const formattedPrice = new Intl.NumberFormat().format(elem.totalPrice);
 
             newOrder.innerHTML = `
+            <div class="orderList__section">
                 <h4 class="orderList__info"><strong> Cliente: </strong>${elem.userName}</h4>
                 <h4 class="orderList__info"><strong>Estado: </strong><span class="orderList__status">En camino</span></h4>
                 <h4 class="orderList__info"><strong>Fecha: </strong>${formatDate}</h4>
                 <h4 class="orderList__info"><strong> Fecha estimada de entrega: </strong>${formatDelivery}</h4>
                 <h4 class="orderList__info"><strong> Total pagado: </strong><span class="orderList__price">$ ${formattedPrice}</span></h4>
-                <img class="orderList__arrow" src="./src/icons/rightarrow.svg" alt="">
+            </div>
+            <img class="orderList__arrow" src="./src/icons/rightarrow.svg" alt="">
             `;
 
             orderListContainer.appendChild(newOrder);

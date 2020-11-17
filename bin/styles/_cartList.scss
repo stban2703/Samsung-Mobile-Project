@@ -56,7 +56,7 @@
 
     &__thumb {
         height: 80%;
-        width: 80px;
+        width: 60px;
         object-fit: contain;
         max-width: none;
         margin: 0 10px;
@@ -64,9 +64,10 @@
 
     &__remove {
         max-width: none;
+        max-height: none;
         height: 50px;
-        position: absolute;
-        right: 10px;
+        margin-left: auto;
+        margin-right: 5px;
         &:hover {
             cursor: pointer;
         }
