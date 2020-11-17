@@ -32,6 +32,10 @@ productsRef.doc(productId).get().then(
         productViewCamera.innerText = elem.camera;
         loadStars(elem, productView);
 
+        const loader = document.querySelector('.lds-ring');
+        loader.classList.add('hidden');
+        productView.classList.remove('hidden');
+
         renderImages(productId);
 
         let editUrl = `create.html?${productId}-${elem.title}`
@@ -79,11 +83,25 @@ function renderImages(id) {
                 newImage.classList.add('productView__image');
                 newImage.src = url;
                 productViewCarrousel.appendChild(newImage);
-                const loader = document.querySelector('.lds-ring');
-                loader.classList.add('hidden');
-                productView.classList.remove('hidden');
                 totalImage++;
                 counterLast.innerText = totalImage;
+
+                /*if (userInfo.admin) {
+                    
+                    const showAdmin = document.querySelectorAll('.showAdmin');
+
+                    showAdmin.forEach(function (elem) {
+                        elem.classList.remove('hidden');
+                    })
+                    console.log(showAdmin)
+
+                } else {
+                    showAdmin.forEach(function (elem) {
+                        elem.classList.add('hidden');
+                    });
+                    console.log(showAdmin)
+
+                }*/
             }).catch(function (error) {
                 console.log(error);
             });

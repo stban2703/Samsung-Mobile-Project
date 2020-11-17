@@ -11,24 +11,42 @@ firebase.auth().onAuthStateChanged(function (user) {
                 getCart();
                 getOrders();
                 showUnlogged();
+
+                const showAdmin = document.querySelectorAll('.showAdmin');
                 
+                if(data.admin) {
+                    showAdmin.forEach(function(elem) {
+                        elem.classList.remove('hidden');
+                    })
+                    console.log(showAdmin)
+                    
+                } else {
+                    showAdmin.forEach(function(elem) {
+                        elem.classList.add('hidden');
+                    });
+                    console.log(showAdmin)
+                }
             }
         });
     } else {
         userInfo = null;
-        hideUnlogged(); 
+        hideUnlogged();
     }
 });
 
 function handleCurrent() {
     const currentUserName = document.querySelectorAll('.currentUser');
-    const burguerUserName = document.querySelectorAll('.burguer-menu__text');
-    currentUserName.forEach(element => {
-        element.innerText = `${userInfo.name}`
-    });
 
-    
-    burguerUserName[0].innerText = userInfo.name;
+    if (!userInfo.admin) {
+        currentUserName.forEach(element => {
+            element.innerText = `${userInfo.name}`
+        });
+    } else {
+        currentUserName.forEach(element => {
+            element.innerText = `Administrador`
+        });
+    }
+
 }
 
 const logOutBtn = document.querySelector('.logout');
@@ -41,11 +59,11 @@ logOutBtn.addEventListener('click', function (event) {
 function hideUnlogged() {
     const unloggedFeatures = document.querySelectorAll('.unlogged');
     const loggedFeatures = document.querySelectorAll('.logged');
-    unloggedFeatures.forEach(function(elem){
+    unloggedFeatures.forEach(function (elem) {
         elem.classList.add('hidden');
     });
 
-    loggedFeatures.forEach(function(elem){
+    loggedFeatures.forEach(function (elem) {
         elem.classList.remove('hidden');
     });
 }
@@ -53,11 +71,11 @@ function hideUnlogged() {
 function showUnlogged() {
     const unloggedFeatures = document.querySelectorAll('.unlogged');
     const loggedFeatures = document.querySelectorAll('.logged');
-    unloggedFeatures.forEach(function(elem){
+    unloggedFeatures.forEach(function (elem) {
         elem.classList.remove('hidden');
     });
 
-    loggedFeatures.forEach(function(elem){
+    loggedFeatures.forEach(function (elem) {
         elem.classList.add('hidden');
     });
 }

@@ -55,9 +55,9 @@ function renderProducts(list) {
             </div>
             </a>
             <div class="productList__settings">
-                <a><img class="productList__option" src="./src/icons/delete.svg" alt="Borrar producto"></a>
+                <a><img class="productList__option showAdmin" src="./src/icons/delete.svg" alt="Borrar producto"></a>
                 <a><img class="productList__option" src="./src/icons/addtocart.svg" alt="Agregar al carrito"></a>
-                <a href=${editUrl}><img class="productList__option" src="./src/icons/edit.svg" alt="Editar producto"></a>
+                <a href=${editUrl}><img class="productList__option showAdmin" src="./src/icons/edit.svg" alt="Editar producto"></a>
             </div>`;
 
             loadStars(elem, newProduct);
@@ -182,7 +182,7 @@ if (window.innerWidth <= 960) {
     productListConstrols.classList.remove('productList__controls--responsive');
 }
 
-window.onresize = function() {
+window.onresize = function () {
     if (window.innerWidth <= 960 && !productListConstrols.classList.contains("productList__controls--responsive")) {
         productListConstrols.classList.add('hidden');
         productListControlsClose.classList.remove('hidden');
@@ -202,8 +202,8 @@ productListResponsiveControls.addEventListener('click', function () {
     }
 })
 
-productListControlsClose.addEventListener('click', function() {
-    if(productListConstrols.classList.contains("productList__controls--responsive")) {
+productListControlsClose.addEventListener('click', function () {
+    if (productListConstrols.classList.contains("productList__controls--responsive")) {
         html.style.overflow = "visible";
         productListConstrols.classList.add('hidden');
     }
