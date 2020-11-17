@@ -717,6 +717,19 @@ input[type=button] {
   }
 }
 
+.empty__image {
+  width: 300px;
+}
+
+.empty__message {
+  font-family: "Open Sans", sans-serif;
+  color: #7c7c7c;
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
 .productList {
   width: 100%;
   max-width: 960px;
@@ -849,7 +862,7 @@ input[type=button] {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-left: auto;
+  margin-left: 5px;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -988,6 +1001,9 @@ input[type=button] {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .productList__view {
+    margin-left: 0;
   }
   .productList__product {
     -webkit-box-flex: 1;
@@ -1310,8 +1326,8 @@ input[type=button] {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  margin: 5px;
-  padding: 10px 20px;
+  margin: 10px 5px;
+  padding: 20px;
 }
 
 .orderList__info {
@@ -1534,17 +1550,6 @@ input[type=button] {
   color: #4d4d4d;
   font-size: 1.25rem;
   z-index: 1;
-  /*&:valid {
-            outline: none;
-            border-color: $lightBlue;
-
-            + label {
-                transition: 0.2s ease;
-                color: $lightBlue;
-                margin-bottom: $labelMarginBottom;
-                font-size: $inputFs - 0.3;
-            }
-        }*/
 }
 
 .input__field:focus {
@@ -1553,6 +1558,19 @@ input[type=button] {
 }
 
 .input__field:focus + label {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  color: #1089ff;
+  margin-bottom: 50px;
+  font-size: 0.95rem;
+}
+
+.input__field:valid {
+  outline: none;
+  border-color: #1089ff;
+}
+
+.input__field:valid + label {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   color: #1089ff;
@@ -1779,6 +1797,7 @@ input[type=button] {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  margin-top: 40px;
 }
 
 .footer__container {
@@ -1847,6 +1866,10 @@ input[type=button] {
   margin: 10px;
   max-width: none;
   width: 50px;
+}
+
+html {
+  background-color: #fcfafa;
 }
 
 .darken {

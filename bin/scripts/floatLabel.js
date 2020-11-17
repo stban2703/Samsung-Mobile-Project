@@ -11,4 +11,12 @@ inputField.forEach(function (elem, i) {
       inputLabel[i].classList.remove("input__label--focus");
     }
   });
+
+  elem.addEventListener('change', function () {
+    if (elem.value.length > 0) {
+      inputLabel[i].classList.add("input__label--focus");
+    } else {
+      inputLabel[i].classList.remove("input__label--focus");
+    }
+  });
 });

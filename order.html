@@ -77,7 +77,19 @@
             </section>
         </header>
 
-        <article class="orderList">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="empty hidden">
+            <img class="empty__image" src="./src/icons/empty.svg" alt="">
+            <h3 class="empty__message">No has hecho pedidos aún</h3>
+        </div>
+
+        <article class="orderList hidden">
             <span class="orderList__total"></span>
 
             <section class="orderList__container">

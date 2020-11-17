@@ -3,8 +3,14 @@ const cartListTotal = cartList.querySelector('.cartList__total');
 const cartListContainer = cartList.querySelector('.cartList__container');
 const cartListTotalPrice = cartList.querySelector('.cartList__priceSum');
 const cartListDeleteAll = cartList.querySelector('.deleteAll');
+const empty = document.querySelector('.empty');
 
 function renderCart(list) {
+    const loader = document.querySelector('.lds-ring');
+    if (loader) {
+        loader.classList.add('hidden');
+    }
+    cartList.classList.remove('hidden');
     cartListContainer.innerHTML = '';
     if (list.length > 0) {
         // Total products
@@ -83,8 +89,10 @@ function renderCart(list) {
         }
 
     } else {
-        cartListTotal.innerHTML = `No hay nada en el carrito`;
+        cartListTotal.innerHTML = ``;
         cartListTotalPrice.innerHTML = ``;
+        empty.classList.remove('hidden');
+        cartList.classList.add('hidden');
     }
 
 }

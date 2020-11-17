@@ -84,6 +84,10 @@ buyForm.addEventListener('submit', function (event) {
 // Buy order
 buyButtons[1].addEventListener('click', function (event) {
     event.preventDefault();
+    loaderContainer.classList.remove('hidden');
+    
+    const loader = document.querySelector('.lds-ring');
+    loader.classList.remove('hidden');
     if (userInfo) {
         console.log('ok');
         ordersRef.doc(userInfo.uid).collection('orders').add(newOrder).then(function (docRef) {

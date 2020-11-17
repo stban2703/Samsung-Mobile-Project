@@ -46,7 +46,7 @@
             }
         }
 
-        /*&:valid {
+        &:valid {
             outline: none;
             border-color: $lightBlue;
 
@@ -56,7 +56,7 @@
                 margin-bottom: $labelMarginBottom;
                 font-size: $inputFs - 0.3;
             }
-        }*/
+        }
 
         &--quantity {
             text-align: center;

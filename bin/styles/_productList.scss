@@ -98,7 +98,7 @@
     &__view {
         display: flex;
         flex-wrap: wrap;
-        margin-left: auto;
+        margin-left: 5px;
         width: 100%;
         height: fit-content;
     }
@@ -196,6 +196,9 @@
     .productList {
         &__container {
             flex-direction: column;
+        }
+        &__view {
+            margin-left: 0;
         }
 
         &__product {

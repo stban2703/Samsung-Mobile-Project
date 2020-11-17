@@ -1,0 +1,14 @@
+.empty {
+    &__image {
+        width: 300px;
+    }
+
+    &__message {
+        font-family: $mainFont;
+        color: $lightGray;
+        font-weight: bold;
+        margin: 10px 0;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+}

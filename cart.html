@@ -77,7 +77,19 @@
             </section>
         </header>
 
-        <article class="cartList">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="empty hidden">
+            <img class="empty__image" src="./src/icons/empty.svg" alt="">
+            <h3 class="empty__message">No has agregado nada al carrito</h3>
+        </div>
+
+        <article class="cartList hidden">
             <span class="cartList__total"></span>
 
             <section class="cartList__container">

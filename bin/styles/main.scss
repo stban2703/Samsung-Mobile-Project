@@ -51,6 +51,7 @@ $responsiveMaxWidth: 960px;
 @import "sectionHeader";
 @import "mainContent";
 @import "lds-ring";
+@import "empty";
 @import "productList";
 @import "productView";
 @import "cartList";
@@ -63,6 +64,10 @@ $responsiveMaxWidth: 960px;
 @import "customFileInput";
 @import "customButton";
 @import "footer";
+
+html {
+    background-color: $altBg;
+}
 
 .darken {
     position: fixed;

@@ -43,23 +43,6 @@ ordersRef.doc(orderuserid).collection('orders').doc(orderid).get().then(
         orderViewPlace.innerText = elem.place;
         orderViewAdditional.innerText = elem.additional;
 
-        /*const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
-        previewImageRef.getDownloadURL().then((url) => {
-            productViewImage.src = url;
-            productViewTitle.innerText = elem.title;
-            productViewPrice.innerText = `$ ${new Intl.NumberFormat().format(elem.price)}`;
-            productViewDesc.innerText = elem.description;
-            productViewClass.innerText = elem.class;
-            productViewStorage.innerText = elem.storage;
-            productViewCamera.innerText = elem.camera;
-            loadStars(elem, productView);
-            const loader = document.querySelector('.lds-ring');
-            loader.classList.add('hidden');
-            productView.classList.remove('hidden');
-            let editUrl = `create.html?${productId}-${elem.title}`
-            productViewEdit.setAttribute('href', editUrl);
-        });*/
-
         let priceSum = 0;
 
         elem.products.forEach(function (elem) {
@@ -86,7 +69,9 @@ ordersRef.doc(orderuserid).collection('orders').doc(orderid).get().then(
                         <h5 class="cartList__totalPrice"><strong>Precio total: </strong>$ ${formattedPrice}</h5>
                     </div>`;
             });
-
+            const loader = document.querySelector('.lds-ring');
+            loader.classList.add('hidden');
+            orderView.classList.remove('hidden');
             orderViewList.appendChild(newOrderProduct);
             orderViewTotalPrice.innerHTML = "$ " + new Intl.NumberFormat().format(priceSum);
         })
