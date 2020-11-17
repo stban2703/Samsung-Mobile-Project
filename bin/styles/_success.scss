@@ -1,0 +1,25 @@
+.success {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    transform: translate(0, -100%);
+    transition:  transform 0.2s ease-in;
+    z-index: 2;
+    background-color: $lightBlue;
+    padding: 10px;
+
+    span {
+        width: 100%;
+        text-align: center;
+        font-family: $secondFont;
+        font-weight: bold;
+        color: white;
+    }
+
+    &--display {
+        transform: translate(0, 0);
+        transition:  transform 0.2s ease-in-out;
+    }
+}

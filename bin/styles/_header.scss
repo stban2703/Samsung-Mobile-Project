@@ -76,12 +76,25 @@
             }
         }
 
-        &__menu {
-            display: block;
+        &__option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin: 0 5px;
         }
 
-        &__button {
-            display: none;
+        &__icon {
+            height: 20px;
+            max-width: none;
+            max-height: none;
         }
+        /*&__menu {
+            display: block;
+        }*/
+
+        /*&__button {
+            display: none;
+        }*/
     }
 }

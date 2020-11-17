@@ -348,14 +348,35 @@ input[type=button] {
 }
 
 @media (max-width: 385px) {
+  .header {
+    /*&__menu {
+            display: block;
+        }*/
+    /*&__button {
+            display: none;
+        }*/
+  }
   .header__logo img {
     height: 30px;
   }
-  .header__menu {
-    display: block;
+  .header__option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    margin: 0 5px;
   }
-  .header__button {
-    display: none;
+  .header__icon {
+    height: 20px;
+    max-width: none;
+    max-height: none;
   }
 }
 
@@ -1271,8 +1292,7 @@ input[type=button] {
 }
 
 .cartList__thumb {
-  height: 80%;
-  width: 60px;
+  width: 65px;
   -o-object-fit: contain;
      object-fit: contain;
   max-width: none;
@@ -1782,6 +1802,44 @@ input[type=button] {
   }
 }
 
+.success {
+  width: 100%;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  z-index: 2;
+  background-color: #1089ff;
+  padding: 10px;
+}
+
+.success span {
+  width: 100%;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.success--display {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
 .footer {
   background-color: white;
   border-top: 1px solid #bbbbbb;
@@ -1886,43 +1944,5 @@ html {
 
 .hidden {
   display: none;
-}
-
-.success {
-  width: 100%;
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  top: 0;
-  -webkit-transform: translate(0, -100%);
-          transform: translate(0, -100%);
-  -webkit-transition: -webkit-transform 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in;
-  transition: transform 0.2s ease-in;
-  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
-  z-index: 2;
-  background-color: #1089ff;
-  padding: 10px;
-}
-
-.success span {
-  width: 100%;
-  text-align: center;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: bold;
-  color: white;
-}
-
-.success--display {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  transition: -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 /*# sourceMappingURL=main.css.map */
