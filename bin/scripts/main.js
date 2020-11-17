@@ -2,8 +2,6 @@ const headerButton = document.querySelectorAll('.header__button');
 const dropDownList = document.querySelector('.dropDownList');
 const loaderContainer = document.querySelector('.lds-container');
 
-console.log(headerButton[1])
-
 headerButton[1].addEventListener('click', function() {
     if(userInfo) {
         window.location = 'cart.html'

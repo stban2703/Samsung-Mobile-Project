@@ -10,10 +10,13 @@ firebase.auth().onAuthStateChanged(function (user) {
                 handleCurrent();
                 getCart();
                 getOrders();
+                showUnlogged();
+                
             }
         });
     } else {
         userInfo = null;
+        hideUnlogged(); 
     }
 });
 
@@ -34,3 +37,27 @@ logOutBtn.addEventListener('click', function (event) {
     firebase.auth().signOut();
     window.location.href = "login.html"
 });
+
+function hideUnlogged() {
+    const unloggedFeatures = document.querySelectorAll('.unlogged');
+    const loggedFeatures = document.querySelectorAll('.logged');
+    unloggedFeatures.forEach(function(elem){
+        elem.classList.add('hidden');
+    });
+
+    loggedFeatures.forEach(function(elem){
+        elem.classList.remove('hidden');
+    });
+}
+
+function showUnlogged() {
+    const unloggedFeatures = document.querySelectorAll('.unlogged');
+    const loggedFeatures = document.querySelectorAll('.logged');
+    unloggedFeatures.forEach(function(elem){
+        elem.classList.remove('hidden');
+    });
+
+    loggedFeatures.forEach(function(elem){
+        elem.classList.add('hidden');
+    });
+}
