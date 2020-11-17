@@ -24,6 +24,16 @@
         margin: 0 5px;
     }
 
+    &--banner {
+        background-color: $lightBlue;
+        padding: 7px 5px;
+        font-size: medium;
+        font-weight: bold;
+        &:hover {
+            background-color: #57abff;
+        }
+    }
+
     &--blue {
         background-color: $lightBlue;
 

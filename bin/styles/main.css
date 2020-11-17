@@ -587,6 +587,10 @@ input[type=button] {
           flex-direction: column;
 }
 
+.sectionHeader__banner {
+  width: 100%;
+}
+
 .sectionHeader__info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1624,6 +1628,57 @@ input[type=button] {
   border-color: #7c7c7c;
 }
 
+.banner {
+  background: radial-gradient(66.55% 50% at 50% 50%, #273788 0%, #094F94 0.01%, #0A0A0E 71.64%, #000000 87.58%);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0;
+}
+
+.banner__image {
+  max-width: none;
+  width: 100px;
+  margin: 0 5px;
+}
+
+.banner__section {
+  width: 100%;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: large;
+  margin: 0 5px;
+}
+
+.banner__desc {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 660px) {
+  .banner__desc {
+    font-size: small;
+  }
+  .banner__image {
+    width: 65px;
+  }
+}
+
 .customAlert {
   width: 100vw;
   height: 100vh;
@@ -1754,6 +1809,17 @@ input[type=button] {
   font-size: 1.25rem;
   font-weight: bold;
   margin: 0 5px;
+}
+
+.customButton--banner {
+  background-color: #1089ff;
+  padding: 7px 5px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.customButton--banner:hover {
+  background-color: #57abff;
 }
 
 .customButton--blue {

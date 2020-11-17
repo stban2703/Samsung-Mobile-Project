@@ -43,6 +43,7 @@ $productHeight: 330px;
 
 $responsiveMaxWidth: 960px;
 $responsiveHeaderMaxWidth: 385px;
+$responsiveBanner: 660px;
 $responsiveFont: 361px;
 
 @import "reset";
@@ -62,6 +63,7 @@ $responsiveFont: 361px;
 @import "rating";
 @import "form";
 @import "input";
+@import "banner";
 @import "customAlert";
 @import "customFileInput";
 @import "customButton";
