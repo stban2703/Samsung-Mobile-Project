@@ -581,7 +581,7 @@ input[type=button] {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   color: #23374d;
-  font-size: 1.875rem;
+  font-size: 1.5em;
 }
 
 .sectionHeader__title--blue {
@@ -981,7 +981,12 @@ input[type=button] {
 }
 
 .productList__option {
-  margin: 5px 5px;
+  background-color: white;
+  padding: 4px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  margin: 2px 5px;
   max-width: none;
   width: 40px;
 }
@@ -1720,7 +1725,7 @@ input[type=button] {
   font-family: "Open Sans", sans-serif;
   color: white;
   padding: 15px 5px;
-  margin: 15px 0;
+  margin: 10px 0;
   border-style: none;
   outline: none;
 }

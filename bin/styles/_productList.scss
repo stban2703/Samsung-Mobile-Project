@@ -175,7 +175,11 @@
     }
 
     &__option {
-        margin: 5px 5px;
+        background-color: white;
+        padding: 4px;
+        border-radius: $borderRadius + 5;
+        box-shadow: $shadow;
+        margin: 2px 5px;
         max-width: none;
         width: 40px;
 
