@@ -18,6 +18,18 @@
         max-height: $galleryMaxWidth;
     }
 
+    &__counter {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background-color: $mainBlue;
+        color: white;
+        padding: 5px 10px; 
+        font-size: $productDescBigFs + .2;
+        border-radius: $borderRadius;
+        z-index: 3;
+    }
+
     &__container {
         display: flex;
         align-items: center;
@@ -30,9 +42,13 @@
         padding: 10px;
     }
 
+    &__imageContainer {
+        overflow: hidden;
+    }
+
     &__carrousel {
         display: flex;
-        object-fit: contain;
+        transition: transform 0.6s ease;
     }
 
     &__image {
@@ -41,9 +57,18 @@
         width: 100%;
     }
 
-    &__thumbs {
-        width: 100%;
-        display: flex;
+    &__previous {
+        height: 40px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__next {
+        height: 40px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__details {
@@ -68,7 +93,7 @@
     }
 
     &__desc {
-        font-size: $productDescBigFs;
+        font-size: $productDescBigFs + .2;
         color: $darkGray;
         margin: 10px 0;
     }

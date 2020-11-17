@@ -15,7 +15,7 @@
             <img class="header__menu" src="./src/icons/burguermenuicon.svg" alt="Menú">
 
             <a class="header__logo" href="index.html"><img src="./src/icons/sm-logo.svg" alt="Samsung Mobile Icono"></a>
-     
+
             <nav class="header__nav">
                 <article class="header__option">
                     <a class="header__button">
@@ -69,7 +69,7 @@
         <div class="success">
             <span>Agregado con éxito al carrito</span>
         </div>
-        
+
         <header class="sectionHeader">
             <a href="index.html" class="sectionHeader__return">
                 <img src="./src/icons/returnarrow.svg" alt="Flecha atrás">
@@ -89,10 +89,15 @@
             <span class="productView__price">$ 3.999.900</span>
             <aside class="productView__gallery">
                 <section class="productView__container">
-                    <img class="productView__previous" src="./src/icons/leftarrow.svg" alt="">
-                    <div class="productView__carrousel">
-                        
+                    <div class="productView__counter">
+                        <p><span class="productView__current">1</span>/<span class="productView__last">4</span></p>
                     </div>
+                    <img class="productView__previous" src="./src/icons/leftarrow.svg" alt="">
+                    <section class="productView__imageContainer">
+                        <div class="productView__carrousel">
+
+                        </div>
+                    </section>
                     <img class="productView__next" src="./src/icons/rightarrow.svg" alt="">
                 </section>
             </aside>
@@ -186,8 +191,9 @@
 
     <div class="customAlert hidden">
         <section class="customAlert__container">
-            <span class="customAlert__message">¿Estás seguro de que quieres eliminar este producto? Esta acción <strong>no se
-                puede deshacer</strong></span>
+            <span class="customAlert__message">¿Estás seguro de que quieres eliminar este producto? Esta acción
+                <strong>no se
+                    puede deshacer</strong></span>
             <div class="customAlert__controls">
                 <button class="customButton customButton--blue customAlert__delete">
                     <span class="customButton__desc">Sí, eliminar</span>

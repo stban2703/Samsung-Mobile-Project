@@ -1100,6 +1100,18 @@ input[type=button] {
   max-height: 480px;
 }
 
+.productView__counter {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: #23374d;
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  z-index: 3;
+}
+
 .productView__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1119,12 +1131,18 @@ input[type=button] {
   padding: 10px;
 }
 
+.productView__imageContainer {
+  overflow: hidden;
+}
+
 .productView__carrousel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
 }
 
 .productView__image {
@@ -1133,11 +1151,20 @@ input[type=button] {
   width: 100%;
 }
 
-.productView__thumbs {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.productView__previous {
+  height: 40px;
+}
+
+.productView__previous:hover {
+  cursor: pointer;
+}
+
+.productView__next {
+  height: 40px;
+}
+
+.productView__next:hover {
+  cursor: pointer;
 }
 
 .productView__details {
@@ -1167,7 +1194,7 @@ input[type=button] {
 }
 
 .productView__desc {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #4d4d4d;
   margin: 10px 0;
 }
