@@ -1223,6 +1223,7 @@ input[type=button] {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  text-align: center;
 }
 
 .cartList__order {
@@ -1328,7 +1329,7 @@ input[type=button] {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  margin: 10px 5px;
+  margin: 10px 0;
   padding: 20px;
 }
 

@@ -173,34 +173,6 @@ productListForm.addEventListener('input', function () {
 // render inicial con todos los productos
 getProducts();
 
-function handleDelete(id) {
-
-    const deleteBtn = customAlert.querySelector('.customAlert__delete');
-    const cancelBtn = customAlert.querySelector('.customAlert__cancel');
-
-    deleteBtn.addEventListener('click', function () {
-        productsRef // referencia de la colección
-            .doc(id) // referencia de un documento específico en esa colección
-            .delete() // elimine el documento asociado a esa referencia
-            .then(function () {
-                // debería entrar si todo sale bien
-                console.log("Document successfully deleted!");
-                getProducts(); // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
-                customAlert.classList.add('hidden');
-            })
-            .catch(function (error) {
-                // debería entrar si ocurre algún error
-                console.error("Error removing document: ", error);
-                customAlert.classList.add('hidden');
-            });
-    });
-
-    cancelBtn.addEventListener('click', function () {
-        customAlert.classList.add('hidden');
-    })
-}
-
-
 if (window.innerWidth <= 960) {
     productListConstrols.classList.add('hidden');
     productListControlsClose.classList.remove('hidden');

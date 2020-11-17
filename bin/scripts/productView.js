@@ -9,6 +9,7 @@ const productViewCamera = productView.querySelector('.productView__camera');
 const productViewEdit = productView.querySelector('.edit');
 const productViewQuantity = productView.querySelector('.productView__quantity input');
 const quantityButtons = productView.querySelectorAll('.productView__btn');
+const customAlert = document.querySelector('.customAlert');
 
 let parts = location.search.split("-")
 let productId = parts[0].replace("?", "");
@@ -41,19 +42,8 @@ productsRef.doc(productId).get().then(
 
         const deleteBtn = productView.querySelector('.delete');
         deleteBtn.addEventListener('click', function () {
-            //loader.classList.add('loader--show');
-            productsRef // referencia de la colección
-                .doc(productId) // referencia de un documento específico en esa colección
-                .delete() // elimine el documento asociado a esa referencia
-                .then(function () {
-                    // debería entrar si todo sale bien
-                    console.log("Document successfully deleted!");
-                    window.location = 'index.html'
-                })
-                .catch(function (error) {
-                    // debería entrar si ocurre algún error
-                    console.error("Error removing document: ", error);
-                });
+            customAlert.classList.remove('hidden');
+            handleDelete(productId);
         });
     });
 

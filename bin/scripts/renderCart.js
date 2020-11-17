@@ -70,6 +70,7 @@ function renderCart(list) {
 
         if (cartListDeleteAll) {
             cartListDeleteAll.addEventListener('click', function () {
+                loaderContainer.classList.remove('hidden');
                 const promises = list.map(function (elem) {
                     return userRef.doc(userInfo.uid).collection('cart').doc(elem.id)
                         .delete() // elimine el documento asociado a esa referencia
@@ -78,7 +79,7 @@ function renderCart(list) {
                 Promise.all(promises).then(function () {
                     console.log("Document successfully deleted!");
                     getCart();
-                    //customAlert.classList.add('hidden');
+                    loaderContainer.classList.add('hidden');
                 })
                     .catch(function (error) {
                         // debería entrar si ocurre algún error

@@ -44,6 +44,34 @@ function handleAddToCart(product, quantity) {
     }
 }
 
+function handleDelete(id) {
+
+    const deleteBtn = customAlert.querySelector('.customAlert__delete');
+    const cancelBtn = customAlert.querySelector('.customAlert__cancel');
+
+    deleteBtn.addEventListener('click', function () {
+        productsRef // referencia de la colección
+            .doc(id) // referencia de un documento específico en esa colección
+            .delete() // elimine el documento asociado a esa referencia
+            .then(function () {
+                // debería entrar si todo sale bien
+                console.log("Document successfully deleted!");
+                window.location = "index.html" // traiga los productos cuando estemos seguros de que ya eliminó el que le dijimos
+                customAlert.classList.add('hidden');
+            })
+            .catch(function (error) {
+                // debería entrar si ocurre algún error
+                console.error("Error removing document: ", error);
+                customAlert.classList.add('hidden');
+            });
+    });
+
+    cancelBtn.addEventListener('click', function () {
+        customAlert.classList.add('hidden');
+    })
+}
+
+
 let cartProducts = [];
 function getCart() {
     const cartList = document.querySelector('.cartList');
