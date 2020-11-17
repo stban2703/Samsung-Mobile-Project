@@ -1,4 +1,5 @@
 const productList = document.querySelector('.productList');
+const productListContainer = productList.querySelector('.productList__container');
 const productListView = productList.querySelector('.productList__view');
 const productListTotal = productList.querySelector('.productList__total');
 const productListForm = productList.querySelector('.productList__form');
@@ -35,6 +36,8 @@ function renderProducts(list) {
         // Load first image from each folder in Storage
         const previewImageRef = productImageRef.child(elem.imageRef).child('image1');
 
+        productListContainer.classList.remove('hidden');
+
         previewImageRef.getDownloadURL().then((url) => {
 
             newProduct.innerHTML = `
@@ -63,6 +66,7 @@ function renderProducts(list) {
             loadStars(elem, newProduct);
 
             const productListOption = newProduct.querySelectorAll('.productList__option');
+            const productListAdmin = newProduct.querySelectorAll('.showAdmin');
 
             productListOption[0].addEventListener('click', function () {
                 customAlert.classList.remove('hidden');
@@ -72,6 +76,18 @@ function renderProducts(list) {
             productListOption[1].addEventListener('click', function () {
                 handleAddToCart(elem, 1);
             });
+
+            productListAdmin.forEach(elem => {
+                if (userInfo) {
+                    if (userInfo.admin) {
+                        elem.classList.remove('hidden');
+                    } else {
+                        elem.classList.add('hidden');
+                    }
+                } else {
+                    elem.classList.add('hidden');
+                }
+            })
 
         });
         productListView.appendChild(newProduct);
@@ -86,6 +102,8 @@ function getProducts() {
         .get() // pide todos los documentos de la colección
         .then((querySnapshot) => {
             objectList = [];
+            loader.classList.add('hidden');
+            loader.classList.add('hidden');
             querySnapshot.forEach((doc) => {
                 const obj = doc.data();
                 obj.id = doc.id;
@@ -94,10 +112,10 @@ function getProducts() {
             });
 
             loader.classList.add('hidden');
-            productList.classList.remove('hidden');
             renderProducts(objectList);
         });
 }
+
 
 productListForm.addEventListener('input', function () {
     let copy = objectList.slice();
@@ -170,8 +188,7 @@ productListForm.addEventListener('input', function () {
 
 })
 
-// render inicial con todos los productos
-getProducts();
+
 
 if (window.innerWidth <= 960) {
     productListConstrols.classList.add('hidden');

@@ -1,6 +1,7 @@
 var userInfo;
 
 firebase.auth().onAuthStateChanged(function (user) {
+    const productList = document.querySelector('.productList');
     if (user) {
         userRef.doc(user.uid).get().then(function (doc) {
             if (doc.exists) {
@@ -12,24 +13,35 @@ firebase.auth().onAuthStateChanged(function (user) {
                 getOrders();
                 showUnlogged();
 
+                if (productList) {
+                    getProducts();
+                }
+
                 const showAdmin = document.querySelectorAll('.showAdmin');
-                
-                if(data.admin) {
-                    showAdmin.forEach(function(elem) {
+
+                if (data.admin) {
+                    showAdmin.forEach(function (elem) {
                         elem.classList.remove('hidden');
                     })
-                    console.log(showAdmin)
-                    
+
                 } else {
-                    showAdmin.forEach(function(elem) {
+                    showAdmin.forEach(function (elem) {
                         elem.classList.add('hidden');
                     });
-                    console.log(showAdmin)
+
                 }
             }
         });
     } else {
         userInfo = null;
+        if (productList) {
+            getProducts();
+        }
+        const showAdmin = document.querySelectorAll('.showAdmin');
+        showAdmin.forEach(function (elem) {
+            elem.classList.add('hidden');
+        })
+
         hideUnlogged();
     }
 });
