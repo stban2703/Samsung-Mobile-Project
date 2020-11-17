@@ -1,5 +1,6 @@
 const productView = document.querySelector('.productView');
-const productViewImage = productView.querySelector('.productView__image img');
+const productViewCarrousel = productView.querySelector('.productView__carrousel');
+const productViewImage = productView.querySelector('.productView__image');
 const productViewTitle = productView.querySelector('.productView__title');
 const productViewPrice = productView.querySelector('.productView__price');
 const productViewDesc = productView.querySelector('.productView__desc');
@@ -68,16 +69,15 @@ function handleQuantity() {
 
 handleQuantity();
 
-/*function renderImages(id, ref) {
-    const productViewImage = ref.querySelector('.productView__image');
-
+function renderImages(id) {
     productImageRef.child(id).listAll().then(function (res) {
         res.items.forEach(function (itemRef) {
             // All the items under listRef.
             itemRef.getDownloadURL().then(function (url) {
                 const newImage = document.createElement('img');
+                newImage.classList.add('productView__image');
                 newImage.src = url;
-                productViewImage.appendChild(newImage);
+                productViewCarrousel.appendChild(newImage);
                 const loader = document.querySelector('.lds-ring');
                 loader.classList.add('hidden');
                 productView.classList.remove('hidden');
@@ -91,4 +91,4 @@ handleQuantity();
         // Uh-oh, an error occurred!
         console.log(error);
     });
-}*/
+}

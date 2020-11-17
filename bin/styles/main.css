@@ -1068,9 +1068,16 @@ input[type=button] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   max-width: 960px;
   font-family: "Open Sans", sans-serif;
@@ -1109,26 +1116,21 @@ input[type=button] {
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   width: 100%;
-}
-
-.productView__image {
   padding: 10px;
 }
 
-.productView__image img {
+.productView__carrousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.productView__image {
   max-width: none;
   max-height: none;
   width: 100%;
-}
-
-.productView__previous {
-  left: 5px;
-  position: absolute;
-}
-
-.productView__next {
-  right: 5px;
-  position: absolute;
 }
 
 .productView__thumbs {
@@ -1148,18 +1150,18 @@ input[type=button] {
           flex-direction: column;
   width: 100%;
   max-width: 480px;
-  margin-left: 30px;
+  margin: 10px 0;
 }
 
 .productView__title {
   color: #4d4d4d;
   font-weight: bold;
-  font-size: 1.5625rem;
+  font-size: 2.0625rem;
 }
 
 .productView__price {
   color: #1089ff;
-  font-size: 1.5625rem;
+  font-size: 2.0625rem;
   font-weight: bold;
   margin: 10px 0;
 }
@@ -1208,18 +1210,6 @@ input[type=button] {
 }
 
 @media (max-width: 1000px) {
-  .productView {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .productView__details {
     margin-top: 10px;
     margin-left: 0;
@@ -1454,6 +1444,9 @@ input[type=button] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .rating--big {
@@ -1463,6 +1456,15 @@ input[type=button] {
 .rating--big .rating__star {
   width: 100%;
   margin: 0 8px;
+}
+
+.rating--productView {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.rating--productView .rating__star {
+  height: 40px;
 }
 
 .form {

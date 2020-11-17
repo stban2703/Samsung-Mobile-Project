@@ -1,5 +1,6 @@
 .rating {
     display: flex;
+    justify-content: center;
     
     &--big {
         width: 100%;
@@ -7,6 +8,14 @@
         .rating__star {
             width: 100%;
             margin: 0 8px;
+        }
+    }
+
+    &--productView {
+        width: 100%;
+        margin: 10px 0;
+        .rating__star {
+            height: 40px;
         }
     }
 }

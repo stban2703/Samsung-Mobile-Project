@@ -1,6 +1,8 @@
 .productView {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     //flex-wrap: wrap;
     width: 100%;
     max-width: $containerMaxWidth;
@@ -25,26 +27,18 @@
         box-shadow: $shadow;
         border-radius: $borderRadius;
         width: 100%;
+        padding: 10px;
+    }
+
+    &__carrousel {
+        display: flex;
+        object-fit: contain;
     }
 
     &__image {
-        padding: 10px;
-
-        img {
-            max-width: none;
-            max-height: none;
-            width: 100%;
-        }
-    }
-
-    &__previous {
-        left: 5px;
-        position: absolute;
-    }
-
-    &__next {
-        right: 5px;
-        position: absolute;
+        max-width: none;
+        max-height: none;
+        width: 100%;
     }
 
     &__thumbs {
@@ -57,18 +51,18 @@
         flex-direction: column;
         width: 100%;
         max-width: $galleryMaxWidth;
-        margin-left: 30px;
+        margin: 10px 0;
     }
 
     &__title {
         color: $darkGray;
         font-weight: bold;
-        font-size: $productTitleBigFs;
+        font-size: $productTitleBigFs + .5;
     }
 
     &__price {
         color: $lightBlue;
-        font-size: $productTitleBigFs;
+        font-size: $productTitleBigFs + .5;
         font-weight: bold;
         margin: 10px 0;
     }
@@ -110,9 +104,6 @@
 
 @media (max-width: 1000px) {
     .productView {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
 
         &__details {
             margin-top: 10px;
