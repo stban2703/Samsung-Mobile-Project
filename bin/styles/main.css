@@ -543,7 +543,7 @@ input[type=button] {
   width: 150px;
   top: 55px;
   border-radius: 10x;
-  z-index: 1;
+  z-index: 2;
   background-color: #23374d;
 }
 
@@ -560,6 +560,7 @@ input[type=button] {
   background-color: white;
   font-family: "Source Sans Pro", sans-serif;
   padding: 10px;
+  z-index: 2;
 }
 
 .dropDownList__option span {
@@ -1313,7 +1314,7 @@ input[type=button] {
 }
 
 .cartList__thumb {
-  width: 65px;
+  width: 70px;
   -o-object-fit: contain;
      object-fit: contain;
   max-width: none;

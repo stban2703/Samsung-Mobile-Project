@@ -2,6 +2,24 @@ const headerButton = document.querySelectorAll('.header__button');
 const dropDownList = document.querySelector('.dropDownList');
 const loaderContainer = document.querySelector('.lds-container');
 
+console.log(headerButton[1])
+
+headerButton[1].addEventListener('click', function() {
+    if(userInfo) {
+        window.location = 'cart.html'
+    } else {
+        window.location = 'login.html'
+    }
+})
+
+headerButton[2].addEventListener('click', function() {
+    if(userInfo) {
+        window.location = 'order.html'
+    } else {
+        window.location = 'login.html'
+    }
+})
+
 document.addEventListener('click', function (event) {
     let isClickInside = headerButton[0].contains(event.target);
 
@@ -40,7 +58,7 @@ function handleAddToCart(product, quantity) {
         })
 
     } else {
-        console.log('No has iniciado sesion')
+        window.location = 'login.html';
     }
 }
 
@@ -88,14 +106,10 @@ function getCart() {
                     cartProducts.push(obj);
                     //console.log(`${doc.id} => ${doc.data()}`);
                 });
-
-                //loader.classList.add('hidden');
-                //cartList.classList.remove('hidden');
                 renderCart(cartProducts);
                 
             });
     }
-    console.log(cartProducts.length)
 }
 
 let orders = [];

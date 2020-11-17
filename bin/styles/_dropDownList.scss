@@ -8,7 +8,7 @@
     width: 150px;
     top: 55px;
     border-radius: 10x;
-    z-index: 1;
+    z-index: 2;
     background-color: $mainBlue;
 
     &__title {
@@ -24,6 +24,7 @@
         background-color: $mainBg;
         font-family: $secondFont;
         padding: 10px;
+        z-index: 2;
 
         span {
             color: $mainBlue;

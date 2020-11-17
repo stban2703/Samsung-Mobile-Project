@@ -83,7 +83,6 @@ function renderImages(id) {
                 loader.classList.add('hidden');
                 productView.classList.remove('hidden');
                 totalImage++;
-                console.log(totalImage)
                 counterLast.innerText = totalImage;
             }).catch(function (error) {
                 console.log(error);
