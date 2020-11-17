@@ -176,8 +176,8 @@
 
     &__option {
         background-color: white;
-        padding: 4px;
-        border-radius: $borderRadius + 5;
+        padding: 2px;
+        border-radius: $borderRadius - 1;
         box-shadow: $shadow;
         margin: 2px 5px;
         max-width: none;

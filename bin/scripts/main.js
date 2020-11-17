@@ -92,8 +92,10 @@ function getCart() {
                 //loader.classList.add('hidden');
                 //cartList.classList.remove('hidden');
                 renderCart(cartProducts);
+                
             });
     }
+    console.log(cartProducts.length)
 }
 
 let orders = [];

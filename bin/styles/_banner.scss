@@ -13,8 +13,7 @@
     }
 
     &__section {
-        width: 100%;
-        max-width: 500px;
+        width: fit-content;
         display: flex;
         flex-direction: column;
         font-size: large;
@@ -24,7 +23,6 @@
     &__desc {
         font-family: $mainFont;
         color: white;
-        font-weight: bold;
     }
 }
 

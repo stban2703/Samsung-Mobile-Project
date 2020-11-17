@@ -18,7 +18,7 @@
         font-family: $mainFont;
         font-weight: bold;
         color: $mainBlue;
-        font-size: $headerTitleFs;
+        font-size: $headerTitleFs !important;
 
         &--blue {
             color: $lightBlue;

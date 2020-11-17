@@ -606,7 +606,7 @@ input[type=button] {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   color: #23374d;
-  font-size: 1.5em;
+  font-size: 1.5em !important;
 }
 
 .sectionHeader__title--blue {
@@ -1007,8 +1007,8 @@ input[type=button] {
 
 .productList__option {
   background-color: white;
-  padding: 4px;
-  border-radius: 20px;
+  padding: 2px;
+  border-radius: 14px;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   margin: 2px 5px;
@@ -1680,8 +1680,9 @@ input[type=button] {
 }
 
 .banner__section {
-  width: 100%;
-  max-width: 500px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1696,7 +1697,6 @@ input[type=button] {
 .banner__desc {
   font-family: "Open Sans", sans-serif;
   color: white;
-  font-weight: bold;
 }
 
 @media (max-width: 660px) {
