@@ -14,6 +14,7 @@ document.addEventListener('click', function (event) {
 
 function handleAddToCart(product, quantity) {
     if (userInfo) {
+        const success = document.querySelector('.success');
         userRef.doc(userInfo.uid).collection('cart').doc(product.id).set(
             {
                 title: product.title,
@@ -27,7 +28,13 @@ function handleAddToCart(product, quantity) {
                 quantity: quantity
             }
         ).then(function () {
-            alert('agregado')
+            //alert('agregado')
+            success.classList.add('success--display');
+
+            setTimeout(function() {
+                success.classList.remove('success--display');
+            }, 1500);
+
         }).catch(function (error) {
             console.log(error.message)
         })

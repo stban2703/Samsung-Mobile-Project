@@ -5,6 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    position: relative;
 
     &__menu {
         display: none;
@@ -66,7 +68,7 @@
     }
 }
 
-@media (max-width: $responsiveMaxWidth) {
+@media (max-width: $responsiveHeaderMaxWidth) {
     .header {
         &__logo {
             img {
