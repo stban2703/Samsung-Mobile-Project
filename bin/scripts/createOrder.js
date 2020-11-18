@@ -69,7 +69,7 @@ buyForm.addEventListener('submit', function (event) {
         buyTitle.innerText = 'Verifica si la información es correcta';
         window.scrollTo(0, 0);
 
-        buyTitle.classList.add('sectionHeader__title--blue');
+        //buyTitle.classList.add('sectionHeader__title--blue');
     }
 
     buyButtons[1].classList.remove('hidden');
