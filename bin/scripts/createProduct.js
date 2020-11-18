@@ -26,7 +26,7 @@ if (productId) {
     formSection[0].classList.add('hidden');
 
     const title = document.querySelector('.sectionHeader__title');
-    title.innerText = 'Editar producto';
+    title.innerText = 'Editar información';
 
     const submitBtn = document.querySelector('.customButton--blue span');
     submitBtn.innerText = 'Actualizar producto';
