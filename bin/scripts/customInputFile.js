@@ -7,12 +7,11 @@ function setCustomInputFile(ref) {
         const removeBtn = e.querySelector('.customFileInput__remove');
     
         fileInput.addEventListener('change', function () {
-            console.log(fileInput.files.length > 0 || fileInput.value != '')
+            
             if (fileInput.files.length > 0) {
                 fileName.innerText = `Image${i + 1}`;
                 let imageUrl = URL.createObjectURL(fileInput.files[0]);
                 fileImage.src = imageUrl;
-                fileImage.classList.remove('hidden');
                 addBtn.classList.add('hidden');
                 removeBtn.classList.remove('hidden');
             } else {

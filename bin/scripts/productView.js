@@ -86,22 +86,6 @@ function renderImages(id) {
                 totalImage++;
                 counterLast.innerText = totalImage;
 
-                /*if (userInfo.admin) {
-                    
-                    const showAdmin = document.querySelectorAll('.showAdmin');
-
-                    showAdmin.forEach(function (elem) {
-                        elem.classList.remove('hidden');
-                    })
-                    console.log(showAdmin)
-
-                } else {
-                    showAdmin.forEach(function (elem) {
-                        elem.classList.add('hidden');
-                    });
-                    console.log(showAdmin)
-
-                }*/
             }).catch(function (error) {
                 console.log(error);
             });

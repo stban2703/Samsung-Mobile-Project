@@ -1,5 +1,8 @@
 const createForm = document.querySelector('.form--create');
 const customInputFiles = createForm.querySelectorAll('.customFileInput');
+const fileInput = document.querySelectorAll('.customFileInput__file');
+const customFileInputThumb = document.querySelectorAll('.customFileInput__thumb')
+const formSection = document.querySelectorAll('.form__section');
 
 setCustomInputFile(customInputFiles);
 setStars(createForm);
@@ -8,8 +11,6 @@ let parts = location.search.split("-")
 let productId = parts[0].replace("?", "");
 
 if (productId) {
-
-    
     productsRef.doc(productId).get().then((doc) => {
         const obj = doc.data()
         createForm.title.value = obj.title;
@@ -20,6 +21,9 @@ if (productId) {
         createForm.description.value = obj.description;
         loadStars(obj, createForm);
     });
+
+    fileInput[0].required = false;
+    formSection[0].classList.add('hidden');
 
     const title = document.querySelector('.sectionHeader__title');
     title.innerText = 'Editar producto';
