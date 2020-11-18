@@ -8,6 +8,8 @@ let parts = location.search.split("-")
 let productId = parts[0].replace("?", "");
 
 if (productId) {
+
+    
     productsRef.doc(productId).get().then((doc) => {
         const obj = doc.data()
         createForm.title.value = obj.title;
@@ -75,7 +77,12 @@ createForm.addEventListener('submit', function (event) {
         }
 
     } else if (filledStar.length == 0) {
-        alert('Ponele estrellas hombre')
+        //alert('Ponele estrellas hombre')
+        const success = document.querySelector('.success');
+        success.classList.add('success--display');
+        setTimeout(function () {
+            success.classList.remove('success--display');
+        }, 2500);
     }
 });
 
