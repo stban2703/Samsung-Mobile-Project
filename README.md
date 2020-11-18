@@ -19,4 +19,4 @@ _SASS Compiler_
 ## Thanks for watching! ❤️
 
 ## Behance presentation
-_https://www.behance.net/_
+_https://www.behance.net/gallery/108023983/Samsung-Mobile-Project_
